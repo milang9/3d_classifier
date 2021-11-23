@@ -1,0 +1,7 @@
+*) get list of 5s rRNAs and tRNAs from Rfam that are also in PDB (file: Rfam.pdb)
+*) use get_pdb.sh to download 5s rRNAs and tRNAs
+*) extract 5s rRNAs and tRNAs with pdb-tools (https://github.com/haddocking/pdb-tools), see extract_RNAs.sh --> more degrees of freedom, as RNAs no longer in complex
+*) first 50 each for initial test set selected with get_pdb_seqlen.py(max length 120 nts, see: ls_test.txt)
+*) run of 100 RNAs with ernwin:
+ernwin.py $file --source-cg-dir ernwin/RESOURCES/CGS --source-pdb-dir ernwin/RESOURCES/PDB_DIR/ --output-base-dir test_ernout/ --fallback-stat ernwin/RESOURCES/fallback.stats --constraint-energy-per-ml MAX10[1FJC1] --reconstruct-every-n 0 --move-set MoveAndRelaxer,NElementMover[3] --reference $file
+
