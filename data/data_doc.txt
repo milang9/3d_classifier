@@ -4,4 +4,5 @@
 *) first 50 each for initial test set selected with get_pdb_seqlen.py(max length 120 nts, see: ls_test.txt)
 *) run of 100 RNAs with ernwin:
 ernwin.py $file --source-cg-dir ernwin/RESOURCES/CGS --source-pdb-dir ernwin/RESOURCES/PDB_DIR/ --output-base-dir test_ernout/ --fallback-stat ernwin/RESOURCES/fallback.stats --constraint-energy-per-ml MAX10[1FJC1] --reconstruct-every-n 0 --move-set MoveAndRelaxer,NElementMover[3] --reference $file
-
+*) copy and sort files with copy_cgs.py
+*) generate the rmsd list with get_rmsd.py
