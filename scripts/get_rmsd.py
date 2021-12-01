@@ -17,16 +17,19 @@ pdb_files = [f for f in listdir(pdb_fp) if isfile(join(pdb_fp, f))]
 l = []
 
 for cg in cg_files:
-    name = cg[:-3]
-    pdb = name.upper() + ".pdb"
+    name = cg[:-9]
+    print(name)
+    pdb = name + ".pdb"
     line = ""
     if pdb in pdb_files:
         cg_p = file_path + cg
         pdb_p = pdb_fp + pdb
         r = subprocess.check_output(["compare_RNA.py", cg_p, pdb_p, "--rmsd"])
         rmsd = str(r.rstrip())[9:-1]
-        line = name + "\t" + rmsd + "\n"
+        line = cg + "\t" + rmsd + "\n"
         l.append(line)
+    else:
+        print("PDB file not found:", pdb)
 
 with open(sys.argv[3], "w") as fh:
     for elem in l:
