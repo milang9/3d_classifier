@@ -69,14 +69,14 @@ for rna in os.listdir(origin):
             tec_tr +=1
 
     #copy files
-    '''
+    
     shutil.copy(origin + best_r0, destination + set_dir + rna + "_br0.cg")
     shutil.copy(origin + best0, destination + set_dir + rna + "_be0.cg")
     i = 1
     for x in rnd_list:
         shutil.copy(origin + x, destination + set_dir + rna + "_rn" + str(i) + ".cg")
         i+=1
-    '''
+    
 print("count training set, 5srRNA:", tc_fs)
 print("count training set, tRNA:", tc_tr)
 print("count validation set, 5srRNA:", vc_fs)
