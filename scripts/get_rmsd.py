@@ -18,13 +18,16 @@ l = []
 
 for cg in cg_files:
     name = cg[:-9]
-    print(name)
-    pdb = name + ".pdb"
+    pdb = name + "001.cg"#".pdb"
     line = ""
     if pdb in pdb_files:
         cg_p = file_path + cg
         pdb_p = pdb_fp + pdb
-        r = subprocess.check_output(["compare_RNA.py", cg_p, pdb_p, "--rmsd"])
+        try:
+            r = subprocess.check_output(["compare_RNA.py", cg_p, pdb_p, "--rmsd"])
+        except:
+            print("Error with files", pdb, cg)
+            continue
         rmsd = str(r.rstrip())[9:-1]
         line = cg + "\t" + rmsd + "\n"
         l.append(line)
