@@ -18,7 +18,10 @@ l = []
 
 for cg in cg_files:
     name = cg[:-9]
-    pdb = name + "001.cg"#".pdb"
+    if "001.cg" in cg:
+        pdb = cg
+    else:
+        pdb = name + "001.cg"#".pdb"
     line = ""
     if pdb in pdb_files:
         cg_p = file_path + cg
