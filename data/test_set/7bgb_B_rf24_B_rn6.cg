@@ -1,0 +1,417 @@
+name 7bgb_B_rf24_B
+length 92
+seq CCUGCGGCGGCCGCAGGAAGAGGAACGGAGCGAGUCCCCGCGGCGCGAUUCCCUGAGCUGUGGGACGUGCACCCAGGACUCGGCUCACACAU
+seq_ids B:211 B:212 B:213 B:214 B:215 B:216 B:217 B:218 B:362 B:363 B:364 B:365 B:366 B:367 B:368 B:369 B:370 B:371 B:372 B:373 B:374 B:375 B:376 B:377 B:378 B:379 B:380 B:381 B:382 B:383 B:384 B:385 B:386 B:387 B:388 B:389 B:390 B:391 B:392 B:397 B:398 B:399 B:400 B:401 B:402 B:403 B:404 B:405 B:406 B:407 B:408 B:409 B:410 B:411 B:412 B:413 B:414 B:415 B:416 B:417 B:418 B:419 B:420 B:421 B:422 B:423 B:424 B:425 B:426 B:427 B:428 B:429 B:430 B:431 B:432 B:433 B:434 B:435 B:436 B:437 B:438 B:439 B:440 B:441 B:442 B:443 B:444 B:445 B:446 B:447 B:448 B:449
+missing B:99 U
+missing B:261 U
+missing B:43 U
+missing B:144 C
+missing B:44 G
+missing B:253 G
+missing B:265 C
+missing B:310 G
+missing B:450 G
+missing B:190 C
+missing B:275 C
+missing B:225 C
+missing B:155 U
+missing B:58 G
+missing B:92 C
+missing B:162 A
+missing B:109 U
+missing B:263 G
+missing B:143 G
+missing B:180 C
+missing B:46 C
+missing B:145 C
+missing B:203 C
+missing B:48 A
+missing B:184 U
+missing B:210 A
+missing B:285 A
+missing B:297 C
+missing B:133 U
+missing B:63 G
+missing B:328 C
+missing B:36 C
+missing B:94 C
+missing B:1 G
+missing B:137 C
+missing B:182 G
+missing B:40 U
+missing B:295 A
+missing B:147 U
+missing B:53 U
+missing B:326 G
+missing B:84 G
+missing B:135 G
+missing B:57 U
+missing B:330 C
+missing B:38 U
+missing B:114 U
+missing B:317 C
+missing B:3 G
+missing B:351 C
+missing B:289 A
+missing B:157 A
+missing B:55 A
+missing B:320 C
+missing B:169 A
+missing B:200 C
+missing B:341 G
+missing B:124 G
+missing B:13 G
+missing B:167 A
+missing B:89 C
+missing B:198 C
+missing B:274 U
+missing B:291 U
+missing B:235 C
+missing B:356 C
+missing B:202 U
+missing B:189 G
+missing B:87 C
+missing B:223 C
+missing B:360 C
+missing B:126 A
+missing B:161 U
+missing B:91 G
+missing B:192 C
+missing B:284 C
+missing B:45 U
+missing B:358 U
+missing B:79 C
+missing B:116 C
+missing B:238 C
+missing B:323 C
+missing B:81 U
+missing B:395 G
+missing B:146 U
+missing B:163 G
+missing B:69 A
+missing B:255 C
+missing B:228 G
+missing B:30 G
+missing B:352 A
+missing B:232 A
+missing B:2 G
+missing B:333 G
+missing B:83 U
+missing B:245 C
+missing B:111 A
+missing B:20 U
+missing B:156 C
+missing B:249 U
+missing B:266 C
+missing B:230 C
+missing B:24 A
+missing B:306 U
+missing B:195 U
+missing B:101 U
+missing B:287 C
+missing B:234 C
+missing B:12 G
+missing B:247 C
+missing B:256 C
+missing B:105 U
+missing B:22 G
+missing B:115 U
+missing B:277 C
+missing B:251 G
+missing B:224 G
+missing B:26 G
+missing B:60 G
+missing B:205 C
+missing B:103 U
+missing B:281 A
+missing B:241 A
+missing B:16 G
+missing B:138 C
+missing B:178 G
+missing B:125 G
+missing B:279 G
+missing B:159 U
+missing B:322 G
+missing B:62 A
+missing B:97 U
+missing B:27 G
+missing B:128 A
+missing B:34 G
+missing B:149 C
+missing B:15 G
+missing B:344 C
+missing B:52 C
+missing B:17 G
+missing B:75 C
+missing B:153 G
+missing B:298 G
+missing B:332 C
+missing B:56 C
+missing B:82 U
+missing B:5 U
+missing B:342 G
+missing B:315 G
+missing B:151 C
+missing B:288 C
+missing B:9 G
+missing B:346 A
+missing B:54 A
+missing B:194 U
+missing B:19 C
+missing B:303 G
+missing B:334 G
+missing B:305 G
+missing B:7 C
+missing B:336 G
+missing B:293 C
+missing B:324 G
+missing B:170 C
+missing B:204 C
+missing B:29 U
+missing B:41 U
+missing B:72 C
+missing B:354 G
+missing B:307 U
+missing B:187 U
+missing B:160 C
+missing B:39 U
+missing B:70 G
+missing B:175 A
+missing B:206 G
+missing B:177 U
+missing B:107 G
+missing B:208 G
+missing B:74 C
+missing B:61 A
+missing B:329 U
+missing B:165 G
+missing B:95 G
+missing B:196 C
+missing B:33 G
+missing B:64 G
+missing B:226 C
+missing B:327 U
+missing B:179 U
+missing B:85 C
+missing B:110 G
+missing B:267 C
+missing B:248 C
+missing B:18 C
+missing B:349 U
+missing B:35 C
+missing B:127 A
+missing B:100 U
+missing B:236 C
+missing B:321 C
+missing B:201 C
+missing B:246 G
+missing B:104 C
+missing B:117 A
+missing B:270 G
+missing B:250 G
+missing B:28 G
+missing B:199 C
+missing B:121 G
+missing B:102 U
+missing B:67 G
+missing B:139 U
+missing B:260 G
+missing B:240 A
+missing B:106 C
+missing B:396 C
+missing B:221 G
+missing B:119 C
+missing B:264 G
+missing B:193 G
+missing B:123 C
+missing B:96 C
+missing B:77 U
+missing B:262 C
+missing B:142 C
+missing B:355 C
+missing B:113 U
+missing B:299 C
+missing B:10 A
+missing B:300 G
+missing B:50 C
+missing B:31 G
+missing B:132 C
+missing B:314 U
+missing B:348 G
+missing B:136 G
+missing B:21 G
+missing B:302 A
+missing B:304 A
+missing B:25 G
+missing B:134 C
+missing B:227 U
+missing B:319 G
+missing B:171 A
+missing B:292 G
+missing B:350 U
+missing B:172 A
+missing B:257 G
+missing B:23 G
+missing B:393 G
+missing B:296 C
+missing B:66 C
+missing B:309 G
+missing B:340 A
+missing B:186 C
+missing B:220 G
+missing B:237 C
+missing B:313 C
+missing B:294 C
+missing B:88 C
+missing B:174 A
+missing B:259 G
+missing B:176 A
+missing B:42 U
+missing B:76 G
+missing B:311 C
+missing B:86 U
+missing B:191 C
+missing B:164 A
+missing B:222 U
+missing B:129 A
+missing B:59 A
+missing B:32 U
+missing B:90 C
+missing B:168 A
+missing B:269 G
+missing B:345 G
+missing B:181 A
+missing B:47 U
+missing B:78 G
+missing B:49 A
+missing B:80 U
+missing B:185 G
+missing B:166 C
+missing B:242 C
+missing B:343 G
+missing B:131 C
+missing B:37 A
+missing B:68 U
+missing B:347 G
+missing B:183 C
+missing B:98 G
+missing B:301 A
+missing B:51 C
+missing B:335 G
+missing B:252 A
+missing B:337 G
+missing B:141 C
+missing B:120 G
+missing B:325 G
+missing B:286 C
+missing B:108 C
+missing B:73 G
+missing B:118 G
+missing B:258 C
+missing B:254 G
+missing B:339 G
+missing B:219 G
+missing B:276 U
+missing B:122 G
+missing B:173 A
+missing B:71 G
+missing B:207 G
+missing B:280 G
+missing B:244 C
+missing B:451 C
+missing B:357 U
+missing B:209 G
+missing B:11 G
+missing B:112 C
+missing B:268 G
+missing B:93 G
+missing B:361 A
+missing B:197 G
+missing B:278 C
+missing B:158 U
+missing B:65 G
+missing B:282 G
+missing B:316 U
+missing B:130 G
+missing B:359 U
+missing B:239 G
+missing B:148 C
+missing B:14 U
+missing B:272 C
+missing B:394 C
+missing B:152 C
+missing B:229 C
+missing B:4 U
+missing B:318 A
+missing B:140 G
+missing B:353 G
+missing B:283 G
+missing B:233 G
+missing B:150 A
+missing B:8 G
+missing B:290 C
+missing B:243 C
+missing B:271 G
+missing B:308 G
+missing B:154 U
+missing B:188 G
+missing B:273 U
+missing B:331 U
+missing B:231 C
+missing B:6 G
+missing B:312 U
+missing B:338 C
+define s0 1 8 10 17
+define h0 9 9
+define m0 18 27
+define s1 28 31 83 86
+define i2 82 82
+define s2 32 37 76 81
+define i0 38 42 71 75
+define s3 43 47 66 70
+define i1 48 50 65 65
+define s4 51 53 62 64
+define h1 54 61
+define t0 87 92
+connect s0 h0 m0
+connect s1 m0 i2 t0
+connect s2 i2 i0
+connect s3 i0 i1
+connect s4 i1 h1
+info Energy -24.3915307229 ROG,AME(i),AME(h),SLD(h1),SLD(h0)
+info dssr_stacks i2
+info dssr_stacks i1
+coord h0 0.0000000000000000 17.8490000000000002 1.0000000000000000 3.6897206396177618 19.1114456660212291 12.9465147318061717
+coord h1 -10.6496077515964611 -4.9712681372621335 17.9539039872915964 -17.0454872395857713 -11.8927576999090654 35.2414532679820098
+coord t0 -23.8818348179798541 -11.4692860131134555 -11.4546161828571069 -19.4002858235915916 -26.4026061290859033 -8.3861301036992728
+coord s4 -6.7377913988509590 -5.9239726302902938 14.8006448841798921 -10.6496077515964611 -4.9712681372621335 17.9539039872915964
+coord s3 0.7447973431382264 -13.9022431898249970 4.0282249606439997 -1.7481264101329077 -12.7637877017510526 13.8614601486200772
+coord s2 -14.3524567903053271 -9.1771411667499372 -14.2902164087253141 -2.1378954278148061 -7.2759006786475888 -17.4334313756587065
+coord s0 0.0000000000000000 0.0000000000000000 1.0000000000000000 0.0000000000000000 17.8490000000000002 1.0000000000000000
+coord s1 -23.8818348179798541 -11.4692860131134555 -11.4546161828571069 -16.7650190959902154 -9.2571353482453524 -13.2289454688592052
+twist s3 0.8368747956547095 -0.4776042020898465 0.2674599082928305 -0.2806264017859772 0.9427322819886402 -0.1802905075625073
+twist s2 -0.2677175242507026 0.7761644331738694 -0.5708731031367309 0.2854525188717967 -0.6048758431439382 0.7433990004369501
+twist s1 0.2595037086316805 -0.9542101445716131 -0.1487979341356086 -0.3092349462418876 0.2614858332468042 -0.9143297583662043
+twist s0 1.0000000000000000 0.0000000000000000 0.0000000000000000 -0.6139768247131786 0.0000000000000000 0.7893240517779264
+twist s4 -0.5609389741082831 -0.6631880369007344 -0.4955089252860107 0.0897139534779311 -0.9171184833455923 0.3883878139916856
+sampled h1 5V7Q_A:h_34 2 1507 1514
+sampled i1 5NJT_U:i_50 4 1357 1359 1369 1369
+sampled i0 3J7Q_5-8:i_28 4 1531 1539 1594 1598
+sampled h0 4IOA_X:h_40 2 1635 1637
+sampled i2 6GAW_BA:i_16 2 1403 1403
+sampled t0 RS_random_430_S_3_A:t_0 2 155 160
+sampled s4 5XXB_1-4:s_88 4 3013 3015 3052 3054
+sampled s3 2Y9H_H:s_0 4 3 7 12 16
+sampled m0 5XXB_1-4:m_193 2 1257 1266
+sampled s2 1D4R_A-B:s_0 4 7 12 46 51
+sampled s0 4IOA_X:s_36 4 1 8 2678 2685
+sampled s1 3JB9_N-P:s_3 4 1 4 9 12
+
+vres i2 -9.61947305 8.29702258 8.09090013 
+vres i1 4.07161168 -1.64868370 -3.05028970 10.47064010 0.91757471 -4.03459311 10.06927350 4.68837364 -0.36282465 -3.71227951 7.28645353 7.91554856 
+vres i0 -4.15729447 5.37692221 2.88688144 -2.89804093 12.03420212 4.41787496 -0.00213717 9.07574508 11.50059798 0.13118201 10.74577653 4.36165380 1.38069620 4.71410541 2.18095763 1.92241396 3.05697559 -2.25930897 4.49094595 2.66602429 -5.60671338 9.17880366 4.75444715 -8.60527554 14.49739371 6.54824724 -7.39651926 14.50243220 8.19917668 2.53839007 13.44274131 11.50903378 -1.05597922 8.38594866 12.39655108 -4.33063355 2.61242765 12.92911327 -3.88408868 -3.95810945 10.43007409 -4.00886440 
+vres h0 -0.19075299 9.14047928 -4.87392878 2.46841608 3.80363085 -3.86677221 6.28345092 -0.00000000 -0.00000000 
+vres h1 -1.17116356 6.21994704 -2.46171994 3.72683950 3.20895952 0.17571836 9.84471498 0.00000000 -0.00000000 6.10653316 -3.26041693 3.40884663 -0.90787227 -2.21517381 4.94077613 -5.27039848 -1.80981264 2.40778812 -14.18659129 -3.39195261 1.20196521 -9.01663755 -1.32379277 7.31251456 
+vres t0 0.30217848 2.50971970 -5.65560680 6.34936135 5.05911311 -2.70130169 7.94518625 -0.00000000 0.00000000 5.38367194 -4.77373360 0.17252007 1.53356642 -8.45646071 -3.57890921 -2.29965197 -3.62071427 -5.15062222 
+vres m0 -18.33934103 6.74946401 0.46672660 -13.08851770 9.55672688 2.49166360 -13.47994382 17.00793216 5.63828117 -8.40332621 20.56379619 9.43103369 -5.76241677 23.90980088 10.13244450 3.38964250 25.93579322 9.18361155 5.38121688 22.69608251 3.85854049 5.59328190 17.01536050 3.78309646 6.14459750 12.27335160 3.73164925 5.05578047 3.47461279 1.43965540 
+
