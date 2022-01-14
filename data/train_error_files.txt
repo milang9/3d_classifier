@@ -1,0 +1,17 @@
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn2.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn3.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn8.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn5.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn4.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn6.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_be0.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn8.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn4.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn7.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn5.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn2.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn7.cg
+6wru_2_5srRNA001.cg 6wru_2_5srRNA_2_rn1.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn1.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn6.cg
+6wrs_2_5srRNA001.cg 6wrs_2_5srRNA_2_rn3.cg

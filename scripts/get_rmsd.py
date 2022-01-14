@@ -16,12 +16,18 @@ pdb_files = [f for f in listdir(pdb_fp) if isfile(join(pdb_fp, f))]
 
 l = []
 
+error_f = []
+
 for cg in cg_files:
-    name = cg[:-9]
-    if "001.cg" in cg:
-        pdb = cg
+    if len(cg) > 14:
+        name = cg[:-9]
     else:
-        pdb = name + "001.cg"#".pdb"
+        name = cg[:-3]
+    pdb = name + ".cg"
+    #if "001.cg" in cg:
+    #    pdb = cg
+    #else:
+    #    pdb = name + "001.cg"#".pdb"
     line = ""
     if pdb in pdb_files:
         cg_p = file_path + cg
@@ -30,6 +36,7 @@ for cg in cg_files:
             r = subprocess.check_output(["compare_RNA.py", cg_p, pdb_p, "--rmsd"])
         except:
             print("Error with files", pdb, cg)
+            error_f.append(f"{pdb} {cg}\n")
             continue
         rmsd = str(r.rstrip())[9:-1]
         line = cg + "\t" + rmsd + "\n"
@@ -40,3 +47,7 @@ for cg in cg_files:
 with open(sys.argv[3], "w") as fh:
     for elem in l:
         fh.write(elem)
+
+with open(sys.argv[4], "w") as fj:
+    for line in error_f:
+        fj.write(line)
