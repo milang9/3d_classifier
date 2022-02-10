@@ -15,25 +15,27 @@ destination = sys.argv[2]
 
 set_dir = sys.argv[3]
 
-number = 8
+number = 10
 
 for rna in os.listdir(origin):
 
     best_r0 = rna + "/best_rmsd0.coord"
     best0 = rna + "/simulation_01/best0.coord"
     data_list = [best_r0, best0]
-    rng = []
+
     rnd_list = []
+    for sim in ["/simulation_01/", "/simulation_02/", "/simulation_03/", "/simulation_04/"]:
+        rng = []
 
-    while len(rng) < number:
-        rnd = str(random.randrange(1, 100))
-        while len(rnd) < 4:
-            rnd = "0" + rnd
-        if rnd not in rng:
-            rng.append(rnd)
+        while len(rng) < number:
+            rnd = str(random.randrange(1, 100))
+            while len(rnd) < 4:
+                rnd = "0" + rnd
+            if rnd not in rng:
+                rng.append(rnd)
 
-    for i in rng:
-        rnd_list.append(rna + "/simulation_01/step" + i + "00.coord")
+        for i in rng:
+            rnd_list.append(rna + sim + "step" + i + "00.coord")
 
 
 
@@ -43,5 +45,9 @@ for rna in os.listdir(origin):
     shutil.copy(origin + best0, destination + set_dir + rna + "_be0.cg")
     i = 1
     for x in rnd_list:
-        shutil.copy(origin + x, destination + set_dir + rna + "_rn" + str(i) + ".cg")
+        if len(str(i)) == 1:
+            j = "0" + str(i)
+        else:
+            j = str(i)
+        shutil.copy(origin + x, destination + set_dir + rna + "_rn" + j + ".cg")
         i+=1

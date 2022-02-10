@@ -23,7 +23,10 @@ error_f = []
 
 for cg in cg_files:
     if len(cg) > 14:
-        name = cg[:-9]
+        if "be0" in cg or "br0" in cg:
+            name = cg[:-9]
+        else:
+            name = cg[:-10]
     else:
         name = cg[:-3]
     pdb = name + ".cg"
