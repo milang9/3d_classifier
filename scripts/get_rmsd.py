@@ -7,8 +7,11 @@ from os import listdir
 from os.path import isfile, join
 import sys
 
-file_path = sys.argv[1]
-pdb_fp = sys.argv[2]
+file_path = sys.argv[1] #directory for selected ernwin simulated structures
+pdb_fp = sys.argv[2] #directory original pdbs
+
+#argv[3]: output rmsd list files
+#argv[4]: error file, if a rmsd cant be calculated the structure name is recorded here
 
 cg_files = [f for f in listdir(file_path) if isfile(join(file_path, f))]
 
