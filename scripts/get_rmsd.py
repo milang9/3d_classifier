@@ -23,7 +23,7 @@ error_f = []
 
 for cg in cg_files:
     if len(cg) > 14:
-        if "be0" in cg or "br0" in cg:
+        if "br" in cg:
             name = cg[:-9]
         else:
             name = cg[:-10]

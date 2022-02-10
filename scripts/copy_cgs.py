@@ -8,6 +8,7 @@ import os
 import sys
 import random
 import shutil
+import glob
 
 origin = sys.argv[1] #ernwin output directory
 
@@ -18,15 +19,21 @@ set_dir = sys.argv[3]
 number = 10
 
 for rna in os.listdir(origin):
-
-    best_r0 = rna + "/best_rmsd0.coord"
-    best0 = rna + "/simulation_01/best0.coord"
-    data_list = [best_r0, best0]
+    #get the best rmsd structures
+    for a in range(3):
+        best_r = rna + "/best_rmsd" + str(a) + ".coord"
+        shutil.copy(origin + best_r, destination + set_dir + rna + "_br" + str(a) + ".cg")
 
     rnd_list = []
-    for sim in ["/simulation_01/", "/simulation_02/", "/simulation_03/", "/simulation_04/"]:
-        rng = []
+    for sim in range(1, 5):
 
+        #get the best structures of each sim
+        for b in range(3):
+            best = rna + "/simulation_0" + str(sim) + "/" + "best" + str(b) + ".coord"
+            shutil.copy(origin + best, destination + set_dir + rna + "_be" + str(sim) + str(b) + ".cg")
+
+        #get random structures
+        rng = []
         while len(rng) < number:
             rnd = str(random.randrange(1, 100))
             while len(rnd) < 4:
@@ -35,14 +42,11 @@ for rna in os.listdir(origin):
                 rng.append(rnd)
 
         for i in rng:
-            rnd_list.append(rna + sim + "step" + i + "00.coord")
+            rnd_list.append(rna + "/simulation_0" + str(sim) + "/" + "step" + i + "00.coord")
 
 
 
     #copy files
-
-    shutil.copy(origin + best_r0, destination + set_dir + rna + "_br0.cg")
-    shutil.copy(origin + best0, destination + set_dir + rna + "_be0.cg")
     i = 1
     for x in rnd_list:
         if len(str(i)) == 1:
