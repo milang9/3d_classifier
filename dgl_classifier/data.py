@@ -8,7 +8,7 @@ from dgl.data import DGLDataset
 #Graph Building
 #load coarse grain file
 def load_cg_file(file): 
-    cg = ftmc.CoarseGrainRNA.from_bg_file(file) 
+    cg = ftmc.CoarseGrainRNA.from_bg_file(file)
     c_dict = dict(cg.coords)
     t_dict = dict(cg.twists)
     coord_dict = {}
@@ -25,7 +25,6 @@ def load_cg_file(file):
     # Get elements and neighbours:
     connections = {}
     for elem in cg.sorted_element_iterator():
-        neighbours = cg.connections(elem)
         if elem not in connections:
             connections[elem] = cg.connections(elem)
     return coord_dict, twist_dict, connections

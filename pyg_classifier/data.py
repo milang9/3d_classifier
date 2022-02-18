@@ -25,7 +25,6 @@ def load_cg_file(file):
     # Get elements and neighbours:
     connections = {}
     for elem in cg.sorted_element_iterator():
-        neighbours = cg.connections(elem)
         if elem not in connections:
             connections[elem] = cg.connections(elem)
     return coord_dict, twist_dict, connections
@@ -54,7 +53,6 @@ def build_graph(coord_dict, twist_dict, connections, label):
     num_graph = {}
     for num, n in enumerate(sorted(connections)):
         num_graph[n] = num
-
 
     #build graph and edges
     u = []
