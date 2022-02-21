@@ -95,7 +95,7 @@ class CGDataset(InMemoryDataset):
     
     @property
     def processed_file_names(self):
-        return ['data.pt']
+        return ["data.pt"]
 
     def process(self):
         self.graphs = []
