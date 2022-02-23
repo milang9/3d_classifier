@@ -1,9 +1,26 @@
+from torch_geometric.typing import OptTensor
+from torch_geometric.data.storage import GlobalStorage
+from typing import Any
 import numpy as np
 import torch as th
 import forgi.threedee.model.coarse_grain as ftmc
 import os
 from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
+
+'''
+class NamedData(Data):
+    def __init__(self, x: OptTensor = None, edge_index: OptTensor = None, edge_attr: OptTensor = None, y: OptTensor = None, pos: OptTensor = None, filename: Any = None,**kwargs):
+        self.__dict__['_store'] = GlobalStorage(_parent = self)
+        
+        if filename is not None:
+            self.name = filename
+        super().__init__(x, edge_index, edge_attr, y, pos, filename, **kwargs)
+        
+    @property
+    def filename(self) -> Any:
+        return self['filename'] if 'filename' in self._store else None
+'''
 
 #Graph Building
 #load coarse grain file
@@ -38,7 +55,7 @@ def get_rmsd_dict(rmsd_list):
             rmsd_dict[name] = float(rmsd)
     return rmsd_dict
 
-def build_graph(coord_dict, twist_dict, connections, label):
+def build_graph(coord_dict, twist_dict, connections, label, name):
     #dictionary to convert type
     type_transl = {
         "h": [1, 0, 0, 0, 0, 0],
@@ -77,7 +94,7 @@ def build_graph(coord_dict, twist_dict, connections, label):
     x = np.array(x)
     x = th.tensor(x, dtype=th.float32)
 
-    graph = Data(x=x, edge_index=edge_index, y=label)
+    graph = Data(x=x, edge_index=edge_index, y=label, name=name)
 
     return graph
 
@@ -100,7 +117,6 @@ class CGDataset(InMemoryDataset):
     def process(self):
         self.graphs = []
         rmsd_dict = get_rmsd_dict(self.rmsd_list)
-        
         files = []
 
         for file in self.raw_file_names:
@@ -109,7 +125,7 @@ class CGDataset(InMemoryDataset):
 
         for struc in files:
             coord_dict, twist_dict, connections = load_cg_file(os.path.join(self.file_path, struc))
-            graph = build_graph(coord_dict, twist_dict, connections, rmsd_dict[struc])
+            graph = build_graph(coord_dict, twist_dict, connections, rmsd_dict[struc], struc)
             self.graphs.append(graph)
 
         if self.pre_filter is not None:
