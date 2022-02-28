@@ -8,20 +8,6 @@ import os
 from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
 
-'''
-class NamedData(Data):
-    def __init__(self, x: OptTensor = None, edge_index: OptTensor = None, edge_attr: OptTensor = None, y: OptTensor = None, pos: OptTensor = None, filename: Any = None,**kwargs):
-        self.__dict__['_store'] = GlobalStorage(_parent = self)
-        
-        if filename is not None:
-            self.name = filename
-        super().__init__(x, edge_index, edge_attr, y, pos, filename, **kwargs)
-        
-    @property
-    def filename(self) -> Any:
-        return self['filename'] if 'filename' in self._store else None
-'''
-
 #Graph Building
 #load coarse grain file
 def load_cg_file(file): 

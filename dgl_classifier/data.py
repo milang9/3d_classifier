@@ -29,7 +29,7 @@ def load_cg_file(file):
             connections[elem] = cg.connections(elem)
     return coord_dict, twist_dict, connections
 
-def build_dgl_graph(coord_dict, twist_dict, connections, device):
+def build_dgl_graph(coord_dict, twist_dict, connections, name, device):
     #dictionary to encode type
     type_transl = {
         "h": [1, 0, 0, 0, 0, 0],
@@ -58,7 +58,7 @@ def build_dgl_graph(coord_dict, twist_dict, connections, device):
             u.append(num_graph[node])
             v.append(num_graph[c])
 
-    graph = dgl.graph((th.tensor(u), th.tensor(v)))
+    graph = dgl.graph((th.tensor(u), th.tensor(v)))#, name=name)
 
     #initialise node attributes
     graph.ndata["type"] = th.zeros(graph.num_nodes(), 6, dtype=th.float32)
@@ -105,7 +105,7 @@ class CGDataset(DGLDataset):
 
         for struc in files:
             coord_dict, twist_dict, connections = load_cg_file(os.path.join(self.file_path, struc))
-            self.graphs.append(build_dgl_graph(coord_dict, twist_dict, connections, self.device))
+            self.graphs.append(build_dgl_graph(coord_dict, twist_dict, connections, struc, self.device))
 
         self.labels = th.tensor(self.labels).to(self.device)
   
