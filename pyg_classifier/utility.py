@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from scipy.stats import linregress
 #Plots
 def loss_plot(losses, fq, median, tq, title):
     fig, axs = plt.subplots(layout='constrained', figsize=(8, 6))
@@ -12,9 +13,12 @@ def loss_plot(losses, fq, median, tq, title):
     plt.show()
 
 def rmsd_scatter(pred, true, title):
+    reg = linregress(pred, true)
+    print(reg)
     fig1, axs1 = plt.subplots(layout='constrained', figsize=(8, 6))
     plt.title(title)
     axs1.scatter(true, pred)
+    axs1.axline(xy1=(0, reg.intercept), slope=reg.slope, linestyle="--", color="k")
     plt.ylabel("Predicted RMSD")
     plt.xlabel("True RMSD")
     plt.show()
