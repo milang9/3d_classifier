@@ -48,14 +48,14 @@ class ChainSplitter:
         print(chain)
         if struct is None:
             struct = self.parser.get_structure(pdb_id, pdb_path)
-        
+
         for c in struct.get_chains():
             #print(c.has_id())
-            if c.has_id(chain):
+            if c.has_id(chain.upper()):
                 print(c)
 
         self.writer.set_structure(struct)
-        self.writer.save(out_path, select=SelectChain(chain)) #PDB.Select.accept_chain(chain)) #SelectChains(chain))
+        self.writer.save(out_path, select=PDB.Select.accept_chain(self, chain=chain)) #SelectChain(chain))
 
         return out_path
 
@@ -80,9 +80,8 @@ if __name__ == "__main__":
 
     with open(pdb_textfn) as pdb_textfile:
         for line in pdb_textfile:
-            pdb_id, el, chain = (line.lower()).rstrip("\n").split("\t")
-            print(pdb_id, el, chain)
-            #chain = line[4:]
+            pdb_id, id, chain = (line.lower()).rstrip("\n").split("\t")
+            print(pdb_id, chain, id)
             pdb_fn = pdbList.retrieve_pdb_file(pdb_id, pdir = pdb_dir)
             splitter.make_pdb(pdb_fn, chain)
             sys.exit()
