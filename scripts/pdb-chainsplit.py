@@ -15,7 +15,7 @@ def split(pdb_path, chain, start, split_dir, overwrite=False):
     cifparser = PDB.MMCIFParser(QUIET=True)
     io = PDB.MMCIFIO()
     print(pdb_path)
-    cifdict = PDB.MMCIF2Dict(pdb_path)
+    cifdict = cifparser._mmcif_dict(pdb_path)
     print(cifdict)
     (pdb_dir, pdb_fn) = os.path.split(pdb_path)
     pdb_id = pdb_fn[:4]
