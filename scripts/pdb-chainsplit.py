@@ -2,9 +2,21 @@ import os
 from Bio import PDB
 import sys
 
+class ChainSelect(PDB.Select):
+    def __init__(self, chain):
+        self.chain = chain
+    def accept_chain(self, chain):
+        if chain.get_id() == self.chain:
+            return 1
+        else:
+            return 0
+
 def split(pdb_path, chain, start, split_dir, overwrite=False):
     cifparser = PDB.MMCIFParser(QUIET=True)
-    io = PDB.PDBIO()
+    io = PDB.MMCIFIO()
+    print(pdb_path)
+    cifdict = PDB.MMCIF2Dict(pdb_path)
+    print(cifdict)
     (pdb_dir, pdb_fn) = os.path.split(pdb_path)
     pdb_id = pdb_fn[:4]
 
@@ -18,18 +30,9 @@ def split(pdb_path, chain, start, split_dir, overwrite=False):
 
     struct = cifparser.get_structure(structure_id=pdb_id, filename=pdb_path)[start-1]
 
-
-
-    #for c in struct.get_chains():
-    #    print(c, c.has_id(chain), chain)
-    #    if c.has_id(chain):
-    #        print("here it is")
-    print(struct[chain])
     io.set_structure(struct)
-    io.save(out_path, PDB.Select.accept_chain(struct[chain]))
+    io.save(out_path, ChainSelect(chain))
     return
-
-
 
 if __name__ == '__main__':
     text_file = sys.argv[1] #structure: pdb_id    pdb start     chain
@@ -37,12 +40,10 @@ if __name__ == '__main__':
     split_dir = sys.argv[3]
 
     pdbList = PDB.PDBList()
-
     with open(text_file, "r") as fh:
         for line in fh.readlines():
             pdb_id, start, chain = (line.lower()).rstrip("\n").split("\t")
             print(pdb_id, start, chain)
-
             pdb_path = pdbList.retrieve_pdb_file(pdb_id, pdir = pdb_dir)
             split(pdb_path, chain.upper(), int(start), split_dir)
             sys.exit()
