@@ -48,13 +48,10 @@ if __name__ == '__main__':
     split_dir = sys.argv[3]
 
     pdbList = PDB.PDBList()
-    count = 0
     with open(text_file, "r") as fh:
         for line in fh.readlines():
             pdb_id, start, chain = (line.lower()).rstrip("\n").split("\t")
             print(pdb_id, start, chain)
             pdb_path = pdbList.retrieve_pdb_file(pdb_id, pdir = pdb_dir, obsolete=False)
             split(pdb_path, chain.upper(), int(start), split_dir, overwrite=True)
-            count += 1
-            if count == 4:
-                sys.exit()
+            
