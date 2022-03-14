@@ -14,7 +14,7 @@ class ChainSelect(PDB.Select):
         else:
             return 0
 
-def split(pdb_path, chain, start, split_dir, overwrite=False):
+def split(pdb_path, chain, start, rfam, split_dir, overwrite=False):
     cifparser = PDB.MMCIFParser(QUIET=True)
     io = PDB.MMCIFIO()
     print(pdb_path)
@@ -29,7 +29,7 @@ def split(pdb_path, chain, start, split_dir, overwrite=False):
     (pdb_dir, pdb_fn) = os.path.split(pdb_path)
     pdb_id = pdb_fn[:4]
 
-    out_name = f"{pdb_id}_{chain}.cif"
+    out_name = f"{pdb_id}_{chain}_{rfam}.cif"
     out_path = os.path.join(split_dir, out_name)
     print("OUT PATH:",out_path)
 
@@ -37,21 +37,22 @@ def split(pdb_path, chain, start, split_dir, overwrite=False):
         print(f"Chain {chain} of {pdb_id} already extracted to {out_name}.")
         return out_path
 
-    struct = cifparser.get_structure(structure_id=pdb_id, filename=pdb_path)[start-1]
+    struct = cifparser.get_structure(structure_id=pdb_id, filename=pdb_path)#[start-1]
     io.set_structure(struct)
     io.save(out_path, ChainSelect(chain))
     return
 
 if __name__ == '__main__':
-    text_file = sys.argv[1] #structure: pdb_id    pdb start     chain
+    text_file = sys.argv[1] #structure: pdb_id    pdb_start     chain   rfam_id
     pdb_dir = sys.argv[2]
     split_dir = sys.argv[3]
 
     pdbList = PDB.PDBList()
     with open(text_file, "r") as fh:
         for line in fh.readlines():
-            pdb_id, start, chain = (line.lower()).rstrip("\n").split("\t")
-            print(pdb_id, start, chain)
+            pdb_id, start, chain, rfam = (line.lower()).rstrip("\n").split("\t")
+            print(pdb_id, start, chain, rfam)
             pdb_path = pdbList.retrieve_pdb_file(pdb_id, pdir = pdb_dir, obsolete=False)
-            split(pdb_path, chain.upper(), int(start), split_dir, overwrite=True)
+            split(pdb_path, chain.upper(), int(start), rfam, split_dir)
+
             
