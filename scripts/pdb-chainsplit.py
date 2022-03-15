@@ -14,7 +14,7 @@ class ChainSelect(PDB.Select):
         else:
             return 0
 
-def split(pdb_path, chain, start, rfam, split_dir, overwrite=False):
+def split(pdb_path, chain, start, nr_class, split_dir, overwrite=False):
     cifparser = PDB.MMCIFParser(QUIET=True)
     io = PDB.MMCIFIO()
     print(pdb_path)
@@ -29,7 +29,7 @@ def split(pdb_path, chain, start, rfam, split_dir, overwrite=False):
     (pdb_dir, pdb_fn) = os.path.split(pdb_path)
     pdb_id = pdb_fn[:4]
 
-    out_name = f"{pdb_id}_{chain}_{rfam}.cif"
+    out_name = f"{pdb_id}_{chain}_{nr_class}.cif"
     out_path = os.path.join(split_dir, out_name)
     print("OUT PATH:",out_path)
 
@@ -43,16 +43,16 @@ def split(pdb_path, chain, start, rfam, split_dir, overwrite=False):
     return
 
 if __name__ == '__main__':
-    text_file = sys.argv[1] #structure: pdb_id    pdb_start     chain   rfam_id
+    text_file = sys.argv[1] #structure: pdb_id    pdb_start     chain   nr_class
     pdb_dir = sys.argv[2]
     split_dir = sys.argv[3]
 
     pdbList = PDB.PDBList()
     with open(text_file, "r") as fh:
         for line in fh.readlines():
-            pdb_id, start, chain, rfam = (line.lower()).rstrip("\n").split("\t")
-            print(pdb_id, start, chain, rfam)
+            pdb_id, start, chain, nr_class = (line.lower()).rstrip("\n").split("\t")
+            print(pdb_id, start, chain, nr_class)
             pdb_path = pdbList.retrieve_pdb_file(pdb_id, pdir = pdb_dir, obsolete=False)
-            split(pdb_path, chain.upper(), int(start), rfam, split_dir)
+            split(pdb_path, chain.upper(), int(start), nr_class, split_dir)
 
             
