@@ -102,7 +102,11 @@ class CGDataset(InMemoryDataset):
             self.vector_dict[elem] = np.array(vector)
     
     def n_neighbours(self):
-        mp_dir = {}
+        '''
+        Calculates the middle point for each element. Returns for each element its center and the center points of the k nearest elements.
+        '''
+        #calculate the midpoint for each element
+        mp_dir = {"null": [0, 0, 0]}
         for elem in self.coord_dict:
             mp = (self.coord_dict[elem][0] + self.coord_dict[elem][1])/2
             mp_dir[elem] = mp
@@ -118,18 +122,21 @@ class CGDataset(InMemoryDataset):
             if helper_d != {}:
                 dist_dir[a] = helper_d
 
-        #get the nearest k=5 elements
+        #get the nearest k elements
         n_dict = {}
         for f in dist_dir:
             n_list = []
-            i = 0
-            for n in  {k: v for k, v in sorted(dist_dir[f].items(), key=lambda item: item[1])}:
-                n_list.append(n)
-                i+=1
-                if i == 3:
+            for n in {k: v for k, v in sorted(dist_dir[f].items(), key=lambda item: item[1])}:
+                if len(n_list) < self.k:
+                    n_list.append(n)
+                else:
                     break
+            if len(n_list) < self.k:
+                while len(n_list) < self.k:
+                    n_list.append("null")
             n_dict[f] = n_list
 
+        #start with the midpoint of the current element and add the nearest k midpoints as node feature
         self.neighbour_dict = {}
         for elem in n_dict:
             v_arr = [mp_dir[elem]]
