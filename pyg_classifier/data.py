@@ -127,21 +127,24 @@ class CGDataset(InMemoryDataset):
         for f in dist_dir:
             n_list = []
             for n in {k: v for k, v in sorted(dist_dir[f].items(), key=lambda item: item[1])}:
-                if len(n_list) < self.k:
+                while len(n_list) < self.k:
                     n_list.append(n)
-                else:
-                    break
+                
             if len(n_list) < self.k:
                 while len(n_list) < self.k:
                     n_list.append("null")
             n_dict[f] = n_list
 
-        #start with the midpoint of the current element and add the nearest k midpoints as node feature
+        #add the nearest k midpoints as vector node features
         self.neighbour_dict = {}
         for elem in n_dict:
-            v_arr = [mp_dir[elem]]
+            v_arr = []
             for e in n_dict[elem]:
-                v_arr.append(np.array(mp_dir[e]))
+                vec = []
+                for i in range(3):
+                    p = mp_dir[e][i] - mp_dir[elem][i]
+                    vec.append(p)
+                v_arr.append(np.array(vec))#mp_dir[e]))
             self.neighbour_dict[elem] = np.concatenate(v_arr)
 
     def build_graph(self, label, name):
@@ -187,7 +190,8 @@ class CGDataset(InMemoryDataset):
             if self.vectorize and self.k == 0:
                 b = self.vector_dict[elem]
             elif self.k > 0 and self.vectorize == False:
-                b = self.neighbour_dict[elem]
+                temp_coords = np.concatenate(self.coord_dict[elem])
+                b = np.concatenate((temp_coords, self.neighbour_dict[elem]))
             elif self.vectorize and self.k > 0:
                 b = np.concatenate([self.vector_dict[elem], self.neighbour_dict[elem]])
             else:

@@ -27,6 +27,8 @@ def e_rmsd_scatter(energy, rmsd, title):
     fig1, axs1 = plt.subplots(layout='constrained', figsize=(8, 6))
     plt.title(title)
     axs1.scatter(rmsd, energy)
+    if max(energy) > 200:
+        axs1.set_ybound(lower=min(energy) , upper=200)
     plt.ylabel("Energy")
     plt.xlabel("RMSD")
     plt.show()
