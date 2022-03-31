@@ -4,6 +4,7 @@ import forgi.threedee.model.coarse_grain as ftmc
 import os
 from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
+import forgi.threedee.classification.aminor as ftca #forgi/threedee/classification/aminor.py:19 change "from sklearn.neighbors.kde import KernelDensity" to "from sklearn.neighbors import KernelDensity"
 
 #Graph Dataset Class
 class CGDataset(InMemoryDataset):
@@ -52,7 +53,7 @@ class CGDataset(InMemoryDataset):
         '''
         Load coarse grained structure.
         '''
-        cg = ftmc.CoarseGrainRNA.from_bg_file(file) 
+        cg = ftmc.CoarseGrainRNA.from_bg_file(file)
         c_dict = dict(cg.coords)
         t_dict = dict(cg.twists)
         self.coord_dict = {}
@@ -65,12 +66,22 @@ class CGDataset(InMemoryDataset):
                 c = np.array(t_dict[e][0])
                 d = np.array(t_dict[e][1])
                 self.twist_dict[e] = c, d
-            
+        
+        #Get A-Minor interactions
+        a_dict = {}
+        for pair in ftca.all_interactions(cg):
+            a_dict[pair[0]] = pair[1]
+
         # Get elements and neighbours:
         self.connections = {}
         for elem in cg.sorted_element_iterator():
             if elem not in self.connections:
                 self.connections[elem] = cg.connections(elem)
+        
+        #add A-Minor interactions as edges
+        for ami in a_dict:
+            self.connections[ami].append(a_dict[ami])
+            self.connections[a_dict[ami]].append(ami)
 
     #create a dict with name and rmsd as labels
     def get_rmsd_dict(self):
