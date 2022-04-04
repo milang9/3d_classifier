@@ -3,11 +3,11 @@ import torch as th
 import forgi.threedee.model.coarse_grain as ftmc
 import os
 from torch_geometric.data import Data
-from torch_geometric.data import InMemoryDataset
+from torch_geometric.data import InMemoryDataset, Dataset
 import forgi.threedee.classification.aminor as ftca #forgi/threedee/classification/aminor.py:19 change "from sklearn.neighbors.kde import KernelDensity" to "from sklearn.neighbors import KernelDensity"
 
 #Graph Dataset Class
-class CGDataset(InMemoryDataset):
+class CGDataset(InMemoryDataset): #Dataset):#
     def __init__(self, root, rmsd_list, vectorize, k, transform=None, pre_transform=None):
         self.file_path = root
         self.rmsd_list = rmsd_list
@@ -30,7 +30,7 @@ class CGDataset(InMemoryDataset):
         files = []
 
         for file in self.raw_file_names:
-            if file.endswith(".cg") and file in self.rmsd_dict.keys():
+            if file in self.rmsd_dict: #file.endswith(".cg") and file in self.rmsd_dict:
                 files.append(file)
 
         for struc in files:
@@ -140,10 +140,15 @@ class CGDataset(InMemoryDataset):
             for n in {k: v for k, v in sorted(dist_dir[f].items(), key=lambda item: item[1])}:
                 while len(n_list) < self.k:
                     n_list.append(n)
+                    if len(n_list) == len(dist_dir[f]):
+                        n_list.append("null")
+                    else:
+                        n_list.append(n)
+                    
                 
-            if len(n_list) < self.k:
-                while len(n_list) < self.k:
-                    n_list.append("null")
+            #if len(n_list) < self.k:
+            #    while len(n_list) < self.k:
+            #        n_list.append("null")
             n_dict[f] = n_list
 
         #add the nearest k midpoints as vector node features
@@ -201,8 +206,8 @@ class CGDataset(InMemoryDataset):
             if self.vectorize and self.k == 0:
                 b = self.vector_dict[elem]
             elif self.k > 0 and self.vectorize == False:
-                temp_coords = np.concatenate(self.coord_dict[elem])
-                b = np.concatenate((temp_coords, self.neighbour_dict[elem]))
+                #temp_coords = np.concatenate(self.coord_dict[elem])
+                b = self.neighbour_dict[elem] #np.concatenate((temp_coords, self.neighbour_dict[elem]))
             elif self.vectorize and self.k > 0:
                 b = np.concatenate([self.vector_dict[elem], self.neighbour_dict[elem]])
             else:
@@ -222,7 +227,7 @@ class CGDataset(InMemoryDataset):
     
     '''
     def get(self, idx):
-        data = torch.load(osp.join(self.processed_dir, f'data_{idx}.pt'))
+        data = th.load(os.path.join(self.processed_dir, f'data_{idx}.pt'))
         return data
 
     def len(self):
