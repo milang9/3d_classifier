@@ -58,11 +58,11 @@ def diff_test_loop(model, loader, e_dict, title, device):
     print("Third Quantile: \t {:.4f}".format(test_tq))
     print("Max Loss: \t\t {:.4f}".format(max(test_losses)))
     
-    loss_plot(test_losses, test_fq, test_median, test_tq, title + ", Sorted Test Losses")
-    rmsd_scatter(pred_rmsds, true_rmsds, title)
+    #loss_plot(test_losses, test_fq, test_median, test_tq, title + ", Sorted Test Losses")
+    rmsd_scatter(pred_rmsds, true_rmsds, test_losses, title)
     e_rmsd_scatter(energies, trmsds_f_en, title + ", True RMSDs vs Energy")
     e_rmsd_scatter(energies, prmsds_f_en, title + ", Predicted RMSDs vs Energy")
-    return energies, trmsds_f_en, prmsds_f_en
+    return energies, trmsds_f_en, prmsds_f_en, test_losses
 
 @th.no_grad()
 def test_loop(model, loader, e_dict, title, device):
@@ -119,7 +119,7 @@ def test_loop(model, loader, e_dict, title, device):
     print("Max Loss: \t\t {:.4f}".format(max(test_losses)))
     
     loss_plot(test_losses, test_fq, test_median, test_tq, title + ", Sorted Test Losses")
-    rmsd_scatter(pred_rmsds, true_rmsds, title)
+    rmsd_scatter(pred_rmsds, true_rmsds, test_losses, title)
     e_rmsd_scatter(energies, trmsds_f_en, title + ", True RMSDs vs Energy")
     e_rmsd_scatter(energies, prmsds_f_en, title + ", Predicted RMSDs vs Energy")
     return energies, trmsds_f_en, prmsds_f_en
