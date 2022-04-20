@@ -1,10 +1,25 @@
+import os
+import math
 import numpy as np
 import torch as th
 import forgi.threedee.model.coarse_grain as ftmc
-import os
-from torch_geometric.data import Data
-from torch_geometric.data import InMemoryDataset, Dataset
+from torch_geometric.data import Data, InMemoryDataset, Dataset
 import forgi.threedee.classification.aminor as ftca #forgi/threedee/classification/aminor.py:19 change "from sklearn.neighbors.kde import KernelDensity" to "from sklearn.neighbors import KernelDensity"
+import forgi.threedee.utilities.vector as ftuv
+
+def s0_dist(cg_d: dict):
+    ideal_start = np.array([0, 0, 1])
+    diff_start = cg_d["s0"][0] - ideal_start
+    return diff_start
+
+def s0_angle(cg_d: dict):
+    s0_len = math.sqrt((cg_d["s0"][1][0] - cg_d["s0"][0][0])**2 + (cg_d["s0"][1][1] - cg_d["s0"][0][1])**2 + (cg_d["s0"][1][2] - cg_d["s0"][0][2])**2)
+    A = np.array([0, s0_len, 1])
+    B = np.array([0, 0, 1])
+    ba = A - B
+    s0_vec = cg_d["s0"][1] - cg_d["s0"][0]
+    rot_m = ftuv.get_alignment_matrix(ba, s0_vec)
+    return rot_m
 
 #Graph Dataset Class
 class CGDataset(InMemoryDataset): #Dataset):#
@@ -13,7 +28,7 @@ class CGDataset(InMemoryDataset): #Dataset):#
         self.rmsd_list = rmsd_list
         self.vectorize = vectorize
         self.k = k
-        super(CGDataset, self).__init__(root, transform, pre_transform)
+        super().__init__(root, transform, pre_transform) #super(CGDataset, self)
         self.data, self.slices = th.load(self.processed_paths[0])
 
     @property
@@ -27,16 +42,12 @@ class CGDataset(InMemoryDataset): #Dataset):#
     def process(self):
         self.graphs = []
         self.get_rmsd_dict()
-        files = []
 
-        for file in self.raw_file_names:
-            if file in self.rmsd_dict: #file.endswith(".cg") and file in self.rmsd_dict:
-                files.append(file)
-
-        for struc in files:
-            self.load_cg_file(os.path.join(self.file_path, struc))
-            graph = self.build_graph(self.rmsd_dict[struc], struc)
-            self.graphs.append(graph)
+        for struc in self.raw_file_names: #files:
+            if struc in self.rmsd_dict:
+                self.load_cg_file(os.path.join(self.file_path, struc))
+                graph = self.build_graph(self.rmsd_dict[struc], struc)
+                self.graphs.append(graph)
 
         if self.pre_filter is not None:
             self.graphs = [data for data in self.graphs if self.pre_filter(data)]
@@ -49,25 +60,28 @@ class CGDataset(InMemoryDataset): #Dataset):#
     
     #Graph Building
     #load coarse grain file
-    def load_cg_file(self, file):
+    def load_cg_file(self, file: str):
         '''
         Load coarse grained structure.
         '''
         cg = ftmc.CoarseGrainRNA.from_bg_file(file)
-        c_dict = dict(cg.coords)
-        t_dict = dict(cg.twists)
-        self.coord_dict = {}
-        self.twist_dict = {}
-        for e in c_dict:
-            a = np.array(c_dict[e][0])
-            b = np.array(c_dict[e][1])
-            self.coord_dict[e] = a, b
-            if e in t_dict:
-                c = np.array(t_dict[e][0])
-                d = np.array(t_dict[e][1])
-                self.twist_dict[e] = c, d
+
+        y_e = cg.coords["s0"][1][1]
+        i_start = np.array([0, 0, 1])
+        i_end = np.array([0, y_e, 1])
+
+        # check if end of s0 is equal to convention. if not rotate structure
+        # check if start of s0 is equal to convention, if not translate structure
+        if not np.array_equal(cg.coords["s0"][1], i_end) or not np.array_equal(cg.coords["s0"][0], i_start):
+            rot_m = s0_angle(dict(cg.coords))
+            cg.rotate_translate([0,0,0], rot_m)
+            diff_start = s0_dist(dict(cg.coords))
+            cg.rotate_translate(diff_start, [[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+
+        self.coord_dict = dict(cg.coords)
+        self.twist_dict = dict(cg.twists)
         
-        #Get A-Minor interactions
+        # Get A-Minor interactions
         a_dict = {}
         for pair in ftca.all_interactions(cg):
             a_dict[pair[0]] = pair[1]
@@ -78,12 +92,12 @@ class CGDataset(InMemoryDataset): #Dataset):#
             if elem not in self.connections:
                 self.connections[elem] = cg.connections(elem)
         
-        #add A-Minor interactions as edges
+        # add A-Minor interactions as edges
         for ami in a_dict:
             self.connections[ami].append(a_dict[ami])
             self.connections[a_dict[ami]].append(ami)
 
-    #create a dict with name and rmsd as labels
+    # create a dict with name and rmsd as labels
     def get_rmsd_dict(self):
         '''
         Load the file containing the RMSD for each structure into a dictionary.
@@ -101,14 +115,9 @@ class CGDataset(InMemoryDataset): #Dataset):#
         self.vector_dict = {}
         for elem in self.coord_dict:
             vector = []
-            if elem == "t0" or elem == "f0":
-                for i in range(3):
-                    v = self.coord_dict[elem][0][i] - self.coord_dict[elem][1][i]
-                    vector.append(v)
-            else:
-                for i in range(3):
-                    v = self.coord_dict[elem][1][i] - self.coord_dict[elem][0][i]
-                    vector.append(v)
+            for i in range(3):
+                v = self.coord_dict[elem][1][i] - self.coord_dict[elem][0][i]
+                vector.append(v)
             
             self.vector_dict[elem] = np.array(vector)
     
@@ -163,7 +172,7 @@ class CGDataset(InMemoryDataset): #Dataset):#
                 v_arr.append(np.array(vec))#mp_dir[e]))
             self.neighbour_dict[elem] = np.concatenate(v_arr)
 
-    def build_graph(self, label, name):
+    def build_graph(self, label: float, name: str):
         '''
         Build the Graph from the coarse grained RNA structures given by forgi.
         Nodes are labeled in the scheme: [TYPE, COORDINATES/VECTOR, TWIST]
@@ -206,8 +215,7 @@ class CGDataset(InMemoryDataset): #Dataset):#
             if self.vectorize and self.k == 0:
                 b = self.vector_dict[elem]
             elif self.k > 0 and self.vectorize == False:
-                #temp_coords = np.concatenate(self.coord_dict[elem])
-                b = self.neighbour_dict[elem] #np.concatenate((temp_coords, self.neighbour_dict[elem]))
+                b = self.neighbour_dict[elem]
             elif self.vectorize and self.k > 0:
                 b = np.concatenate([self.vector_dict[elem], self.neighbour_dict[elem]])
             else:
