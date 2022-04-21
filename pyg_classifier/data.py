@@ -7,19 +7,20 @@ from torch_geometric.data import Data, InMemoryDataset, Dataset
 import forgi.threedee.classification.aminor as ftca #forgi/threedee/classification/aminor.py:19 change "from sklearn.neighbors.kde import KernelDensity" to "from sklearn.neighbors import KernelDensity"
 import forgi.threedee.utilities.vector as ftuv
 
-def s0_dist(cg_d: dict):
-    ideal_start = np.array([0, 0, 1])
-    diff_start = cg_d["s0"][0] - ideal_start
-    return diff_start
+def elem_len(cg_d: dict, elem: str) -> float:
+    return math.sqrt((cg_d[elem][1][0] - cg_d[elem][0][0])**2 + (cg_d[elem][1][1] - cg_d[elem][0][1])**2 + (cg_d[elem][1][2] - cg_d[elem][0][2])**2)
 
-def s0_angle(cg_d: dict):
-    s0_len = math.sqrt((cg_d["s0"][1][0] - cg_d["s0"][0][0])**2 + (cg_d["s0"][1][1] - cg_d["s0"][0][1])**2 + (cg_d["s0"][1][2] - cg_d["s0"][0][2])**2)
+def s0_dist(cg_d: dict) -> np.ndarray:
+    ideal_start = np.array([0, 0, 1])
+    return cg_d["s0"][0] - ideal_start
+
+def s0_angle(cg_d: dict) -> np.ndarray:
+    s0_len = elem_len(cg_d, "s0")
     A = np.array([0, s0_len, 1])
     B = np.array([0, 0, 1])
     ba = A - B
     s0_vec = cg_d["s0"][1] - cg_d["s0"][0]
-    rot_m = ftuv.get_alignment_matrix(ba, s0_vec)
-    return rot_m
+    return ftuv.get_alignment_matrix(ba, s0_vec)
 
 #Graph Dataset Class
 class CGDataset(InMemoryDataset): #Dataset):#
@@ -43,7 +44,7 @@ class CGDataset(InMemoryDataset): #Dataset):#
         self.graphs = []
         self.get_rmsd_dict()
 
-        for struc in self.raw_file_names: #files:
+        for struc in self.raw_file_names:
             if struc in self.rmsd_dict:
                 self.load_cg_file(os.path.join(self.file_path, struc))
                 graph = self.build_graph(self.rmsd_dict[struc], struc)
@@ -172,7 +173,7 @@ class CGDataset(InMemoryDataset): #Dataset):#
                 v_arr.append(np.array(vec))#mp_dir[e]))
             self.neighbour_dict[elem] = np.concatenate(v_arr)
 
-    def build_graph(self, label: float, name: str):
+    def build_graph(self, label: float, name: str) -> Data:
         '''
         Build the Graph from the coarse grained RNA structures given by forgi.
         Nodes are labeled in the scheme: [TYPE, COORDINATES/VECTOR, TWIST]
