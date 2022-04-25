@@ -20,7 +20,7 @@ def rmsd_scatter(pred, true, losses, title):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6), gridspec_kw={'width_ratios': [5, 1]}, layout='constrained')
     ax1.scatter(true, pred)
     ax1.axline(xy1=(0, reg.intercept), slope=reg.slope, linestyle="--", color="k")
-    ax1.text(max(true), 0.01, f"R = {reg.rvalue:.4f}", fontsize=14, verticalalignment="bottom", horizontalalignment="right")
+    ax1.text(max(true), 0.01, f"R = {reg.rvalue:.4f}", fontsize = 14, verticalalignment="bottom", horizontalalignment="right")
     ax2.boxplot(losses)
     ax1.set_title("Predicted vs True RMSDs")
     ax1.set_ylabel("Predicted RMSD")
@@ -30,7 +30,7 @@ def rmsd_scatter(pred, true, losses, title):
     ax2.set_ylabel("abs. RMSD diff.")
     ax2.set_title("\u0394 RMSD")
     ax2.axes.xaxis.set_visible(False)
-    plt.suptitle(title, fontsize="x-large")
+    plt.suptitle(title, fontsize = "x-large")
     plt.show()
 
 def e_rmsd_scatter(energy, rmsd, title):
@@ -38,7 +38,7 @@ def e_rmsd_scatter(energy, rmsd, title):
     plt.title(title)
     axs1.scatter(rmsd, energy)
     if max(energy) > 200:
-        axs1.set_ybound(lower=min(energy) , upper=200)
+        axs1.set_ybound(lower = min(energy) - 1, upper = 200)
     plt.ylabel("Energy")
     plt.xlabel("RMSD")
     plt.show()
