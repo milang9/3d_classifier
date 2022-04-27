@@ -22,6 +22,15 @@ def s0_angle(cg_d: dict) -> np.ndarray:
     s0_vec = cg_d["s0"][1] - cg_d["s0"][0]
     return ftuv.get_alignment_matrix(ba, s0_vec)
 
+def s1_angle(cg_d: dict) -> np.ndarray:
+    vec1 = cg_d["s1"][0] - cg_d["s0"][1]
+    n = np.array([1, 0, 0])
+    proj_n = (np.dot(vec1, n) / np.linalg.norm(n)**2) * n
+    vec2 = np.absolute(vec1 - proj_n)
+    len_v1 = np.linalg.norm(vec1)
+    len_v2 = np.linalg.norm(vec2)
+    return np.arccos(np.dot(vec1, vec2)/(len_v1 * len_v2))
+
 #Graph Dataset Class
 class CGDataset(InMemoryDataset): #Dataset):#
     def __init__(self, root, rmsd_list, vectorize, k, transform=None, pre_transform=None):
@@ -72,12 +81,16 @@ class CGDataset(InMemoryDataset): #Dataset):#
         i_end = np.array([0, y_e, 1])
 
         # check if end of s0 is equal to convention. if not rotate structure
-        # check if start of s0 is equal to convention, if not translate structure
-        if not np.array_equal(cg.coords["s0"][1], i_end) or not np.array_equal(cg.coords["s0"][0], i_start):
+        if not np.array_equal(cg.coords["s0"][1], i_end):
             rot_m = s0_angle(dict(cg.coords))
             cg.rotate_translate([0,0,0], rot_m)
-            diff_start = s0_dist(dict(cg.coords))
-            cg.rotate_translate(diff_start, [[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+
+        # rotate around y-axis, so that connecting element between s0 and s1 is on the yz-plane
+        # rotation influences s0 --> move the structure up
+        s1angle = s1_angle(dict(cg.coords)) 
+        cg.rotate(s1angle, axis="y")
+        diff_start = s0_dist(dict(cg.coords))
+        cg.rotate_translate(diff_start, [[1, 0, 0], [0, 1, 0], [0, 0, 1]])
 
         self.coord_dict = dict(cg.coords)
         self.twist_dict = dict(cg.twists)

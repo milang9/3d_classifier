@@ -1,0 +1,1601 @@
+  RNA (5'-R(*GP*CP*AP*GP*(A7C)P*CP*UP*UP*AP*AP[...]			NR_4.0_29253.1
+  RNA (5'-R(*GP*GP*UP*AP*UP*UP*UP*CP*GP*GP*UP*[...]			NR_4.0_14518.1
+  (GAGCC)11G 56-NUCLEOTIDE RNA			NR_4.0_84424.1
+  (GAGUU)10GAG 53-NUCLEOTIDE RNA			NR_4.0_62528.1
+  c-rich telomeric RNA			NR_4.0_64649.1
+  125a-oligo2			NR_4.0_82332.1
+  12S rRNA			NR_4.0_93855.8
+  12S rRNA			NR_4.0_06835.1,      NR_4.0_42813.3,      NR_4.0_52597.1,      NR_4.0_19551.5,      NR_4.0_50188.1
+  15S rRNA			NR_4.0_67193.1
+  16S rRNA			NR_4.0_13125.1,      NR_4.0_40657.1,      NR_4.0_43894.1,      NR_4.0_18881.1,      NR_4.0_04427.1,      NR_4.0_12763.20,      NR_4.0_45705.1,      NR_4.0_40313.1,      NR_4.0_96354.4,      NR_4.0_98268.1,      NR_4.0_65795.63,      NR_4.0_97539.1,      NR_4.0_69503.1,      NR_4.0_66687.5,      NR_4.0_43481.3,      NR_4.0_42860.1,      NR_4.0_20035.2,      NR_4.0_56726.81,      NR_4.0_94066.4,      NR_4.0_74023.9,      NR_4.0_24610.2
+  16S rRNA FRAGMENT			NR_4.0_49782.1,     NR_4.0_23049.1
+  17delU1A (58-MER)			NR_4.0_00559.1
+  18GAAA (52-MER)			NR_4.0_07795.1
+  18S rRNA			NR_4.0_41328.1,      NR_4.0_82907.1,      NR_4.0_45231.1,      NR_4.0_21280.19,      NR_4.0_46995.23,      NR_4.0_61505.1,      NR_4.0_72076.8,      NR_4.0_10370.1,      NR_4.0_03510.42,      NR_4.0_51645.1,      NR_4.0_06563.1,     NR_4.0_67394.1,      NR_4.0_49738.1,     NR_4.0_48721.1,     NR_4.0_51105.1,     NR_4.0_90416.1,     NR_4.0_80911.1,   NR_4.0_33014.4
+  18a_oligo1			NR_4.0_73160.1
+  197-MER			NR_4.0_30944.4
+  20-MER RNA HAIRPIN			NR_4.0_94113.1,      NR_4.0_53294.1
+  20S rRNA			NR_4.0_69769.1
+  21 NT FRAGMENT OF 5S rRNA			NR_4.0_99953.1
+  21S rRNA			NR_4.0_08470.1
+  23S rRNA			NR_4.0_25376.1,      NR_4.0_74849.1,      NR_4.0_98593.1,      NR_4.0_52614.1,      NR_4.0_20129.1,      NR_4.0_96169.2,      NR_4.0_20305.5,      NR_4.0_90633.20,      NR_4.0_26150.2,      NR_4.0_97519.57,      NR_4.0_55002.1,      NR_4.0_34355.2,      NR_4.0_83717.90,      NR_4.0_98632.5,      NR_4.0_62067.1,      NR_4.0_35677.1,      NR_4.0_76090.2,   NR_4.0_41610.14
+  23S rRNA 1932-1968			NR_4.0_03525.1
+  23S rRNA Sarcin Ricin Loop			NR_4.0_94729.7
+  25-MER			NR_4.0_80055.1
+  25S rRNA			NR_4.0_56778.1,      NR_4.0_94750.1,      NR_4.0_90506.47,      NR_4.0_57789.1,     NR_4.0_75645.1
+  26-MER			NR_4.0_89224.1
+  26S epsilon rRNA			NR_4.0_35448.1
+  26S gamma rRNA			NR_4.0_40535.1
+  26S rRNA			NR_4.0_15716.2,      NR_4.0_14483.1,     NR_4.0_13728.1
+  26S zeta rRNA			NR_4.0_03414.1
+  28-MER			NR_4.0_52425.1
+  28S rRNA			NR_4.0_79353.1,      NR_4.0_95755.2,      NR_4.0_06650.21,      NR_4.0_26483.1,      NR_4.0_08591.1,      NR_4.0_65061.12,     NR_4.0_96091.1
+  29-MER OF MODIFIED SRP RNA HELIX 6			NR_4.0_68428.1
+  3 end			NR_4.0_27149.1
+  3' RNA			NR_4.0_87898.1,      NR_4.0_79094.1
+  3' vRNA			NR_4.0_30938.1,      NR_4.0_21738.1,      NR_4.0_01522.1
+  3'-exon-intron			NR_4.0_95531.1
+  3'-vRNA promoter			NR_4.0_75279.1
+  3'ETS(LeuZ)			NR_4.0_45291.1
+  3-'vRNA promoter			NR_4.0_68426.1
+  31-MER			NR_4.0_49799.1
+  34-mer RNA			NR_4.0_91105.1
+  35S rRNA			NR_4.0_59155.1
+  36-MER			NR_4.0_40597.1
+  38-MER RNA-DNA Aptamer			NR_4.0_29537.1
+  4.5S rRNA			NR_4.0_51660.3,     NR_4.0_99432.1,     NR_4.0_57933.1,     NR_4.0_05530.5
+  45-MER			NR_4.0_47370.1,      NR_4.0_10203.1
+  46-MER			NR_4.0_80987.1,      NR_4.0_17773.1
+  47-MER			NR_4.0_07004.1,      NR_4.0_06780.1
+  49 NT FRAGMENT OF MRNA FOR L1			NR_4.0_23978.1
+  5 end			NR_4.0_57831.1
+  5' RNA			NR_4.0_50716.1,      NR_4.0_85316.1
+  5' vRNA			NR_4.0_56913.1,      NR_4.0_36180.1
+  5'-(*G3AP*GP*AP*AP*CP*CP*UP*GP*A)-3'			NR_4.0_45692.1
+  5'-(*GP*GP*CP*GP*AP*AP*GP*AP*AP*CP*CP*GP[...]			NR_4.0_67355.2
+  5'-(CGUACG)-3'			NR_4.0_54538.1
+  5'-D(*AP*AP*AP*AP*AP*AP*AP*AP*AP*AP *AP*[...]			NR_4.0_96380.1
+  5'-D(*CP*AP*GP*CP*TP*AP*CP*TP*TP*GP*AP*G[...]			NR_4.0_86975.1
+  5'-D(*CP*CP*CP*CP*CP*CP*CP*CP*CP*CP*CP)-[...]			NR_4.0_77692.1
+  5'-D(*UP*UP*GP*CP*GP*UP*CP*CP*CP*GP*(5BU[...]			NR_4.0_31561.1
+  5'-R(*A*UP*UP*UP*UP*UP*AP*UP*UP*UP*U)-3'			NR_4.0_06694.1
+  5'-R(*AP*AP*AP*AP*AP*AP*AP*AP*AP*AP)-3'			NR_4.0_30422.1
+  5'-R(*AP*AP*AP*AP*AP*AP*AP*AP*AP*AP*A)-3[...]			NR_4.0_78670.1,      NR_4.0_87059.1,      NR_4.0_85902.1
+  5'-R(*AP*AP*AP*GP*AP*CP*CP*AP*GP*GP*C)-3[...]			NR_4.0_01515.1
+  5'-R(*AP*AP*AP*GP*GP*GP*CP*GP*CP*CP*GP*U[...]			NR_4.0_46866.1
+  5'-R(*AP*AP*AP*UP*AP*UP*AP*UP*AP*UP*UP*U[...]			NR_4.0_24746.1
+  5'-R(*AP*AP*CP*U*GP*CP*GP*GP*CP*GP*AP*U)[...]			NR_4.0_71520.1
+  5'-R(*AP*AP*GP*AP*CP*CP*AP*GP*GP*C)-3'			NR_4.0_19218.1
+  5'-R(*AP*C*AP*UP*GP*UP*UP*UP*UP*CP*UP*GP[...]			NR_4.0_13250.1
+  5'-R(*AP*CP*AP*UP*CP*GP*CP*GP*AP*UP *UP*[...]			NR_4.0_75028.1
+  5'-R(*AP*CP*AP*UP*GP*AP*GP*GP*AP*UP *PYO[...]			NR_4.0_51266.3
+  5'-R(*AP*CP*CP*AP*GP*GP*AP)-3'			NR_4.0_23131.1
+  5'-R(*AP*GP*AP*AP*GP*GP*AP*GP*GP*GP*AP*G[...]			NR_4.0_01810.1
+  5'-R(*AP*GP*AP*CP*UP*AP*AP*CP*AP*AP*CP*U[...]			NR_4.0_09332.1
+  5'-R(*AP*GP*AP*GP*AP*AP*GP*AP*UP*CP*UP*U[...]			NR_4.0_82939.1
+  5'-R(*AP*GP*AP*GP*AP*AP*GP*AP*UP*UP*UP*U[...]			NR_4.0_29649.1
+  5'-R(*AP*GP*AP*GP*AP*G)-3'			NR_4.0_75304.1
+  5'-R(*AP*GP*CP*GP*AP*AP*UP*UP*CP*GP*CP*U[...]			NR_4.0_15462.1
+  5'-R(*AP*GP*UP*AP*GP*UP*AP*AP*CP*AP*AP*G[...]			NR_4.0_78714.1
+  5'-R(*AP*GP*UP*CP*UP*C)-3'			NR_4.0_28964.1
+  5'-R(*AP*GP*UP*CP*UP*GP*CP*GP*GP*CP*GP*C[...]			NR_4.0_08107.1
+  5'-R(*AP*GP*UP*GP*CP*GP*AP*CP*AP*CP*CP*U[...]			NR_4.0_73487.1
+  5'-R(*AP*U)-3'			NR_4.0_48777.1
+  5'-R(*AP*UP*AP*AP*UP*UP*UP)-3'			NR_4.0_71707.1
+  5'-R(*AP*UP*AP*UP*CP*AP)-3'			NR_4.0_20180.1
+  5'-R(*AP*UP*AP*UP*UP*UP*UP)-3'			NR_4.0_16324.1
+  5'-R(*AP*UP*CP*GP*AP*GP*AP*GP*GP*A)-3'			NR_4.0_34359.7
+  5'-R(*AP*UP*GP*AP*3DRP*GP*GP*CP*CP*AP*CP[...]			NR_4.0_08464.1
+  5'-R(*AP*UP*GP*GP*UP*CP*GP*GP*CP*GP*CP*C[...]			NR_4.0_67179.1,      NR_4.0_73328.1,      NR_4.0_67439.2
+  5'-R(*AP*UP*UP*AP*CP*AP*AP*UP*AP*A)-3'			NR_4.0_16650.1
+  5'-R(*AP*UP*UP*AP*GP*CP*CP*CP*CP*C)-3'			NR_4.0_57770.1
+  5'-R(*AP*UP*UP*GP*CP*AP*UP*AP*UP*AP)-3'			NR_4.0_73930.1
+  5'-R(*AP*UP*UP*UP*UP*UP*G)-3'			NR_4.0_18162.1
+  5'-R(*AP*UP*UP*UP*UP*UP*UP*A)-3'			NR_4.0_07663.1
+  5'-R(*C*GP*GP*UP*AP*GP*GP*CP*UP*UP*UP*UP[...]			NR_4.0_19413.1
+  5'-R(*CP*(5AA)*(HFA))-3'			NR_4.0_35535.1
+  5'-R(*CP*(5BU)P*UP*GP*CP*UP*GP*AP*AP*GP*[...]			NR_4.0_78706.1
+  5'-R(*CP*AP*AP*AP*GP*AP*AP*AP*AP*G)-3'			NR_4.0_51549.1
+  5'-R(*CP*AP*AP*CP*CP*UP*AP*CP*UP*AP*CP*C[...]			NR_4.0_44916.1
+  5'-R(*CP*AP*GP*UP*AP*CP*GP*(5IC)P*C)-3'			NR_4.0_19241.1
+  5'-R(*CP*AP*UP*GP*GP*GP*CP*C)-3'			NR_4.0_41538.1
+  5'-R(*CP*AP*UP*GP*GP*GP*CP*CP*C)-3'			NR_4.0_62003.1,      NR_4.0_10954.1
+  5'-R(*CP*CP*(PPU)*(LOF))-3'			NR_4.0_63152.1
+  5'-R(*CP*CP*(S4C)P*CP*GP*GP*GP*G)-3'			NR_4.0_23650.1
+  5'-R(*CP*CP*AP*GP*UP*CP*GP*GP*AP*AP*C)-3[...]			NR_4.0_55153.1
+  5'-R(*CP*CP*AP*GP*UP*CP*GP*GP*AP*AP*CP*A[...]			NR_4.0_79282.1
+  5'-R(*CP*CP*AP*UP*AP*AP*GP*GP*AP*GP*CP*U[...]			NR_4.0_11428.1
+  5'-R(*CP*CP*C)-3'			NR_4.0_31791.1
+  5'-R(*CP*CP*CP*(PYY)P*GP*GP*GP*G)-3'			NR_4.0_36794.1
+  5'-R(*CP*CP*GP*GP*(2PR)P*GP*GP*AP*UP*CP*[...]			NR_4.0_13485.1
+  5'-R(*CP*CP*GP*GP*AP*GP*GP*AP*UP*CP*AP*C[...]			NR_4.0_72335.1
+  5'-R(*CP*CP*GP*GP*CP*UP*CP*UP*UP*UP*UP*C[...]			NR_4.0_74336.1
+  5'-R(*CP*GP*AP*AP*CP*UP*UP*CP*GP*CP*G)-3[...]			NR_4.0_44326.1
+  5'-R(*CP*GP*AP*GP*GP*AP*AP*CP*UP*AP*CP*U[...]			NR_4.0_83775.1
+  5'-R(*CP*GP*CP*(2SG)P*AP*AP*UP*UP*AP*GP*[...]			NR_4.0_50652.1
+  5'-R(*CP*GP*CP*(NF2)P*AP*AP*UP*UP*AP*GP*[...]			NR_4.0_39119.1
+  5'-R(*CP*GP*CP*CP*UP)-3'			NR_4.0_86148.1
+  5'-R(*CP*GP*CP*CP*UP*CP)-3'			NR_4.0_60836.1
+  5'-R(*CP*GP*CP*GP*(A2M)P*(ADS)P*UP*UP*AP[...]			NR_4.0_12687.1
+  5'-R(*CP*GP*CP*GP*AP*AP*UP*UP*(A2M)P*(2S[...]			NR_4.0_47141.1
+  5'-R(*CP*GP*CP*GP*AP*AP*UP*UP*CP*GP*CP*G[...]			NR_4.0_85514.1
+  5'-R(*CP*GP*CP*GP*CP*GP*GP*AP*UP*CP*AP*G[...]			NR_4.0_36231.1
+  5'-R(*CP*GP*CP*GP*UP*CP*AP*CP*AP*CP*CP*G[...]			NR_4.0_52295.1
+  5'-R(*CP*GP*CP*UP*AP*CP*GP*C)-3'			NR_4.0_40545.1
+  5'-R(*CP*GP*GP*AP*CP*CP*GP*AP*GP*CP*CP*A[...]			NR_4.0_49890.1,      NR_4.0_07779.1
+  5'-R(*CP*GP*GP*AP*GP*GP*AP*AP*CP*UP*AP*C[...]			NR_4.0_86436.1
+  5'-R(*CP*GP*GP*AP*UP*CP*CP*GP*CP*AP*C)-3[...]			NR_4.0_84898.1
+  5'-R(*CP*GP*UP*AP*CP*GP*CP*GP*GP*AP*AP*U[...]			NR_4.0_99773.1
+  5'-R(*CP*GP*UP*GP*AP*CP*U)-D(P*CP*T)-3'			NR_4.0_15952.1
+  5'-R(*CP*GP*UP*GP*AP*CP*UP*CP*U)-3'			NR_4.0_56046.1
+  5'-R(*CP*UP*CP*CP*CP*UP*UP*CP*UP*GP*UP*G[...]			NR_4.0_61892.1
+  5'-R(*CP*UP*CP*UP*CP*UP*CP*U)-3'			NR_4.0_09128.1
+  5'-R(*CP*UP*GP*AP*GP*AP*GP*AP*GP*AP*GP*G[...]			NR_4.0_91413.1
+  5'-R(*CP*UP*GP*CP*CP*GP*UP*AP*UP*AP*GP*G[...]			NR_4.0_65600.1
+  5'-R(*CP*UP*GP*CP*UP*GP*CP*UP*GP*CP*UP*G[...]			NR_4.0_25125.1
+  5'-R(*CP*UP*GP*UP*GP*UP*(FHU)P*CP*GP*AP*[...]			NR_4.0_22464.1
+  5'-R(*CP*UP*GP*UP*GP*UP*UP*CP*GP*AP*UP*C[...]			NR_4.0_43901.1
+  5'-R(*G*GP*AP*CP*GP*CP*AP*GP*AP*GP*AP*UP[...]			NR_4.0_47291.1
+  5'-R(*GP*AP*AP*GP*AP*AP*GP*AP*A)-3'			NR_4.0_53424.1
+  5'-R(*GP*AP*AP*GP*AP*GP*AP*AP*GP*C)-3'			NR_4.0_94840.1
+  5'-R(*GP*AP*AP*UP*GP*CP*CP*UP*GP*CP*GP*A[...]			NR_4.0_38877.1
+  5'-R(*GP*AP*CP*AP*CP*CP*UP*GP*AP*UP*UP*C[...]			NR_4.0_93523.1
+  5'-R(*GP*AP*GP*GP*GP*GP*AP*UP*UP*GP*AP*A[...]			NR_4.0_98374.1
+  5'-R(*GP*AP*GP*UP*GP*CP*GP*AP*CP*AP*CP*C[...]			NR_4.0_33669.1
+  5'-R(*GP*AP*UP*CP*AP*CP*UP*UP*CP*GP*GP*U[...]			NR_4.0_06457.1
+  5'-R(*GP*AP*UP*UP*UP*CP*UP*CP*UP*CP*UP*G[...]			NR_4.0_47541.1
+  5'-R(*GP*CP*AP*(5BU)P*GP*GP*AP*CP*GP*CP*[...]			NR_4.0_93219.1
+  5'-R(*GP*CP*AP*(XUG)P*AP*GP*UP*UP*AP*AP*[...]			NR_4.0_68126.1
+  5'-R(*GP*CP*AP*CP*CP*GP*UP*UP*GP*GP*UP*A[...]			NR_4.0_51076.1
+  5'-R(*GP*CP*AP*GP*AP*CP*UP*UP*AP*AP*AP*U[...]			NR_4.0_89129.1,      NR_4.0_51779.4
+  5'-R(*GP*CP*AP*UP*CP*CP*GP)-3'			NR_4.0_97569.1
+  5'-R(*GP*CP*AP*UP*GP*CP*GP*AP*CP*CP*UP*C[...]			NR_4.0_28969.1
+  5'-R(*GP*CP*AP*UP*UP*GP*GP)-3'			NR_4.0_06107.1
+  5'-R(*GP*CP*CP*UP*GP*GP*AP*AP*AP*GP*(PSU[...]			NR_4.0_76824.1
+  5'-R(*GP*CP*GP*AP*AP*UP*UP*CP*GP*CP*UP*A[...]			NR_4.0_35969.1
+  5'-R(*GP*CP*GP*AP*CP*CP*GP*AP*CP*CP*AP*([...]			NR_4.0_54661.1
+  5'-R(*GP*CP*GP*CP*GP*CP*GP*C)-3'			NR_4.0_62752.1
+  5'-R(*GP*CP*GP*CP*UP*CP*CP*UP*CP*AP*GP*U[...]			NR_4.0_26846.1
+  5'-R(*GP*CP*GP*GP*AP*UP*AP*UP*CP*CP*GP*C[...]			NR_4.0_03202.1
+  5'-R(*GP*CP*GP*GP*AP*UP*CP*CP*GP*CP*AP*C[...]			NR_4.0_65598.1,      NR_4.0_12093.1
+  5'-R(*GP*CP*GP*GP*GP*AP*AP)-3'			NR_4.0_36129.1
+  5'-R(*GP*CP*GP*GP*GP*AP*G)-3'			NR_4.0_17264.1
+  5'-R(*GP*CP*GP*UP*CP*AP*GP*GP*UP*CP*(CBV[...]			NR_4.0_32544.1
+  5'-R(*GP*CP*UP*CP*AP*GP*AP*UP*CP*UP *GP*[...]			NR_4.0_47406.1
+  5'-R(*GP*CP*UP*GP*CP*UP*GP*C)-3'			NR_4.0_81896.1
+  5'-R(*GP*CP*UP*UP*CP*GP*GP*C)-D(P*(BRU))[...]			NR_4.0_87893.1
+  5'-R(*GP*CP*UP*UP*CP*GP*GP*C)-D(P*(UFP))[...]			NR_4.0_98171.1
+  5'-R(*GP*GP*AP*GP*AP*GP*AP)-3'			NR_4.0_29312.1
+  5'-R(*GP*GP*AP*GP*GP*(UFT)P*GP*(CFZ)P*(U[...]			NR_4.0_23187.1
+  5'-R(*GP*GP*AP*GP*UP*GP*CP*GP*AP*CP*AP*C[...]			NR_4.0_99291.1
+  5'-R(*GP*GP*AP*UP*CP*GP*CP*AP*UP*UP*UP*G[...]			NR_4.0_74199.1
+  5'-R(*GP*GP*C)-3'			NR_4.0_72277.1
+  5'-R(*GP*GP*CP*AP*AP*CP*GP*GP*UP*(FLO) U[...]			NR_4.0_36712.2
+  5'-R(*GP*GP*CP*AP*GP*CP*AP*GP*CP*C)-3'			NR_4.0_25369.1
+  5'-R(*GP*GP*CP*GP*(5BU)P*GP*CP*GP*CP*U)-[...]			NR_4.0_53890.1
+  5'-R(*GP*GP*CP*GP*AP*GP*CP*C)-3'			NR_4.0_99363.1
+  5'-R(*GP*GP*CP*GP*UP*GP*CP*C)-3'			NR_4.0_92683.1
+  5'-R(*GP*GP*CP*GP*UP*UP*GP*CP*CP*GP *GP*[...]			NR_4.0_04852.2
+  5'-R(*GP*GP*CP*UP*CP*CP*UP*UP*GP*GP*CP*A[...]			NR_4.0_86424.1,      NR_4.0_12608.1
+  5'-R(*GP*GP*GP*(5BU)P*GP*GP*UP*GP*AP*AP*[...]			NR_4.0_35088.1
+  5'-R(*GP*GP*GP*AP*GP*AP*AP*CP*AP*AP*CP*G[...]			NR_4.0_92005.1
+  5'-R(*GP*GP*GP*AP*UP*UP*GP*AP*AP*AP*AP*U[...]			NR_4.0_95734.1
+  5'-R(*GP*GP*GP*CP*GP*GP*GP*CP*CP*CP*GP*C[...]			NR_4.0_68439.1
+  5'-R(*GP*GP*GP*CP*UP*UP*CP*AP*AP*CP*GP*C[...]			NR_4.0_40560.1
+  5'-R(*GP*GP*UP*AP*UP*UP*GP*CP*GP*GP*UP*A[...]			NR_4.0_99184.1
+  5'-R(*GP*GP*UP*CP*AP*CP*AP*GP*CP*CP*C)-3[...]			NR_4.0_64635.1,      NR_4.0_03986.1
+  5'-R(*GP*GP*UP*GP*AP*GP*G)-3'			NR_4.0_80567.1
+  5'-R(*GP*GP*UP*GP*CP*GP*CP*(CBR)P*C-3'			NR_4.0_79446.1
+  5'-R(*GP*GP*UP*GP*GP*UP*GP*AP*AP*GP*UP*C[...]			NR_4.0_72697.1
+  5'-R(*GP*IP*CP*GP*AP*GP*CP*C)-3'			NR_4.0_16422.1
+  5'-R(*GP*UP*AP*UP*AP*CP*A)-3'			NR_4.0_54586.1
+  5'-R(*GP*UP*GP*GP*UP*GP*AP*AP*GP*UP*CP*G[...]			NR_4.0_87784.1,      NR_4.0_33604.1
+  5'-R(*GP*UP*GP*UP*CP*GP*(CBR)P*AP*C)-3'			NR_4.0_16983.1
+  5'-R(*GP*UP*UP*GP*UP)-3'			NR_4.0_28594.1
+  5'-R(*GP*UP*UP*UP*GP*AP)-3'			NR_4.0_96260.1,      NR_4.0_16130.1
+  5'-R(*UP*AP*AP*AP*AP*GP*AP*AP*AP*AP*GP*G[...]			NR_4.0_17495.1
+  5'-R(*UP*AP*AP*UP*CP*UP*UP*UP*GP*AP*CP*A[...]			NR_4.0_32676.1
+  5'-R(*UP*AP*CP*UP*AP*AP*CP*GP*UP*AP*GP*U[...]			NR_4.0_16044.1
+  5'-R(*UP*AP*GP*AP*CP*UP*AP*AP*CP*AP*AP*C[...]			NR_4.0_59755.1
+  5'-R(*UP*AP*U*AP*CP*AP*AP*CP*CP*UP*AP*CP[...]			NR_4.0_54314.1
+  5'-R(*UP*AP*UP*AP*CP*AP*AP*CP*CP*UP*AP*C[...]			NR_4.0_26629.1
+  5'-R(*UP*AP*UP*AP*UP*GP*CP*A*UP*AP*AP*AP[...]			NR_4.0_05217.3
+  5'-R(*UP*CP*AP*GP*CP*CP*AP*CP*UP*UP*UP*U[...]			NR_4.0_23180.1
+  5'-R(*UP*CP*CP*CP*CP*AP*CP*GP*CP*GP*UP*G[...]			NR_4.0_15533.1,      NR_4.0_78183.1,      NR_4.0_72322.1,      NR_4.0_46586.1,      NR_4.0_24738.1,      NR_4.0_87252.1
+  5'-R(*UP*CP*GP*AP*AP*GP*UP*AP*UP*UP*CP*C[...]			NR_4.0_95559.1
+  5'-R(*UP*CP*GP*AP*CP*A)-3'			NR_4.0_09880.4
+  5'-R(*UP*CP*GP*CP*CP*AP*AP*CP*AP*GP*GP*C[...]			NR_4.0_60411.1
+  5'-R(*UP*CP*UP*GP*AP*CP*GP*GP*UP*AP*CP*G[...]			NR_4.0_53157.1
+  5'-R(*UP*GP*(CBV)P*(CBV)P*AP*GP*UP*UP*CP[...]			NR_4.0_08416.1
+  5'-R(*UP*GP*AP)-3'			NR_4.0_61174.1
+  5'-R(*UP*GP*AP*CP*AP*UP)-3'			NR_4.0_68928.1
+  5'-R(*UP*GP*CP*AP*UP*U*UP*CP*GP*AP*CP*CP[...]			NR_4.0_10218.1
+  5'-R(*UP*GP*CP*AP*UP*UP*U*CP*AP*AP*CP*CP[...]			NR_4.0_63409.1,      NR_4.0_34753.1
+  5'-R(*UP*GP*CP*AP*UP*UP*UP*CP*GP*AP*CP*C[...]			NR_4.0_33750.1
+  5'-R(*UP*GP*CP*UP*GP*UP*UP*UP*U)-3'			NR_4.0_72030.1
+  5'-R(*UP*GP*UP*AP*AP*AP*AP*UP*C)-3'			NR_4.0_14980.1
+  5'-R(*UP*GP*UP*AP*CP*CP*AP*UP*A)-3'			NR_4.0_26816.1
+  5'-R(*UP*GP*UP*AP*UP*CP*AP*UP*A)-3'			NR_4.0_48272.1
+  5'-R(*UP*GP*UP*GP*CP*CP*AP*UP*A)-3'			NR_4.0_84036.1
+  5'-R(*UP*GP*UP*GP*CP*CP*UP*UP*A)-3'			NR_4.0_10014.1
+  5'-R(*UP*GP*UP*GP*UP*CP*AP*UP*U)-3'			NR_4.0_52626.1
+  5'-R(*UP*GP*UP*GP*UP*UP*AP*UP*C)-3'			NR_4.0_85762.1
+  5'-R(*UP*UP*CP*AP*CP*UP*GP*CP*CP*GP*UP*A[...]			NR_4.0_06402.1
+  5'-R(*UP*UP*CP*CP)-3'			NR_4.0_81635.1
+  5'-R(*UP*UP*CP*GP*AP*CP*CP*AP*GP*AP*UP)-[...]			NR_4.0_06823.1
+  5'-R(*UP*UP*CP*GP*AP*CP*CP*AP*GP*GP*AP)-[...]			NR_4.0_92231.1,      NR_4.0_47665.1,      NR_4.0_37861.1
+  5'-R(*UP*UP*CP*GP*AP*CP*CP*AP*GP*GP*AP*A[...]			NR_4.0_28840.1
+  5'-R(*UP*UP*CP*GP*AP*CP*GP*CP)-3'			NR_4.0_57734.1
+  5'-R(*UP*UP*CP*GP*AP*CP*GP*CP*GP*UP*CP*G[...]			NR_4.0_18396.1
+  5'-R(*UP*UP*GP)-3'			NR_4.0_99944.1,      NR_4.0_03143.1
+  5'-R(*UP*UP*GP*AP*GP*UP*U)-3'			NR_4.0_19039.1
+  5'-R(*UP*UP*GP*CP*GP*UP*CP*UP*CP*GP*(5BU[...]			NR_4.0_26059.1,      NR_4.0_07169.1
+  5'-R(*UP*UP*GP*CP*GP*UP*CP*UP*CP*GP*UP*C[...]			NR_4.0_42932.1
+  5'-R(*UP*UP*GP*UP*AP*AP*UP*AP*UP*UP*A)-3[...]			NR_4.0_91544.1
+  5'-R(*UP*UP*GP*UP*UP*CP*UP*U)-3'			NR_4.0_00973.1
+  5'-R(*UP*UP*UP*AP*AP*UP*GP*UP*U)-3'			NR_4.0_76670.1
+  5'-R(*UP*UP*UP*AP*CP*AP*GP*UP*AP*UP*UP*U[...]			NR_4.0_37879.1
+  5'-R(*UP*UP*UP*AP*GP*UP*UP*UP*UP*UP*AP*G[...]			NR_4.0_14870.1
+  5'-R(*UP*UP*UP*GP*AP*GP*GP*AP*GP*G)-3'			NR_4.0_52785.1
+  5'-R(*UP*UP*UP*UP*CP*CP)-3'			NR_4.0_79612.1,      NR_4.0_31949.1
+  5'-R(*UP*UP*UP*UP*UP*UP*UP)-3'			NR_4.0_25856.1
+  5'-R(*UP*UP*UP*UP*UP*UP*UP*UP*UP*U)-3'			NR_4.0_59612.1,      NR_4.0_51748.1
+  5'-R(*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP *UP*[...]			NR_4.0_29524.1
+  5'-R(*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP)-[...]			NR_4.0_31135.1
+  5'-R(GP*CP*AP*CP*CP*GP*CP*UP*AP*C)-3'			NR_4.0_30844.1
+  5'-R(P*AP*AP*AP*AP*AP*AP*AP*AP*A)-3'			NR_4.0_82961.1
+  5'-R(P*AP*AP*AP*AP*AP*AP*AP*AP*AP*U)-3'			NR_4.0_42877.1
+  5'-R(P*AP*AP*CP*CP*GP*UP*AP*GP*GP*GP*GP*[...]			NR_4.0_55295.1,      NR_4.0_25813.1
+  5'-R(P*AP*CP*AP*GP*GP*GP*AP*CP*UP*GP*UP*[...]			NR_4.0_89275.1
+  5'-R(P*AP*GP*AP*CP*AP*G)-3'			NR_4.0_45851.1
+  5'-R(P*AP*GP*AP*CP*AP*GP*CP*AP*UP*AP*UP*[...]			NR_4.0_59799.1
+  5'-R(P*AP*GP*UP*GP*GP*CP*CP*UP*UP*GP*C)-[...]			NR_4.0_26402.1
+  5'-R(P*AP*UP*CP*AP*CP*CP*UP*CP*CP*UP*UP*[...]			NR_4.0_65401.1
+  5'-R(P*AP*UP*GP*GP*GP*CP*CP*C)-3'			NR_4.0_16755.1
+  5'-R(P*AP*UP*UP*GP*UP*AP*CP*AP*UP*A)-3'			NR_4.0_81175.1
+  5'-R(P*CP*AP*GP*CP*AP*GP*CP*AP*GP*CP*CP*[...]			NR_4.0_93859.1
+  5'-R(P*CP*CP*C)-3'			NR_4.0_95023.1
+  5'-R(P*CP*CP*CP*CP*CP*C)-3'			NR_4.0_33315.1
+  5'-R(P*CP*CP*CP*CP*CP*CP*CP*CP*CP*CP*C)-[...]			NR_4.0_20366.1
+  5'-R(P*CP*CP*GP*CP*CP*GP*CP*CP*GP*CP*CP*[...]			NR_4.0_78931.1
+  5'-R(P*CP*CP*UP*AP*CP*UP*AP*CP*CP*UP*CP*[...]			NR_4.0_57417.1
+  5'-R(P*CP*GP*UP*AP*CP*GP*CP*GP*UP*CP*AP*[...]			NR_4.0_95110.1
+  5'-R(P*GP*AP*CP*CP*AP*GP*GP*CP*A)-3'			NR_4.0_77921.1
+  5'-R(P*GP*AP*GP*UP*CP*UP*GP*CP*GP*GP*CP*[...]			NR_4.0_35629.1
+  5'-R(P*GP*CP*GP*AP*AP*UP*UP*CP*GP*CP*UP*[...]			NR_4.0_47933.1
+  5'-R(P*GP*CP*GP*GP*CP*GP*GP*CP*GP*GP*CP*[...]			NR_4.0_41922.1
+  5'-R(P*GP*CP*GP*UP*UP*GP*GP*CP*CP*AP*AP*[...]			NR_4.0_04426.1
+  5'-R(P*GP*CP*UP*GP*CP*UP*GP*CP*UP*GP*CP*[...]			NR_4.0_25361.2
+  5'-R(P*GP*GP*CP*GP*GP*CP*GP*GP*CP*GP*GP*[...]			NR_4.0_70790.1,      NR_4.0_55642.1
+  5'-R(P*GP*GP*GP*GP*GP*GP*GP*GP*GP*GP*G)-[...]			NR_4.0_23784.1
+  5'-R(P*GP*GP*UP*CP*GP*AP*CP*AP*UP*CP*UP*[...]			NR_4.0_25893.1
+  5'-R(P*UP*AP*GP*GP*GP*CP*CP*C)-3'			NR_4.0_53841.1
+  5'-R(P*UP*AP*UP*UP*UP*AP*UP*UP*UP*A)-3'			NR_4.0_88266.1
+  5'-R(P*UP*C)-3'			NR_4.0_64047.1
+  5'-R(P*UP*CP*GP*AP*AP*GP*GP*UP*CP*CP*UP*[...]			NR_4.0_06683.1
+  5'-R(P*UP*GP*CP*CP*CP*GP*GP*GP*C)-3'			NR_4.0_64844.1
+  5'-R(P*UP*GP*CP*GP*AP*AP*UP*UP*CP*GP*CP*[...]			NR_4.0_73378.1
+  5'-R(P*UP*GP*GP*GP*CP*CP*C)-3'			NR_4.0_97629.1
+  5'-R(P*UP*GP*UP*AP*CP*UP*AP*UP*A)-3'			NR_4.0_25162.1
+  5'-R(P*UP*GP*UP*AP*UP*AP*U)-3'			NR_4.0_48641.1
+  5'-R(P*UP*GP*UP*CP*CP*AP*G)-3'			NR_4.0_93459.1
+  5'-R(P*UP*UP*AP*AP*UP*AP*UP*UP*UP*UP*UP*[...]			NR_4.0_04268.1
+  5'-R(P*UP*UP*AP*CP*AP*AP*UP*AP*A)-3'			NR_4.0_22156.1
+  5'-R(P*UP*UP*CP*U)-3'			NR_4.0_78107.1
+  5'-R(P*UP*UP*GP*AP*GP*GP*(PSU)P*GP*G)-3'[...]			NR_4.0_07497.1
+  5'-R(P*UP*UP*GP*CP*GP*AP*AP*UP*UP*CP*GP*[...]			NR_4.0_78685.1
+  5'-R(P*UP*UP*GP*CP*UP*GP*CP*UP*GP*CP*UP*[...]			NR_4.0_40086.1
+  5'-R(P*UP*UP*GP*UP*AP*UP*AP*U)-3'			NR_4.0_81068.1
+  5'-R(P*UP*UP*GP*UP*CP*CP*AP*G)-3'			NR_4.0_40126.1
+  5'-R(P*UP*UP*U)-3'			NR_4.0_53472.1
+  5'-R(P*UP*UP*UP*AP*GP*UP*U)-3'			NR_4.0_18961.1
+  5'-R(P*UP*UP*UP*GP*CP*GP*AP*AP*UP*UP*CP*[...]			NR_4.0_33125.1
+  5'-R(P*UP*UP*UP*UP*AP*UP*UP*UP*U)-3'			NR_4.0_50004.1
+  5'-R(P*UP*UP*UP*UP*UP*UP*U)-3'			NR_4.0_25852.1,      NR_4.0_69076.1,      NR_4.0_26733.1
+  5'-R(P*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP*[...]			NR_4.0_78175.1
+  5'-R(UP*A)-3')			NR_4.0_65802.1
+  5'-R(UP*GP*UP*AP*AP*AP*UP*A)-3'			NR_4.0_97666.1,      NR_4.0_43560.1,      NR_4.0_10913.1
+  5'-R(UP*GP*UP*AP*CP*AP*UP*C)-3'			NR_4.0_81724.1,      NR_4.0_98055.1
+  5'-R(UP*GP*UP*AP*GP*AP*UP*A)-3'			NR_4.0_54128.1
+  5'-R(UP*GP*UP*AP*UP*AP*UP*A)-3'			NR_4.0_08738.1
+  5'-R-PPP(GP*GP*CP*GP*CP*GP*GP*CP*UP*UP*C[...]			NR_4.0_43251.1
+  5'-cRNA promoter			NR_4.0_01428.1
+  5'-vRNA			NR_4.0_56002.1,      NR_4.0_04437.1
+  5'ETS rRNA			NR_4.0_30553.1,      NR_4.0_92607.1
+  5- R(*UP*UP*UP*UP*UP*UP*UP*UP*U) -3			NR_4.0_41539.1
+  5-hydroxytryptophan RNA aptamer			NR_4.0_74174.1
+  5.8S rRNA			NR_4.0_76684.1,      NR_4.0_13071.1
+  5.8S-23S rRNA			NR_4.0_67642.1
+  50-mer RNA			NR_4.0_25335.1
+  5ETS RNA			NR_4.0_62396.2
+  5S rRNA			NR_4.0_14136.1,      NR_4.0_42832.1,     NR_4.0_75381.1,      NR_4.0_51377.1,      NR_4.0_99272.1,      NR_4.0_83891.20,      NR_4.0_54575.1,      NR_4.0_12971.5,      NR_4.0_67384.2,      NR_4.0_41742.1,      NR_4.0_26536.1,      NR_4.0_95940.2,      NR_4.0_83043.1,      NR_4.0_46024.1,      NR_4.0_77670.1,      NR_4.0_50314.5,      NR_4.0_17605.2,      NR_4.0_96182.1,      NR_4.0_51489.1,      NR_4.0_36108.1,      NR_4.0_10255.21,      NR_4.0_79566.1,      NR_4.0_62824.1,      NR_4.0_52752.11,      NR_4.0_42622.57,      NR_4.0_42467.1,      NR_4.0_11525.1,      NR_4.0_10157.89,      NR_4.0_18586.44,      NR_4.0_25303.2,      NR_4.0_26197.1,     NR_4.0_17436.1,    NR_4.0_69984.2,   NR_4.0_97435.10
+  5S rRNA fragment			NR_4.0_62367.1
+  6S rRNA			NR_4.0_05181.1
+  72-MER			NR_4.0_98033.1
+  76mer-tRNA			NR_4.0_91690.1,      NR_4.0_73795.1
+  7S rRNA			NR_4.0_37229.1,     NR_4.0_79955.1,     NR_4.0_35965.1
+  7SK GGHP4 (300-332)			NR_4.0_16754.1
+  7SK RNA			NR_4.0_33278.1
+  7SL RNA			NR_4.0_76196.1,      NR_4.0_19932.1
+  832GAAA (50-MER)			NR_4.0_89299.1
+  9-nt RNA transcript			NR_4.0_86840.1
+  9S rRNA			NR_4.0_23013.1,      NR_4.0_75086.1,      NR_4.0_74642.1,      NR_4.0_99955.1,      NR_4.0_60828.5
+  A site of human mitochondrial ribosome			NR_4.0_21191.1,      NR_4.0_38099.1
+  A site of human ribosome			NR_4.0_46403.1
+  A-SITE TRNA THR			NR_4.0_54761.1
+  A-SITE mRNA FRAGMENT CGGG			NR_4.0_12173.1,      NR_4.0_07184.1
+  A-SITE tRNA			NR_4.0_40314.1
+  A-riboswitch			NR_4.0_66984.1
+  A-site Met-tRNA(Met)			NR_4.0_06465.1
+  A-site tRNA			NR_4.0_74214.1,      NR_4.0_04000.1,      NR_4.0_45609.5
+  A-site tRNAAla(GGC) U32-A38			NR_4.0_20585.1
+  A/P tRNA			NR_4.0_73958.1
+  A/P-Site tRNA			NR_4.0_20988.1
+  A/P-tRNA			NR_4.0_73703.1
+  A24U/U25A/A46G mutant of the B. subtilis[...]			NR_4.0_89429.5
+  A7 RNA			NR_4.0_98950.1
+  ALU JO CONSENSUS RNA			NR_4.0_59099.1
+  AMIDE LINKED RNA			NR_4.0_56235.1
+  ANTICODON STEM-LOOP OF LEU-2 TRANSFER RN[...]			NR_4.0_13358.1
+  ANTICODON STEM-LOOP OF SER TRANSFER RNA			NR_4.0_65818.1
+  ANTICODON STEM-LOOP OF TRANSFER RNA WITH[...]			NR_4.0_71302.1
+  ASH1 E3 (28 nt-loop)			NR_4.0_78625.1,      NR_4.0_57646.1
+  ASH1 E3 (42 nt-TL/TLR)			NR_4.0_66328.1
+  ASH1-E3 element			NR_4.0_90603.1,      NR_4.0_86202.1
+  ASL-tRNA			NR_4.0_61139.1,      NR_4.0_51071.1
+  ASL-truncated tRNA			NR_4.0_13919.1
+  ASPARTYL TRANSFER RNA			NR_4.0_24819.3
+  AU-rich RNA			NR_4.0_82184.1,      NR_4.0_48702.2
+  Adenosine RIboswitch			NR_4.0_63265.1
+  Adenosylcobalamin riboswitch			NR_4.0_36514.1,      NR_4.0_26802.1
+  Adenovirus Virus-Associated (VA) RNA I a[...]			NR_4.0_80225.1
+  Ala-tRNA (P-site)			NR_4.0_91806.3
+  Anticodon tRNA			NR_4.0_82938.1,      NR_4.0_56744.1
+  Antitoxin RNA			NR_4.0_99575.1
+  Aptamer 11F7t (36-MER)			NR_4.0_73803.1
+  Aptamer A9g			NR_4.0_89953.1
+  B. subtilis cobalamin riboswitch			NR_4.0_27764.1
+  Bacillus subtilis xpt			NR_4.0_70496.1
+  C-di-AMP riboswitch			NR_4.0_91474.1
+  C-di-GMP riboswitch			NR_4.0_25458.1
+  C/D guide RNA			NR_4.0_22853.1
+  C13.18 RNA Aptamer			NR_4.0_04840.1
+  COX17 RNA target sequence			NR_4.0_95803.1
+  CP tRNAPhe			NR_4.0_33675.2
+  CRISPR RNA			NR_4.0_90447.1
+  CRISPR RNA (60-MER)			NR_4.0_11200.1,      NR_4.0_11167.1
+  CYSTEINYL TRNA			NR_4.0_34221.1
+  Canis lupus familiaris RNA			NR_4.0_50256.1
+  Cas9 (SpCas9) single-guide RNA (sgRNA)			NR_4.0_47294.1
+  Chains: A			NR_4.0_28670.1,      NR_4.0_82632.1,      NR_4.0_34764.1,      NR_4.0_80360.2
+  Chains: B			NR_4.0_49839.1
+  Chains: C			NR_4.0_03921.1
+  Chili RNA Aptamer			NR_4.0_84656.1
+  Class I ligase ribozyme			NR_4.0_66484.2
+  Class III PreQ1 riboswitch			NR_4.0_63567.1
+  Cobalamin riboswitch aptamer domain			NR_4.0_95082.1
+  Core ENE hairpin and A-rich tract from M[...]			NR_4.0_37008.1
+  Core ENE hairpin from KSHV PAN RNA			NR_4.0_41959.1
+  Core double ENE RNA (Xtal construct) fro[...]			NR_4.0_91654.1
+  CrPV 5'-UTR IRES			NR_4.0_29604.1
+  CrPV IRES			NR_4.0_32696.1
+  CrPV-IRES			NR_4.0_84648.1
+  CrRNA (60-MER)			NR_4.0_94467.5
+  Crispr RNA			NR_4.0_88832.1,      NR_4.0_47956.1,      NR_4.0_61960.1
+  Cysteinyl-tRNA synthetase			NR_4.0_83386.1
+  DNA (5'-R(*GP*U)-3')			NR_4.0_78372.4
+  DNA (5'-R(P*AP*CP*GP*GP*AP*AP*AP*GP*AP*C[...]			NR_4.0_98573.1
+  DNA (55-MER)			NR_4.0_02307.1
+  DNA/RNA (23-MER)			NR_4.0_99000.1
+  DNA/RNA (5'-D(*(GTG))-R(P*GP*C)-3')			NR_4.0_45734.1
+  DNA/RNA (5'-D(*C)-R(P*G)-D(P*C)-R(P*G)-D[...]			NR_4.0_23362.1
+  DNA/RNA (5'-D(*IP*)-R(*CP*)-D(*IP*)-R(*C[...]			NR_4.0_70203.1
+  DNA/RNA (5'-R(*AP*UP*CP*GP*AP*GP*AP*GP*G[...]			NR_4.0_47915.1
+  DNA/RNA (5'-R(*CP*GP*GP*CP*GP*GP*GP*CP*A[...]			NR_4.0_54594.1
+  DNA/RNA (5'-R(*CP*GP*GP*UP*AP*AP*CP*CP*C[...]			NR_4.0_97453.1,      NR_4.0_21529.1
+  DNA/RNA (5'-R(*GP*UP*AP*UP*AP*CP*A)-D(P*[...]			NR_4.0_27290.1
+  DNA/RNA (5'-R(*GP*UP*AP*UP*AP*UP*AP*)-D([...]			NR_4.0_09770.1
+  DNA/RNA (5'-R(*GP*UP*AP*UP*GP*UP*AP*)-D([...]			NR_4.0_14080.1
+  DNA/RNA (5'-R(*GP*UP*GP*UP*GP*UP*AP*)-D([...]			NR_4.0_79329.1
+  DNA/RNA (5'-R(*UP*UP*U)-D(P*UP*UP*(BRU)P[...]			NR_4.0_62764.1
+  DNA/RNA (5'-R(P*UP*U)-D(P*U)-R(P*UP*U)-D[...]			NR_4.0_41357.1
+  DNA/RNA (5'-R(P*UP*UP*(UD)P*UP*U)-D(P*(B[...]			NR_4.0_94195.1
+  DNA/RNA (5'-R(P*UP*UP*UP*(UD)P*UP*U)-D(P[...]			NR_4.0_18481.1
+  DNA/RNA (50-MER)			NR_4.0_81496.1
+  DNA/RNA (71-MER)			NR_4.0_48748.1
+  Deacylated tRNA minihelix			NR_4.0_03445.1
+  Didymium iridis partial IGS			NR_4.0_86266.1
+  Distal Stem I region of the glyQS T box [...]			NR_4.0_26186.1
+  Domain 3 of the cricket paralysis virus [...]			NR_4.0_95171.1
+  E site tRNA			NR_4.0_04887.1
+  E-SITE TRNA ILE2 AGMATIDINE OR P-SITE TR[...]			NR_4.0_02142.1
+  E-site tRNA CHAIN			NR_4.0_74018.1
+  E-site tRNA Valine			NR_4.0_83999.1
+  E-tRNA			NR_4.0_24366.1
+  E. coli yybP-ykoY riboswitch			NR_4.0_83641.1
+  FMN Riboswitch			NR_4.0_18889.3
+  FMN riboswitch			NR_4.0_47203.2
+  FRAGMENT OF MRNA FOR L1-OPERON CONTAININ[...]			NR_4.0_09706.1
+  Flock House virus genomic RNA			NR_4.0_62747.1
+  Fluoride riboswitch			NR_4.0_82984.1
+  G70A tRNA minihelix			NR_4.0_51503.1
+  GCAG(7AT)CUUAAGUCUGC			NR_4.0_10487.1
+  GLMS RIBOZYME			NR_4.0_08692.3
+  GLYCINE RIBOSWITCH			NR_4.0_36867.1
+  GROUP II INTRON			NR_4.0_28269.1
+  Gas5 GREM Rev			NR_4.0_69766.1
+  Gli1 8AZ 23mer RNA			NR_4.0_01901.1
+  Group I ribozyme			NR_4.0_88088.1
+  Group IIC intron			NR_4.0_35054.4
+  Guanidine III riboswitch			NR_4.0_01073.1
+  Guanidine-I riboswitch			NR_4.0_01253.1
+  Guanine riboswitch			NR_4.0_76114.1
+  Guide RNA			NR_4.0_33394.4,      NR_4.0_90160.4,      NR_4.0_62361.1
+  H/ACA RNA			NR_4.0_34126.1,      NR_4.0_99751.1
+  H1 RNA			NR_4.0_24457.1
+  HAMMERHEAD RIBOZYME-RNA STRAND			NR_4.0_82681.1,      NR_4.0_55907.2
+  HAV dV RNA (92-MER)			NR_4.0_60628.1
+  HCV IRES pseudoknot domain plus crystall[...]			NR_4.0_40189.1
+  HCV genotype 1a miR-122 site-1			NR_4.0_23918.1
+  HCV-IRES			NR_4.0_58054.1
+  HDV RIBOZYME SELF-CLEAVED			NR_4.0_09431.1
+  HELIX 6 OF HUMAN SRP RNA			NR_4.0_26264.1
+  HISTONE MRNA 3' STEM LOOP			NR_4.0_52096.2
+  HIV frameshift stimulating sequence mRNA[...]			NR_4.0_34877.1
+  HIV-1 REVERSE TRANSCRIPTION PRIMER TRNA([...]			NR_4.0_90775.1
+  HIV-1 subtype F genomic RNA			NR_4.0_60167.4
+  HIV-1 viral RNA fragment			NR_4.0_04792.1
+  HMKT-7			NR_4.0_16594.1,      NR_4.0_86832.1,      NR_4.0_64208.1,      NR_4.0_26836.2,      NR_4.0_70895.1
+  HO endonuclease 3' UTR binding sequence			NR_4.0_27661.1
+  HSP RNA			NR_4.0_52157.1
+  HUMAN TRNAGLY MICROHELIX			NR_4.0_65010.1
+  Hammerhead Ribozyme			NR_4.0_59651.1
+  Hammerhead ribozyme			NR_4.0_36634.1,      NR_4.0_40252.1
+  Hepatitis Delta virus ribozyme			NR_4.0_73165.3
+  Holo L-16 ScaI Tetrahymena ribozyme			NR_4.0_98811.1
+  Human MenBeta minihelix ending in CCACC			NR_4.0_49730.1
+  IAPV-IRES			NR_4.0_04836.1,      NR_4.0_78250.1
+  ICG tRNA Arg (P/P)			NR_4.0_60125.3
+  IRES			NR_4.0_32878.1,      NR_4.0_28858.1,     NR_4.0_99969.1
+  IRES RNA			NR_4.0_69484.1,     NR_4.0_71771.1,     NR_4.0_47156.1,     NR_4.0_81584.1,     NR_4.0_96438.1
+  ISOLEUCYL-TRNA			NR_4.0_03715.1
+  ITS2			NR_4.0_18489.8
+  Influenza A polymerase vRNA promoter 5' [...]			NR_4.0_29002.1
+  Influenza virus polymerase vRNA promoter[...]			NR_4.0_45043.3
+  Initiator Met-tRNA-i			NR_4.0_46502.1
+  Internal Transcribed Spacer 1			NR_4.0_93862.1
+  JIIIabc			NR_4.0_90687.1
+  JIIIabc RNA (68-MER)			NR_4.0_20951.1
+  L-glutamine riboswitch (58-MER)			NR_4.0_69350.1,      NR_4.0_04601.1
+  L1 Ribozyme RNA Ligase			NR_4.0_60142.1,      NR_4.0_36247.1
+  LSU rRNA chain 10			NR_4.0_00321.1
+  LSU rRNA chain 11			NR_4.0_32401.1
+  LSU rRNA chain 13			NR_4.0_90146.1
+  LSU rRNA chain 2			NR_4.0_54580.1
+  LSU rRNA chain 3			NR_4.0_68504.1
+  LSU rRNA chain 4			NR_4.0_36360.1
+  LSU rRNA chain 5			NR_4.0_41145.1
+  LSU rRNA chain 7			NR_4.0_90326.1
+  LSU rRNA chain 8			NR_4.0_39845.1
+  LSU rRNA chain 9			NR_4.0_08919.1
+  LSU rRNA_2			NR_4.0_08125.1
+  LSU-beta			NR_4.0_29429.1
+  La Crosse virus 3' vRNA (1-16)			NR_4.0_66417.1
+  Large rRNA			NR_4.0_42139.1
+  Loop A and Loop B Ribozyme strand			NR_4.0_02086.1
+  Lysine Riboswitch RNA			NR_4.0_22479.1
+  M-box Riboswitch RNA			NR_4.0_47162.1
+  MALACHITE GREEN APTAMER RNA			NR_4.0_74421.1
+  MRE fragment of PAN RNA			NR_4.0_05648.1
+  MRNA			NR_4.0_46764.1
+  Met-tRNA			NR_4.0_19931.1
+  Met-tRNA-iMet			NR_4.0_37355.1
+  Mitochondrial Precursor tRNA-Tyr			NR_4.0_31982.1
+  Modified Octamer RNA			NR_4.0_99259.1
+  Mus musculus 5S rRNA			NR_4.0_21609.1
+  Mutated adenine riboswitch aptamer			NR_4.0_73445.1
+  Myotonic Dystrophy Type 2 RNA			NR_4.0_26582.1
+  NMT1_Mn (46-MER)			NR_4.0_74244.1
+  NTR			NR_4.0_76225.1
+  Nascent RNA			NR_4.0_03509.1
+  NiCo riboswitch RNA			NR_4.0_88154.1
+  Non-template RNA (36-MER)			NR_4.0_22144.1
+  O2'methyl-RNA			NR_4.0_01981.1
+  OLE* RNA			NR_4.0_72196.1
+  Octanucleotide			NR_4.0_93661.1,      NR_4.0_78218.1
+  P-SITE TRNA			NR_4.0_70335.1
+  P-Site tRNA			NR_4.0_68467.9
+  P-site ASL SufA6			NR_4.0_45251.1
+  P-site ASLPro			NR_4.0_52787.1
+  P-site Isoleucine tRNA (77-MER)			NR_4.0_45098.2
+  P-site Leu-tRNA(Leu)			NR_4.0_79803.1
+  P-site Phe-tRNA(Phe)			NR_4.0_22108.1
+  P-site fMet-tRNAMet			NR_4.0_65635.2
+  P-site tRNA			NR_4.0_29127.1,      NR_4.0_28277.1,      NR_4.0_29074.1,      NR_4.0_12494.1,      NR_4.0_87112.1,      NR_4.0_23520.1,      NR_4.0_97621.1,      NR_4.0_22323.3,      NR_4.0_32990.2
+  P-site tRNA ASL fragment			NR_4.0_17333.1,      NR_4.0_02491.1
+  P-site tRNA SufA6			NR_4.0_75816.1
+  P-site tRNA(Pro)			NR_4.0_27000.1
+  P-site tRNA-Pro			NR_4.0_56101.3
+  P-site tRNA-fMet			NR_4.0_72820.1
+  P-site-tRNA			NR_4.0_01551.1
+  P-tRNA			NR_4.0_10909.1
+  P-tRNA(Leu)			NR_4.0_57792.1
+  P/E tRNA			NR_4.0_79851.1,      NR_4.0_83547.1
+  P/E-Site tRNA			NR_4.0_47859.1
+  P/E-site tRNA			NR_4.0_11689.3
+  P3 domain of the RNA component of RNase [...]			NR_4.0_01806.1
+  P4-P6 RNA RIBOZYME DOMAIN			NR_4.0_39627.4
+  PAS RNA			NR_4.0_83142.1
+  PBE-5A (5'-R(P*UP*GP*UP*AP*AP*AP*UP*A)-3[...]			NR_4.0_77859.1
+  PBE-5C (5'-R(P*UP*GP*UP*AP*CP*AP*UP*A)-3[...]			NR_4.0_36895.1,      NR_4.0_25251.1
+  PBE-5G (5'-R(P*UP*GP*UP*AP*GP*AP*UP*A)-3[...]			NR_4.0_43688.1,      NR_4.0_31724.1
+  PBE-5U (5'-R(P*UP*GP*UP*AP*UP*AP*UP*A)-3[...]			NR_4.0_98426.1,      NR_4.0_24803.1
+  PE RNA			NR_4.0_28207.3
+  PHE tRNA			NR_4.0_38961.3
+  PRPP Riboswitch			NR_4.0_98802.1
+  PRPP riboswitch			NR_4.0_40570.1
+  Pepper (49-MER)			NR_4.0_54098.1
+  Potato leafroll virus xrRNA			NR_4.0_29875.1
+  PreQ1 riboswitch			NR_4.0_95363.4
+  PreQ1-II Riboswitch			NR_4.0_27306.1
+  PreQ1-II riboswitch			NR_4.0_55964.1
+  Pri-miR-16-2 (78-MER)			NR_4.0_20722.1
+  Pseudomonas aeruginosa strain SMC4485 CR[...]			NR_4.0_74932.1
+  R06			NR_4.0_33835.1
+  R1			NR_4.0_69305.1
+  R1 REPEAT RNA CLEAVAGE PRODUCT			NR_4.0_91365.1
+  R1 REPEAT RNA SUBSTRATE MIMIC			NR_4.0_31288.1
+  R2			NR_4.0_40133.1
+  R3 REPEAT RNA CLEAVAGE PRODUCT			NR_4.0_88374.1
+  RIBONUCLEASE P			NR_4.0_72627.1
+  RIBONUCLEASE P RNA			NR_4.0_20339.1
+  RMV RNA			NR_4.0_53179.1
+  RNA			NR_4.0_80216.1,      NR_4.0_99878.1,      NR_4.0_96183.1,      NR_4.0_27264.1,      NR_4.0_03885.1,      NR_4.0_55334.1,      NR_4.0_46873.1,      NR_4.0_41964.1,      NR_4.0_23929.3,      NR_4.0_15997.1,      NR_4.0_77683.1,      NR_4.0_75344.1,      NR_4.0_32983.1,      NR_4.0_80423.1,      NR_4.0_72182.1,      NR_4.0_33912.2,      NR_4.0_93033.1,      NR_4.0_84932.1,      NR_4.0_66843.1,      NR_4.0_66387.1,      NR_4.0_22024.1,      NR_4.0_11651.1,      NR_4.0_06923.1,      NR_4.0_05337.1,      NR_4.0_93567.1,      NR_4.0_65602.1,      NR_4.0_24161.1,      NR_4.0_95458.1,      NR_4.0_65166.1,      NR_4.0_42919.1,      NR_4.0_80768.1,      NR_4.0_58168.1,      NR_4.0_70244.1,      NR_4.0_97023.1,      NR_4.0_40155.1,      NR_4.0_16664.1,      NR_4.0_01597.2,      NR_4.0_98839.1,      NR_4.0_70509.2,      NR_4.0_30485.1,      NR_4.0_31816.1,      NR_4.0_08337.1,      NR_4.0_45428.1,      NR_4.0_79533.1,      NR_4.0_11986.2,      NR_4.0_27096.1
+  RNA (101-MER)			NR_4.0_79426.1
+  RNA (102-mer)			NR_4.0_88542.1
+  RNA (108-MER)			NR_4.0_53735.1
+  RNA (11-MER)			NR_4.0_64827.1
+  RNA (110-MER)			NR_4.0_07895.1
+  RNA (111-MER)			NR_4.0_54615.1
+  RNA (116-MER)			NR_4.0_74101.1,      NR_4.0_94618.1
+  RNA (118-MER)			NR_4.0_63930.1
+  RNA (119-MER)			NR_4.0_88210.1
+  RNA (121-MER)			NR_4.0_71748.1
+  RNA (122-MER)			NR_4.0_17405.9
+  RNA (123-MER)			NR_4.0_51824.1
+  RNA (127-MER)			NR_4.0_94866.2
+  RNA (1519-MER)			NR_4.0_23083.1
+  RNA (166-MER)			NR_4.0_70717.1
+  RNA (167-MER)			NR_4.0_20272.1
+  RNA (17-MER)			NR_4.0_38498.1,      NR_4.0_70040.1
+  RNA (174-MER)			NR_4.0_29848.1
+  RNA (1743-MER)			NR_4.0_73142.1
+  RNA (19-MER)			NR_4.0_02729.1,      NR_4.0_37848.1
+  RNA (192-MER)			NR_4.0_57460.3
+  RNA (20-MER)			NR_4.0_17061.1
+  RNA (25-MER)			NR_4.0_48359.1,      NR_4.0_84568.1,      NR_4.0_29415.1,      NR_4.0_81333.1,      NR_4.0_79502.1,      NR_4.0_74559.1,      NR_4.0_02858.1,      NR_4.0_24791.1
+  RNA (26-MER)			NR_4.0_76733.1,      NR_4.0_11127.1,      NR_4.0_02574.1
+  RNA (27-mer)			NR_4.0_20373.1
+  RNA (2732-MER)			NR_4.0_88987.9
+  RNA (28-MER)			NR_4.0_83946.1,      NR_4.0_44743.1,      NR_4.0_14193.1
+  RNA (28-mer)			NR_4.0_18914.1
+  RNA (2820-MER)			NR_4.0_72592.1
+  RNA (2842-MER)			NR_4.0_15780.1
+  RNA (2862-MER)			NR_4.0_03110.1
+  RNA (29-MER)			NR_4.0_88912.1,      NR_4.0_10362.1
+  RNA (3-MER)			NR_4.0_01601.1
+  RNA (30-MER)			NR_4.0_34432.1
+  RNA (31-MER)			NR_4.0_62395.1,      NR_4.0_04400.1,      NR_4.0_93701.1,      NR_4.0_17548.1,      NR_4.0_13614.1
+  RNA (32-MER)			NR_4.0_80808.1,      NR_4.0_69759.1,      NR_4.0_68262.1
+  RNA (33-MER)			NR_4.0_80276.3,      NR_4.0_31091.1
+  RNA (34-MER)			NR_4.0_94432.1,      NR_4.0_51196.1,      NR_4.0_46231.1
+  RNA (35-MER)			NR_4.0_67574.1,      NR_4.0_45731.1,      NR_4.0_09807.1,      NR_4.0_20758.1,      NR_4.0_25919.1,      NR_4.0_14315.1,      NR_4.0_65533.1,      NR_4.0_39458.1
+  RNA (36-MER)			NR_4.0_73441.1,      NR_4.0_65081.1,      NR_4.0_26426.2,      NR_4.0_24663.1,      NR_4.0_22049.1
+  RNA (37-MER)			NR_4.0_81627.1,      NR_4.0_41425.1,      NR_4.0_84559.1
+  RNA (38-MER)			NR_4.0_20773.1,      NR_4.0_96851.1
+  RNA (39-MER)			NR_4.0_59164.1,      NR_4.0_87561.1,      NR_4.0_57443.1,      NR_4.0_53766.1,      NR_4.0_52747.1
+  RNA (40-MER)			NR_4.0_36746.1,      NR_4.0_14866.1
+  RNA (42-MER)			NR_4.0_86183.1,      NR_4.0_93255.1,      NR_4.0_58017.1
+  RNA (43-MER)			NR_4.0_92069.1,      NR_4.0_43343.1,      NR_4.0_37961.1
+  RNA (45-MER)			NR_4.0_12719.1,      NR_4.0_48149.1,      NR_4.0_85950.1,      NR_4.0_56742.1,      NR_4.0_56532.1,      NR_4.0_42371.1,      NR_4.0_38259.1,      NR_4.0_29179.1,      NR_4.0_28720.1,      NR_4.0_25547.1
+  RNA (47-MER)			NR_4.0_14978.1,      NR_4.0_67474.1,      NR_4.0_37028.1,      NR_4.0_23835.1,      NR_4.0_68259.1
+  RNA (478-MER)			NR_4.0_53658.1,      NR_4.0_70878.1
+  RNA (5' GP*GP*CP*UP*CP*GP*GP*CP*GP*GP*CP[...]			NR_4.0_55576.1,      NR_4.0_82754.1
+  RNA (5'-(*AP*AP*AP*AP*A)-3')			NR_4.0_74135.1,      NR_4.0_11258.1
+  RNA (5'-(*AP*GP*GP*GP*AP*UP)-3')			NR_4.0_22602.1
+  RNA (5'-(*AP*GP*GP*GP*UP*GP)-3')			NR_4.0_98920.1
+  RNA (5'-(AP*AP*AP*AP*AP*AP*AP*AP*AP)-3')			NR_4.0_14977.1,      NR_4.0_08596.1
+  RNA (5'-D(*(APC))-R(P*GP*U)-3')			NR_4.0_77810.2
+  RNA (5'-D(*(ATP))-R(P*A)-3')			NR_4.0_60897.1
+  RNA (5'-D(*(ATP))-R(P*AP*A)-3')			NR_4.0_73502.1
+  RNA (5'-D(*(GDM))-R(P*AP*AP*U)-3')			NR_4.0_32411.1
+  RNA (5'-D(*(GDM))-R(P*AP*AP*UP*C)-3')			NR_4.0_66736.1
+  RNA (5'-D(*(GTA))-R(P*AP*AP*A)-3')			NR_4.0_88047.3
+  RNA (5'-D(*(GTA))-R(P*GP*UP[...]			NR_4.0_39338.1
+  RNA (5'-D(*(GTG))-R(P*A)-3')			NR_4.0_36733.1
+  RNA (5'-D(*(GTP))-R(P*CP*AP*G)-3')			NR_4.0_84308.1
+  RNA (5'-D(*(GTP))-R(P*GP*GP*G)-3')			NR_4.0_32986.2
+  RNA (5'-D(*(GTP))-R(P*GP*GP*GP*GP*G)-3')			NR_4.0_00732.1
+  RNA (5'-D(*(GTP))-R(P*GP*GP*GP*GP*GP*GP*[...]			NR_4.0_57614.1
+  RNA (5'-D(*(M7G))-R(P*(A2M)P*UP*UP*A)-3'[...]			NR_4.0_11762.2
+  RNA (5'-D(*(M7G))-R(P*AP*AP*UP*CP*U)-3')			NR_4.0_77521.1
+  RNA (5'-D(*AP*UP*GP*GP*AP*GP*AP*GP*G)-3'[...]			NR_4.0_56610.1
+  RNA (5'-D(*GP*CP*AP*GP*AP*CP*UP*(56B)P*U[...]			NR_4.0_90823.1
+  RNA (5'-D(*GP*GP*UP*GP*GP*CP*UP*GP*UP*U)[...]			NR_4.0_33558.1
+  RNA (5'-D(P*AP*GP*AP*CP*AP*GP*CP*AP*UP*U[...]			NR_4.0_42560.1
+  RNA (5'-D(P*GP*AP*CP*UP*(70U)P*UP*UP*(12[...]			NR_4.0_61644.1
+  RNA (5'-D(P*GP*CP*UP*GP*UP*GP*(5MU)P*UP*[...]			NR_4.0_51674.1
+  RNA (5'-D(P*UP*UP*AP*CP*AP*AP*CP*CP*UP*A[...]			NR_4.0_43992.1
+  RNA (5'-D(UP*UP*UP*UP*UP*UP*U)-3')			NR_4.0_64642.1,      NR_4.0_09504.1
+  RNA (5'-R(*(5BU)P*AP*GP*GP*GP*UP*UP*AP*G[...]			NR_4.0_70081.1,      NR_4.0_07832.1
+  RNA (5'-R(*(6MZ)P*C)-3')			NR_4.0_33222.1,      NR_4.0_19822.1,      NR_4.0_63313.1,      NR_4.0_10291.1
+  RNA (5'-R(*(6MZ)P*CP*A)-3')			NR_4.0_13974.1
+  RNA (5'-R(*(6MZ)P*CP*UP*AP*G)-3')			NR_4.0_02657.1,      NR_4.0_03325.1
+  RNA (5'-R(*(ATP)P*AP*AP*A)-3')			NR_4.0_43542.1
+  RNA (5'-R(*(ATP)P*UP*AP*UP*AP*UP*AP*UP*A[...]			NR_4.0_44340.1
+  RNA (5'-R(*(BRUP*GP*AP*GP*GP*U)-3')			NR_4.0_81653.1
+  RNA (5'-R(*(CFZ)P*CP*(CFZ)P*CP*(GF2)P*GP*(GF2[...])			NR_4.0_97537.1
+  RNA (5'-R(*(CFZ)P*GP*(AF2)P*AP*(UFT)P*UP*(CFZ[...])			NR_4.0_28980.1,      NR_4.0_06254.1
+  RNA (5'-R(*(CTP))-R(P*CP*UP*CP*GP*A)-3')			NR_4.0_21296.1
+  RNA (5'-R(*(CTP))-R(P*UP*CP*GP*A)-3')			NR_4.0_20925.1
+  RNA (5'-R(*(CTP)P*CP*CP*CP*C)-3')			NR_4.0_03341.1
+  RNA (5'-R(*(GCP)P*G)-3')			NR_4.0_96460.1
+  RNA (5'-R(*(GTP)P*GP*CP*CP*GP*CP*CP*C)-3[...]			NR_4.0_71389.1
+  RNA (5'-R(*(GTP)P*GP*CP*GP*CP*GP*CP*GP*C[...]			NR_4.0_37536.1
+  RNA (5'-R(*(LCC)P*(LCC)P*(LCA)P*(LCG)P*A[...]			NR_4.0_49339.2
+  RNA (5'-R(*(LCC)P*(LCC)P*(LCC)P*(LCG)P*A[...]			NR_4.0_23118.1,      NR_4.0_07962.1,      NR_4.0_16232.2
+  RNA (5'-R(*(LCC)P*(LCC)P*(LCC)P*GP*AP*CP[...]			NR_4.0_01949.4
+  RNA (5'-R(*(LCC)P*(TLN)P*(LCG)P*UP*AP*CP[...]			NR_4.0_84026.2
+  RNA (5'-R(*(LKC)P*(LCC)P*(LCC)P*(LCG)P*A[...]			NR_4.0_69465.1
+  RNA (5'-R(*(U33)P*GP*IP*GP*GP*U)-3')			NR_4.0_58299.1
+  RNA (5'-R(*(UTP))-R(P*CP*GP*A)-3')			NR_4.0_89748.1
+  RNA (5'-R(*(UTP)P*UP*UP*U)-3')			NR_4.0_65232.1
+  RNA (5'-R(*A)-D(P*UP*GP*UP*UP*CP*UP*GP*U[...]			NR_4.0_73713.1,      NR_4.0_80882.1
+  RNA (5'-R(*A*AP*UP*UP*UP*UP*UP*G)-3')			NR_4.0_05778.1
+  RNA (5'-R(*A*AP*UP*UP*UP*UP*UP*GP*AP*G)-[...]			NR_4.0_24908.1
+  RNA (5'-R(*AP*A*AP*AP*GP*CP*C)-3')			NR_4.0_37940.1
+  RNA (5'-R(*AP*AP*AP*(MUM)P*UP*CP*CP*U)-3[...]			NR_4.0_21975.1
+  RNA (5'-R(*AP*AP*AP*AP*AP*A)-3')			NR_4.0_68616.1,      NR_4.0_60226.1
+  RNA (5'-R(*AP*AP*AP*AP*AP*AP*A)-3')			NR_4.0_73115.1,      NR_4.0_20784.1
+  RNA (5'-R(*AP*AP*AP*AP*AP*AP*AP*AP*AP*AP[...]			NR_4.0_30399.1,      NR_4.0_99388.1,      NR_4.0_68289.1,      NR_4.0_12757.1,      NR_4.0_71544.1,      NR_4.0_09810.1
+  RNA (5'-R(*AP*AP*AP*AP*AP*AP*AP*AP*AP*G)[...]			NR_4.0_73988.1
+  RNA (5'-R(*AP*AP*AP*AP*AP*UP*AP*AP*CP*AP[...]			NR_4.0_86185.1
+  RNA (5'-R(*AP*AP*AP*GP*GP*AP*AP*UP*UP*GP[...]			NR_4.0_66547.1,      NR_4.0_63837.1
+  RNA (5'-R(*AP*AP*AP*UP*CP*GP*GP*GP*AP*UP[...]			NR_4.0_67797.1
+  RNA (5'-R(*AP*AP*AP*UP*UP*GP*UP*AP*CP*AP[...]			NR_4.0_03624.1
+  RNA (5'-R(*AP*AP*AP*UP*UP*U)-3')			NR_4.0_27039.1
+  RNA (5'-R(*AP*AP*CP*AP*GP*AP*GP*UP*GP*CP[...]			NR_4.0_51034.1
+  RNA (5'-R(*AP*AP*CP*GP*AP*UP*GP*GP*AP*CP[...]			NR_4.0_26115.1,      NR_4.0_51980.1
+  RNA (5'-R(*AP*AP*CP*GP*AP*UP*UP*UP*UP*AP[...]			NR_4.0_09827.1
+  RNA (5'-R(*AP*AP*CP*UP*AP*AP*A)-3')			NR_4.0_78430.1
+  RNA (5'-R(*AP*AP*GP*AP*AP*GP*AP*AP*AP*UP[...]			NR_4.0_45527.1
+  RNA (5'-R(*AP*AP*GP*GP*AP*CP*UP*AP*GP*C)[...]			NR_4.0_14212.1
+  RNA (5'-R(*AP*AP*GP*GP*AP*CP*UP*U)-3')			NR_4.0_19056.1
+  RNA (5'-R(*AP*AP*GP*UP*CP*UP*CP*CP*AP*GP[...]			NR_4.0_31084.1,      NR_4.0_81203.2,      NR_4.0_09443.2,      NR_4.0_52453.4,      NR_4.0_33790.1
+  RNA (5'-R(*AP*AP*UP*AP*AP*U)-3')			NR_4.0_98212.1
+  RNA (5'-R(*AP*AP*UP*UP*UP*UP*UP*GP*AP*C)[...]			NR_4.0_20024.1
+  RNA (5'-R(*AP*CP*AP*C)-3')			NR_4.0_98524.1
+  RNA (5'-R(*AP*CP*AP*CP*GP*GP*CP*GP*AP*(3[...]			NR_4.0_98913.1
+  RNA (5'-R(*AP*CP*AP*U)-3')			NR_4.0_43515.1,      NR_4.0_23205.3
+  RNA (5'-R(*AP*CP*AP*UP*CP*G)-3')			NR_4.0_41745.1
+  RNA (5'-R(*AP*CP*AP*UP*GP*UP*UP*UP*UP*CP[...]			NR_4.0_19645.1
+  RNA (5'-R(*AP*CP*CP*AP*G)-D(P*(DOC))-3')[...]			NR_4.0_11911.1
+  RNA (5'-R(*AP*CP*CP*AP*GP*A)-3')			NR_4.0_92073.1
+  RNA (5'-R(*AP*CP*CP*GP*UP*CP*AP*GP*AP*GP[...]			NR_4.0_16825.1
+  RNA (5'-R(*AP*GP*AP*CP*G)-3')			NR_4.0_04359.1
+  RNA (5'-R(*AP*GP*AP*GP*AP*AP*CP*CP*CP*GP[...]			NR_4.0_15094.1
+  RNA (5'-R(*AP*GP*AP*GP*AP*GP*A)-3')			NR_4.0_23301.1
+  RNA (5'-R(*AP*GP*AP*GP*AP*GP*AP*GP*AP*G)[...]			NR_4.0_14757.1
+  RNA (5'-R(*AP*GP*AP*GP*AP*GP*AP*UP*AP*AP[...]			NR_4.0_06970.1
+  RNA (5'-R(*AP*GP*AP*GP*C)-3')			NR_4.0_96728.1
+  RNA (5'-R(*AP*GP*AP*GP*G)-3')			NR_4.0_10541.1
+  RNA (5'-R(*AP*GP*AP*GP*GP*(2IA))-3')			NR_4.0_88937.1
+  RNA (5'-R(*AP*GP*AP*UP*CP*AP*A)-3')			NR_4.0_48507.1
+  RNA (5'-R(*AP*GP*CP*AP*CP*CP*GP*UP*AP*AP[...]			NR_4.0_08389.1
+  RNA (5'-R(*AP*GP*GP*(5BU)P*G)-3')			NR_4.0_16634.1
+  RNA (5'-R(*AP*GP*GP*(6MZ)P*CP*AP*U)-3')			NR_4.0_15756.1
+  RNA (5'-R(*AP*GP*GP*A)-3')			NR_4.0_64994.1
+  RNA (5'-R(*AP*GP*GP*AP*CP*UP*G)-3')			NR_4.0_15161.1
+  RNA (5'-R(*AP*GP*GP*AP*GP*AP*GP*AP*GP*AP[...]			NR_4.0_62068.1
+  RNA (5'-R(*AP*GP*GP*CP*GP*GP*GP*CP*AP*G)[...]			NR_4.0_49582.1
+  RNA (5'-R(*AP*GP*GP*GP*AP*CP*UP*AP*GP*A)[...]			NR_4.0_43595.1
+  RNA (5'-R(*AP*GP*GP*UP*AP*A)-3')			NR_4.0_49451.1
+  RNA (5'-R(*AP*GP*U)-3')			NR_4.0_35335.1
+  RNA (5'-R(*AP*GP*UP*AP*GP*AP*AP*AP*CP*AP[...]			NR_4.0_67400.2
+  RNA (5'-R(*AP*GP*UP*AP*GP*AP*UP*UP*AP*GP[...]			NR_4.0_86033.1,      NR_4.0_38306.1
+  RNA (5'-R(*AP*GP*UP*C)-D(P*U)-R(P*CP*CP*[...]			NR_4.0_91027.1
+  RNA (5'-R(*AP*GP*UP*U)-3')			NR_4.0_83260.1
+  RNA (5'-R(*AP*GP*UP*UP*GP*UP*UP*AP*GP*UP[...]			NR_4.0_17090.1
+  RNA (5'-R(*AP*U*AP*AP*CP*UP*A)-3')			NR_4.0_47084.1
+  RNA (5'-R(*AP*UP*A)-3')			NR_4.0_16515.1
+  RNA (5'-R(*AP*UP*AP*AP*AP*AP*UP*AP*AP*CP[...]			NR_4.0_38607.1
+  RNA (5'-R(*AP*UP*AP*CP*CP*CP*GP*GP*CP*A)[...]			NR_4.0_85489.1
+  RNA (5'-R(*AP*UP*AP*U)-3')			NR_4.0_15685.1,      NR_4.0_05106.1
+  RNA (5'-R(*AP*UP*CP*AP*AP*GP*AP*GP*A)-3'[...]			NR_4.0_84294.1
+  RNA (5'-R(*AP*UP*CP*CP*CP*CP*CP*GP*UP*GP[...]			NR_4.0_99060.1
+  RNA (5'-R(*AP*UP*CP*CP*GP*CP*GP*GP*CP*CP[...]			NR_4.0_51944.1
+  RNA (5'-R(*AP*UP*CP*GP*AP*GP*AP*GP*GP*AP[...]			NR_4.0_93052.1,      NR_4.0_74183.1,      NR_4.0_60450.1,      NR_4.0_48000.1,      NR_4.0_28179.1
+  RNA (5'-R(*AP*UP*CP*GP*CP*CP*A)-3')			NR_4.0_75747.1
+  RNA (5'-R(*AP*UP*CP*GP*UP*GP*GP*AP*CP*CP[...]			NR_4.0_29245.1,      NR_4.0_55371.1
+  RNA (5'-R(*AP*UP*GP*GP*AP*GP*AP*GP*GP*A)[...]			NR_4.0_63879.1
+  RNA (5'-R(*AP*UP*GP*GP*AP*GP*AP*GP*GP*AP[...]			NR_4.0_80872.1
+  RNA (5'-R(*AP*UP*GP*GP*GP*CP*C)-3')			NR_4.0_56855.1
+  RNA (5'-R(*AP*UP*GP*UP*GP*AP*UP*UP*UP*UP[...]			NR_4.0_46700.1
+  RNA (5'-R(*AP*UP*UP*AP*A)-3')			NR_4.0_84195.1
+  RNA (5'-R(*AP*UP*UP*AP*AP*AP*CP*A)-3')			NR_4.0_00179.1
+  RNA (5'-R(*AP*UP*UP*AP*GP*C)-3')			NR_4.0_92778.1,      NR_4.0_11290.1
+  RNA (5'-R(*AP*UP*UP*UP*A)-3')			NR_4.0_65417.1
+  RNA (5'-R(*AP*UP*UP*UP*UP)-3')			NR_4.0_49650.1
+  RNA (5'-R(*AP*UP*UP*UP*UP*G)-3')			NR_4.0_81682.1
+  RNA (5'-R(*AP*UP*UP*UP*UP*U)-3')			NR_4.0_35406.1
+  RNA (5'-R(*C*UP*CP*CP*CP*C)-3')			NR_4.0_96295.1
+  RNA (5'-R(*CP*AP)-3')			NR_4.0_54627.6
+  RNA (5'-R(*CP*AP*CP*AP*GP*U)-3')			NR_4.0_47295.1
+  RNA (5'-R(*CP*AP*CP*CP*CP*UP*CP*GP*A)-3'[...]			NR_4.0_38519.1
+  RNA (5'-R(*CP*AP*CP*CP*GP*GP*AP*UP*GP*GP[...]			NR_4.0_58318.1
+  RNA (5'-R(*CP*AP*GP*GP*GP*UP*CP*GP*GP*C)[...]			NR_4.0_57060.1,      NR_4.0_14653.1
+  RNA (5'-R(*CP*AP*GP*UP*CP*AP*CP*UP*GP*G)[...]			NR_4.0_11942.1
+  RNA (5'-R(*CP*AP*UP*C)-D(P*U)-R(P*AP*CP*[...]			NR_4.0_20856.1
+  RNA (5'-R(*CP*AP*UP*GP*GP*C)-D(P*(DOC))-3')			NR_4.0_50754.1
+  RNA (5'-R(*CP*CP*(PPU))-3')			NR_4.0_60049.2
+  RNA (5'-R(*CP*CP*AP*CP*AP*GP*UP*CP*AP*CP[...]			NR_4.0_31286.1
+  RNA (5'-R(*CP*CP*AP*GP*CP*AP*UP*UP*AP*UP[...]			NR_4.0_83715.1
+  RNA (5'-R(*CP*CP*CP*CP*AP*UP*GP*CP*GP*AP[...]			NR_4.0_34610.1
+  RNA (5'-R(*CP*CP*CP*CP*CP*C)-3')			NR_4.0_73187.1
+  RNA (5'-R(*CP*CP*CP*CP*GP*GP*CP*CP*CP*CP[...]			NR_4.0_30433.1
+  RNA (5'-R(*CP*CP*CP*IP*UP*GP*GP*G)-3')			NR_4.0_57688.1
+  RNA (5'-R(*CP*CP*CP*UP*AP*CP*CP*C)-3')			NR_4.0_99451.1
+  RNA (5'-R(*CP*CP*CP*UP*CP*GP*A)-3')			NR_4.0_90383.1
+  RNA (5'-R(*CP*CP*GP*AP*UP*GP*GP*UP*AP*GP[...]			NR_4.0_63943.1
+  RNA (5'-R(*CP*CP*GP*CP*CP*GP*CP*GP*CP*CP[...]			NR_4.0_86272.1
+  RNA (5'-R(*CP*CP*GP*GP*AP*GP*GP*AP*AP*CP[...]			NR_4.0_56893.1
+  RNA (5'-R(*CP*CP*GP*GP*CP*GP*CP*CP*GP*G)[...]			NR_4.0_71188.2
+  RNA (5'-R(*CP*CP*GP*GP*GP*UP*GP*CP*UP*G)[...]			NR_4.0_19817.1
+  RNA (5'-R(*CP*CP*GP*UP*(MUM)P*GP*AP*AP*A[...]			NR_4.0_33499.1
+  RNA (5'-R(*CP*CP*UP*CP*GP*A)-3')			NR_4.0_68486.1
+  RNA (5'-R(*CP*CP*UP*GP*AP*UP*CP*AP*GP*GP[...]			NR_4.0_56182.1
+  RNA (5'-R(*CP*CP*UP*GP*CP*UP*UP*UP*GP*CP[...]			NR_4.0_75931.1
+  RNA (5'-R(*CP*CP*UP*GP*GP*UP*AP*UP*UP*GP[...]			NR_4.0_89332.1
+  RNA (5'-R(*CP*CP*UP*GP*UP*AP*AP*AP*UP*A)[...]			NR_4.0_92727.1
+  RNA (5'-R(*CP*GP*AP*CP*AP*CP*CP*UP*GP*AP[...]			NR_4.0_57733.1
+  RNA (5'-R(*CP*GP*AP*CP*GP*CP*UP*AP*GP*CP[...]			NR_4.0_72830.1
+  RNA (5'-R(*CP*GP*AP*GP*AP*GP*G)-3')			NR_4.0_78065.1
+  RNA (5'-R(*CP*GP*CP*(NF2)P*AP*AP*UP*UP*G[...]			NR_4.0_43749.1
+  RNA (5'-R(*CP*GP*CP*AP*CP*UP*AP*AP*CP*CP[...]			NR_4.0_17852.1
+  RNA (5'-R(*CP*GP*CP*AP*IP*GP*CP*G)-3')			NR_4.0_12322.1
+  RNA (5'-R(*CP*GP*CP*AP*UP*GP*CP*G)-3')			NR_4.0_34992.1
+  RNA (5'-R(*CP*GP*CP*GP*AP*AP*(5BU)P*(8RJ[...]			NR_4.0_30079.1
+  RNA (5'-R(*CP*GP*CP*UP*AP*CP*UP*AP*AP*CP[...]			NR_4.0_22223.1
+  RNA (5'-R(*CP*GP*CP*UP*AP*CP*UP*GP*AP*CP[...]			NR_4.0_46216.1
+  RNA (5'-R(*CP*GP*CP*UP*GP*U)-3')			NR_4.0_35553.1,      NR_4.0_67685.1
+  RNA (5'-R(*CP*GP*GP*UP*AP*CP*UP*AP*AP*AP[...]			NR_4.0_75945.1
+  RNA (5'-R(*CP*GP*UP*AP*AP*A)-3')			NR_4.0_20497.1
+  RNA (5'-R(*CP*GP*UP*CP*GP*U)-3')			NR_4.0_28499.1
+  RNA (5'-R(*CP*GP*UP*CP*UP*AP*CP*CP*CP*AP[...]			NR_4.0_43274.1
+  RNA (5'-R(*CP*GP*UP*GP*AP*CP*UP*CP*U)-3'[...]			NR_4.0_71760.1
+  RNA (5'-R(*CP*GP*UP*UP*AP*CP*GP*CP*(OMU)[...]			NR_4.0_38078.1
+  RNA (5'-R(*CP*UP*AP*(A2P)P*AP*CP*AP*A)-3[...]			NR_4.0_06133.1,      NR_4.0_40559.1
+  RNA (5'-R(*CP*UP*AP*GP*AP*CP*GP*UP*CP*UP[...]			NR_4.0_02622.1
+  RNA (5'-R(*CP*UP*C)-3')			NR_4.0_22605.1
+  RNA (5'-R(*CP*UP*CP*GP*A)-3')			NR_4.0_54899.2
+  RNA (5'-R(*CP*UP*CP*UP*GP*AP*CP*CP*GP*AP[...]			NR_4.0_50588.1
+  RNA (5'-R(*CP*UP*CP*UP*GP*UP*AP*UP*CP*UP[...]			NR_4.0_97196.1
+  RNA (5'-R(*CP*UP*GP*CP*UP*GP*GP*CP*UP*AP[...]			NR_4.0_95948.1
+  RNA (5'-R(*CP*UP*GP*GP*GP*CP*GP*G)-3')			NR_4.0_86909.1
+  RNA (5'-R(*CP*UP*GP*GP*GP*CP*GP*GP*GP*CP[...]			NR_4.0_73526.1,      NR_4.0_70550.1
+  RNA (5'-R(*CP*UP*GP*UP*GP*AP*AP*U)-3')			NR_4.0_97847.1
+  RNA (5'-R(*CP*UP*UP*AP*AP*AP*C)-3')			NR_4.0_63343.1
+  RNA (5'-R(*CP*UP*UP*GP*AP*CP*GP*CP*CP*UP[...]			NR_4.0_50660.1
+  RNA (5'-R(*CP*UP*UP*UP*UP*CP*CP*G)-3')			NR_4.0_74928.1
+  RNA (5'-R(*G*CP*AP*GP*AP*CP*UP*GP*UP*AP*[...]			NR_4.0_25771.1
+  RNA (5'-R(*G*GP*CP*UP*UP*U)-3')			NR_4.0_70523.1
+  RNA (5'-R(*G*GP*UP*AP*CP*AP*AP*CP*CP*UP*[...]			NR_4.0_14902.1
+  RNA (5'-R(*G*UP*GP*GP*UP*CP*UP*GP*AP*UP*[...]			NR_4.0_98916.1
+  RNA (5'-R(*GP*(CBV)P*CP*GP*GP*(6MZ)P*CP*[...]			NR_4.0_49696.1
+  RNA (5'-R(*GP*(CBV)P*CP*GP*GP*(6MZ)P*UP*[...]			NR_4.0_86088.1
+  RNA (5'-R(*GP*(CBV)P*CP*GP*GP*AP*CP*GP*G[...]			NR_4.0_30489.1
+  RNA (5'-R(*GP*(CBV)P*CP*GP*GP*AP*UP*GP*G[...]			NR_4.0_72319.1
+  RNA (5'-R(*GP*(CBV)P*GP*GP*GP*GP*AP*CP*G[...]			NR_4.0_77294.1
+  RNA (5'-R(*GP*AP*AP*A)-3')			NR_4.0_07579.1
+  RNA (5'-R(*GP*AP*AP*AP*AP*A)-3')			NR_4.0_76648.1
+  RNA (5'-R(*GP*AP*AP*GP*AP*AP*GP*AP*A)-3'[...]			NR_4.0_12183.1
+  RNA (5'-R(*GP*AP*AP*GP*AP*AP*GP*AP*G)-3'[...]			NR_4.0_68446.1
+  RNA (5'-R(*GP*AP*AP*GP*AP*GP*AP*GP*AP*G)[...]			NR_4.0_73942.1
+  RNA (5'-R(*GP*AP*AP*UP*AP*UP*AP*AP*UP*AP[...]			NR_4.0_67726.2
+  RNA (5'-R(*GP*AP*AP*UP*UP*GP*AP*CP*GP*G)[...]			NR_4.0_73303.1
+  RNA (5'-R(*GP*AP*CP*AP*CP*CP*UP*GP*AP*(U[...]			NR_4.0_20857.1
+  RNA (5'-R(*GP*AP*CP*AP*CP*CP*UP*GP*AP*UP[...]			NR_4.0_11791.1
+  RNA (5'-R(*GP*AP*CP*GP*CP*UP*AP*GP*CP*GP[...]			NR_4.0_22038.1
+  RNA (5'-R(*GP*AP*CP*UP*GP*AP*AP*CP*GP*AP[...]			NR_4.0_54107.1
+  RNA (5'-R(*GP*AP*GP*AP*GP*G)-3')			NR_4.0_84359.1
+  RNA (5'-R(*GP*AP*GP*AP*GP*GP*GP*GP*GP*UP[...]			NR_4.0_30330.1
+  RNA (5'-R(*GP*AP*GP*G)-3')			NR_4.0_35883.1
+  RNA (5'-R(*GP*AP*GP*UP*GP*CP*CP*AP*GP*A)[...]			NR_4.0_07634.1
+  RNA (5'-R(*GP*CP*(GRB)P*GP*CP*GP*GP*C)-3[...]			NR_4.0_63209.1
+  RNA (5'-R(*GP*CP*(GRB)P*GP*CP*GP*GP*CP*G[...]			NR_4.0_95407.1,      NR_4.0_80680.1
+  RNA (5'-R(*GP*CP*A)-3')			NR_4.0_93869.1
+  RNA (5'-R(*GP*CP*AP*AP*AP*AP*UP*AP*AP*CP[...]			NR_4.0_14903.1
+  RNA (5'-R(*GP*CP*AP*GP*AP*(A5M)P*UP*UP*AP[...]			NR_4.0_38795.1
+  RNA (5'-R(*GP*CP*AP*GP*CP*AP*GP*C)-3')			NR_4.0_99409.1,      NR_4.0_54156.1
+  RNA (5'-R(*GP*CP*AP*GP*UP*GP*GP*C)-3')			NR_4.0_34492.3
+  RNA (5'-R(*GP*CP*AP*UP*UP*CP*AP*AP*AP*GP[...]			NR_4.0_37403.1
+  RNA (5'-R(*GP*CP*CP*AP*AP*UP*GP*AP*GP*GP[...]			NR_4.0_43622.1
+  RNA (5'-R(*GP*CP*CP*GP*AP*UP*GP*AP*AP*UP[...]			NR_4.0_02956.1,      NR_4.0_07301.1
+  RNA (5'-R(*GP*CP*CP*GP*UP*UP*GP*AP*AP*GP[...]			NR_4.0_15188.1
+  RNA (5'-R(*GP*CP*CP*UP*(LCG)P*CP*CP*UP*G[...]			NR_4.0_03183.1,      NR_4.0_70938.1
+  RNA (5'-R(*GP*CP*CP*UP*AP*GP*GP*AP*UP*CP[...]			NR_4.0_33615.1
+  RNA (5'-R(*GP*CP*GP*AP*AP*UP*AP*UP*UP*CP[...]			NR_4.0_53884.1
+  RNA (5'-R(*GP*CP*GP*GP*CP*GP*GP*C)-3')			NR_4.0_68171.1,      NR_4.0_22904.1,      NR_4.0_17782.1
+  RNA (5'-R(*GP*CP*GP*GP*GP*GP*AP*CP*GP*AP[...]			NR_4.0_27657.1
+  RNA (5'-R(*GP*CP*GP*UP*UP*(5BU)P*GP*AP*A[...]			NR_4.0_58198.1
+  RNA (5'-R(*GP*CP*UP*AP*AP*UP*CP*UP*AP*CP[...]			NR_4.0_41594.1,      NR_4.0_31263.1
+  RNA (5'-R(*GP*CP*UP*GP*CP*(5BU)P*GP*C)-3[...]			NR_4.0_75428.1,      NR_4.0_49675.1
+  RNA (5'-R(*GP*CP*UP*GP*CP*GP*UP*AP*UP*UP[...]			NR_4.0_60255.1
+  RNA (5'-R(*GP*CP*UP*GP*CP*UP*GP*C)-3')			NR_4.0_43988.1
+  RNA (5'-R(*GP*CP*UP*UP*UP*UP*UP*GP*UP*UP[...]			NR_4.0_04435.1
+  RNA (5'-R(*GP*GP*(6MZ)P*CP*U)-3')			NR_4.0_80112.1,      NR_4.0_37244.1
+  RNA (5'-R(*GP*GP*(6MZ)P*CP*UP*AP*GP*UP*([...]			NR_4.0_96413.1
+  RNA (5'-R(*GP*GP*(H2U)P*A)-3')			NR_4.0_35987.1
+  RNA (5'-R(*GP*GP*A)-3')			NR_4.0_79699.1,      NR_4.0_18284.1
+  RNA (5'-R(*GP*GP*AP*AP*UP*UP*GP*AP*CP*GP[...]			NR_4.0_42548.1,      NR_4.0_13543.1
+  RNA (5'-R(*GP*GP*AP*CP*AP*GP*AP*UP*GP*GP[...]			NR_4.0_10796.1
+  RNA (5'-R(*GP*GP*AP*CP*GP*(M2G)P*AP*CP*G[...]			NR_4.0_96160.1
+  RNA (5'-R(*GP*GP*AP*CP*UP*(CBR)P*GP*AP*C[...]			NR_4.0_49464.1
+  RNA (5'-R(*GP*GP*AP*CP*UP*GP*AP*AP*(MIA)[...]			NR_4.0_31728.1
+  RNA (5'-R(*GP*GP*AP*CP*UP*UP*CP*GP*GP*UP[...]			NR_4.0_19715.1
+  RNA (5'-R(*GP*GP*AP*CP*UP*UP*UP*GP*GP*UP[...]			NR_4.0_55496.1
+  RNA (5'-R(*GP*GP*AP*GP*CP*UP*A)-3')			NR_4.0_50990.1
+  RNA (5'-R(*GP*GP*AP*GP*GP*GP*AP*G)-3')			NR_4.0_05128.1
+  RNA (5'-R(*GP*GP*AP*GP*UP*CP*CP*AP*AP*CP[...]			NR_4.0_66418.1
+  RNA (5'-R(*GP*GP*AP*GP*UP*UP*GP*AP*CP*GP[...]			NR_4.0_42883.1
+  RNA (5'-R(*GP*GP*AP*UP*CP*AP*CP*C)-3')			NR_4.0_53827.1
+  RNA (5'-R(*GP*GP*AP*UP*CP*AP*CP*CP*UP*CP[...]			NR_4.0_65768.1
+  RNA (5'-R(*GP*GP*AP*UP*UP*UP*GP*AP*CP*GP[...]			NR_4.0_90371.1
+  RNA (5'-R(*GP*GP*CP*AP*CP*GP*UP*GP*CP*U)[...]			NR_4.0_07550.1
+  RNA (5'-R(*GP*GP*CP*CP*AP*GP*AP*UP*CP*UP[...]			NR_4.0_45442.1
+  RNA (5'-R(*GP*GP*CP*CP*GP*AP*AP*AP*GP*GP[...]			NR_4.0_36371.1
+  RNA (5'-R(*GP*GP*CP*GP*AP*AP*GP*(6MZ)P*A[...]			NR_4.0_63269.1
+  RNA (5'-R(*GP*GP*CP*GP*CP*GP*CP*GP*CP*C)[...]			NR_4.0_18996.1
+  RNA (5'-R(*GP*GP*CP*GP*CP*GP*CP*GP*CP*GP[...]			NR_4.0_61988.1
+  RNA (5'-R(*GP*GP*CP*GP*CP*UP*UP*GP*CP*GP[...]			NR_4.0_49362.3
+  RNA (5'-R(*GP*GP*CP*UP*CP*CP*UP*UP*GP*GP[...]			NR_4.0_87225.1,      NR_4.0_58977.1,      NR_4.0_48927.1,      NR_4.0_15820.1,      NR_4.0_13759.1
+  RNA (5'-R(*GP*GP*CP*UP*CP*GP*GP*CP*GP*GP[...]			NR_4.0_28332.1,      NR_4.0_07071.1
+  RNA (5'-R(*GP*GP*CP*UP*UP*UP*UP*GP*AP*CP[...]			NR_4.0_30288.1,      NR_4.0_30317.1
+  RNA (5'-R(*GP*GP*G*GP*UP*UP*UP*UP*CP*CP*[...]			NR_4.0_00518.1
+  RNA (5'-R(*GP*GP*GP*AP*GP*UP*G)-3')			NR_4.0_39268.1
+  RNA (5'-R(*GP*GP*GP*AP*UP*UP*GP*AP*AP*AP[...]			NR_4.0_45930.3
+  RNA (5'-R(*GP*GP*GP*CP*AP*GP*GP*GP*AP*UP[...]			NR_4.0_15508.1
+  RNA (5'-R(*GP*GP*GP*CP*GP*CP*UP*CP*C)-3'[...]			NR_4.0_19513.1
+  RNA (5'-R(*GP*GP*GP*CP*UP*GP*CP*AP*CP*UP[...]			NR_4.0_81112.1
+  RNA (5'-R(*GP*GP*GP*G*UP*UP*UP*UP*AP*AP*[...]			NR_4.0_38769.1
+  RNA (5'-R(*GP*GP*GP*GP*AP*UP*GP*UP*GP*AP[...]			NR_4.0_08340.1
+  RNA (5'-R(*GP*GP*GP*GP*UP*CP*UP*AP*UP*GP[...]			NR_4.0_32675.1,      NR_4.0_21945.1
+  RNA (5'-R(*GP*GP*GP*GP*UP*UP*UP*UP*GP*GP[...]			NR_4.0_36938.1
+  RNA (5'-R(*GP*GP*GP*GP*UP*UP*UP*UP*UP*UP[...]			NR_4.0_66760.1
+  RNA (5'-R(*GP*GP*GP*UP*AP*GP*GP*G)-3')			NR_4.0_65712.1
+  RNA (5'-R(*GP*GP*UP*AP*AP*CP*UP*GP*UP*UP[...]			NR_4.0_48564.1
+  RNA (5'-R(*GP*GP*UP*AP*CP*UP*AP*AP*AP*AP[...]			NR_4.0_73746.1
+  RNA (5'-R(*GP*GP*UP*AP*GP*AP*CP*GP*CP*UP[...]			NR_4.0_70696.1,      NR_4.0_01689.1
+  RNA (5'-R(*GP*GP*UP*CP*AP*AP*AP*AP*UP*GP[...]			NR_4.0_11198.1
+  RNA (5'-R(*GP*GP*UP*GP*CP*UP*A)-3')			NR_4.0_61167.1
+  RNA (5'-R(*GP*GP*UP*GP*GP*GP*GP*AP*CP*GP[...]			NR_4.0_91124.3
+  RNA (5'-R(*GP*GP*UP*GP*GP*UP*GP*AP*AP*GP[...]			NR_4.0_83745.1
+  RNA (5'-R(*GP*UP*(MUM)P*GP*AP*AP*AP*A)-3[...]			NR_4.0_00121.1
+  RNA (5'-R(*GP*UP*AP*(OFC)P*GP*UP*AP*C)-3[...]			NR_4.0_19539.1
+  RNA (5'-R(*GP*UP*AP*A)-3')			NR_4.0_11028.1
+  RNA (5'-R(*GP*UP*AP*UP*AP*(RUS)P*AP*C)-3[...]			NR_4.0_59870.1
+  RNA (5'-R(*GP*UP*C)-D(P*U)-R(P*CP*CP*UP*[...]			NR_4.0_84831.1
+  RNA (5'-R(*GP*UP*CP*CP*C)-3')			NR_4.0_12865.1
+  RNA (5'-R(*GP*UP*CP*CP*CP*CP*AP*CP*(PGP)[...]			NR_4.0_68652.1
+  RNA (5'-R(*GP*UP*CP*CP*CP*CP*AP*CP*GP*CP[...]			NR_4.0_23218.1,      NR_4.0_56450.1
+  RNA (5'-R(*GP*UP*CP*UP*AP*CP*CP*CP*AP*CP[...]			NR_4.0_02070.1
+  RNA (5'-R(*GP*UP*CP*UP*AP*UP*GP*AP*AP*GP[...]			NR_4.0_79830.1
+  RNA (5'-R(*GP*UP*GP*(S5)P*AP*CP*AP*C)-3'[...]			NR_4.0_87746.1
+  RNA (5'-R(*GP*UP*GP*CP*AP*CP*AP*C)-3')			NR_4.0_67171.1
+  RNA (5'-R(*GP*UP*GP*GP*AP*AP*AP*GP*UP*GP[...]			NR_4.0_68474.1
+  RNA (5'-R(*GP*UP*GP*GP*GP*CP*CP*CP*A)-3'[...]			NR_4.0_53861.1
+  RNA (5'-R(*GP*UP*GP*GP*UP*CP*UP*GP*AP*UP[...]			NR_4.0_33763.1
+  RNA (5'-R(*GP*UP*GP*UP*AP*(RUS)P*AP*C)-3[...]			NR_4.0_88706.1
+  RNA (5'-R(*GP*UP*GP*UP*AP*UP*AP*C)-3')			NR_4.0_60906.1
+  RNA (5'-R(*GP*UP*GP*UP*UP*UP*AP*C)-3')			NR_4.0_02834.1
+  RNA (5'-R(*GP*UP*UP*AP*CP*AP*AP*UP*AP*AP[...]			NR_4.0_34288.1
+  RNA (5'-R(*GP*UP*UP*GP*AP*AP*AP*UP*CP*AP[...]			NR_4.0_56560.1,      NR_4.0_34353.1
+  RNA (5'-R(*GP*UP*UP*GP*UP*UP*UP*UP*GP*UP[...]			NR_4.0_42633.1,      NR_4.0_69142.1,      NR_4.0_51631.1,      NR_4.0_49747.1
+  RNA (5'-R(*GP*UP*UP*UP*AP*G)-3')			NR_4.0_29370.1
+  RNA (5'-R(*GP*UP*UP*UP*UP*U)-3')			NR_4.0_71483.1
+  RNA (5'-R(*GPPP*GP*AP*GP*CP*GP*UP*GP*CP*[...]			NR_4.0_53856.1
+  RNA (5'-R(*U*AP*AP*GP*GP*U)-3')			NR_4.0_93248.1,      NR_4.0_67835.1,      NR_4.0_63119.1,      NR_4.0_03625.1,      NR_4.0_02802.1
+  RNA (5'-R(*U*AP*CP*CP*GP*(GDO))-3')			NR_4.0_52691.1
+  RNA (5'-R(*U*UP*AP*GP*GP*U)-3')			NR_4.0_86209.1,      NR_4.0_80069.1,      NR_4.0_68707.1,      NR_4.0_65098.1,      NR_4.0_26439.1,      NR_4.0_24667.1
+  RNA (5'-R(*U*UP*UP*UP*G)-3')			NR_4.0_41488.1,      NR_4.0_06284.1
+  RNA (5'-R(*UP*(BGM)GP*AP*GP*GP*U)-3')			NR_4.0_82140.1
+  RNA (5'-R(*UP*(BGM)P*GP*UP*GP*U)-3')			NR_4.0_84537.1
+  RNA (5'-R(*UP*(US5)P*CP*GP*CP*G)-3')			NR_4.0_12080.1
+  RNA (5'-R(*UP*AP*AP*AP*AP*AP*AP*A)-3')			NR_4.0_93070.1
+  RNA (5'-R(*UP*AP*AP*CP*UP*UP*CP*UP*GP*UP[...]			NR_4.0_10920.1
+  RNA (5'-R(*UP*AP*AP*GP*GP*AP*GP*GP*UP*GP[...]			NR_4.0_81475.1
+  RNA (5'-R(*UP*AP*AP*UP*CP*GP*GP*GP*AP*UP[...]			NR_4.0_22527.1
+  RNA (5'-R(*UP*AP*CP*UP*GP*UP*GP*CP*CP*AP[...]			NR_4.0_28506.1
+  RNA (5'-R(*UP*AP*GP*AP*UP)-3')			NR_4.0_29423.1
+  RNA (5'-R(*UP*AP*GP*CP*CP*CP*C)-3')			NR_4.0_08327.1
+  RNA (5'-R(*UP*AP*GP*CP*UP*CP*C)-3')			NR_4.0_54592.1,      NR_4.0_31898.1
+  RNA (5'-R(*UP*AP*GP*GP*GP*UP*UP*AP*GP*GP[...]			NR_4.0_33458.1
+  RNA (5'-R(*UP*AP*GP*UP*AP*AP*UP*C)-3')			NR_4.0_78007.1
+  RNA (5'-R(*UP*AP*UP*AP*CP*AP*AP*CP*CP*UP[...]			NR_4.0_56203.1
+  RNA (5'-R(*UP*AP*UP*UP*UP*GP*UP*AP*AP*UP[...]			NR_4.0_65457.1
+  RNA (5'-R(*UP*CP*AP*C)-3')			NR_4.0_89128.1
+  RNA (5'-R(*UP*CP*AP*CP*CP*CP*UP*CP*GP*A)[...]			NR_4.0_90532.1
+  RNA (5'-R(*UP*CP*AP*UP*GP*UP*GP*CP*CP*AP[...]			NR_4.0_33378.1
+  RNA (5'-R(*UP*CP*GP*A)-3')			NR_4.0_90795.5
+  RNA (5'-R(*UP*CP*GP*AP*GP*AP*GP*G)-3')			NR_4.0_18318.1
+  RNA (5'-R(*UP*CP*GP*UP*AP*CP*GP*A)-3')			NR_4.0_04974.3
+  RNA (5'-R(*UP*CP*UP*CP*U)-3')			NR_4.0_03515.1
+  RNA (5'-R(*UP*CP*UP*UP*AP*UP*AP*UP*CP*U)[...]			NR_4.0_54448.1
+  RNA (5'-R(*UP*GP*AP*CP*C)-3')			NR_4.0_28334.1
+  RNA (5'-R(*UP*GP*AP*GP*CP*UP*UP*CP*GP*GP[...]			NR_4.0_90819.1
+  RNA (5'-R(*UP*GP*AP*UP*UP*CP*UP*CP*UP*AP[...]			NR_4.0_83556.1
+  RNA (5'-R(*UP*GP*CP*AP*UP*C*UP*UP*CP*CP*[...]			NR_4.0_83504.1,      NR_4.0_38973.1
+  RNA (5'-R(*UP*GP*CP*AP*UP*UP*UP*AP*AP*UP[...]			NR_4.0_26209.1
+  RNA (5'-R(*UP*GP*CP*CP*CP*GP*GP*G)-3')			NR_4.0_34246.1,      NR_4.0_18913.1
+  RNA (5'-R(*UP*GP*CP*GP*AP*CP*AP*GP*UP*CP[...]			NR_4.0_06055.1
+  RNA (5'-R(*UP*GP*GP*CP*GP*AP*GP*UP*GP*GP[...]			NR_4.0_79785.1
+  RNA (5'-R(*UP*GP*GP*GP*GP*U)-3')			NR_4.0_41566.1,      NR_4.0_09702.1,      NR_4.0_31074.2
+  RNA (5'-R(*UP*GP*GP*UP*AP*UP*UP*U)-3')			NR_4.0_98595.1
+  RNA (5'-R(*UP*GP*UP*AP*A)-3')			NR_4.0_35293.2
+  RNA (5'-R(*UP*GP*UP*AP*AP*A)-3')			NR_4.0_33509.1
+  RNA (5'-R(*UP*GP*UP*AP*AP*AP*UP*A)-3')			NR_4.0_24114.1
+  RNA (5'-R(*UP*GP*UP*AP*AP*CP*UP*UP*UP*A)[...]			NR_4.0_86160.1
+  RNA (5'-R(*UP*GP*UP*AP*CP*AP*UP*A)-3')			NR_4.0_11837.1
+  RNA (5'-R(*UP*GP*UP*AP*CP*UP*AP*UP*A)-3'[...]			NR_4.0_74556.1
+  RNA (5'-R(*UP*GP*UP*AP*UP*UP*UP*GP*UP*A)[...]			NR_4.0_08637.1
+  RNA (5'-R(*UP*GP*UP*GP*AP*AP*CP*C)-3')			NR_4.0_46386.1
+  RNA (5'-R(*UP*GP*UP*GP*AP*CP*C)-3')			NR_4.0_16115.1
+  RNA (5'-R(*UP*GP*UP*GP*CP*C)-3')			NR_4.0_46239.1
+  RNA (5'-R(*UP*GP*UP*GP*GP*U)-3')			NR_4.0_10469.1
+  RNA (5'-R(*UP*GP*UP*GP*UP*GP*UP*GP*UP*GP[...]			NR_4.0_97043.1
+  RNA (5'-R(*UP*GP*UP*GP*UP*GP*UP*UP*GP*UP[...]			NR_4.0_50067.1
+  RNA (5'-R(*UP*GP*UP*GP*UP*UP*UP*CP*UP)-3[...]			NR_4.0_36481.1
+  RNA (5'-R(*UP*GP*UP*UP*CP)-3')			NR_4.0_44600.1
+  RNA (5'-R(*UP*GP*UP*UP*CP*GP*AP*CP*GP*AP[...]			NR_4.0_49195.1,      NR_4.0_07714.1
+  RNA (5'-R(*UP*GP*UP*UP*CP*UP*CP*UP*AP*CP[...]			NR_4.0_53005.1
+  RNA (5'-R(*UP*GP*UP*UP*GP*UP*AP*UP*A)-3'[...]			NR_4.0_49071.1
+  RNA (5'-R(*UP*UP*AP*AP*AP*CP*C)-3')			NR_4.0_03690.1
+  RNA (5'-R(*UP*UP*AP*GP*G)-3')			NR_4.0_36229.1
+  RNA (5'-R(*UP*UP*AP*UP*AP*UP*AP*UP*AP*UP[...]			NR_4.0_51826.1
+  RNA (5'-R(*UP*UP*AP*UP*U)-3')			NR_4.0_40750.1
+  RNA (5'-R(*UP*UP*AP*UP*UP*AP*U)-3')			NR_4.0_00935.1
+  RNA (5'-R(*UP*UP*CP*AP*CP*UP*AP*AP*CP*AP[...]			NR_4.0_11173.1
+  RNA (5'-R(*UP*UP*CP*GP*GP*GP*CP*GP*CP*C)[...]			NR_4.0_92759.1
+  RNA (5'-R(*UP*UP*CP*UP*UP*AP*UP*UP*CP*UP*UP*A[...])			NR_4.0_24558.1
+  RNA (5'-R(*UP*UP*CP*UP*UP*GP*UP*CP*CP*AP[...]			NR_4.0_98594.1
+  RNA (5'-R(*UP*UP*GP*CP*CP*UP*GP*GP*AP*G)[...]			NR_4.0_26590.1
+  RNA (5'-R(*UP*UP*GP*CP*GP*UP*CP*AP*CP*AP[...]			NR_4.0_82951.1
+  RNA (5'-R(*UP*UP*GP*CP*GP*UP*CP*GP*CP*GP[...]			NR_4.0_52761.1
+  RNA (5'-R(*UP*UP*GP*CP*GP*UP*CP*GP*CP*UP[...]			NR_4.0_54657.1,      NR_4.0_48589.1
+  RNA (5'-R(*UP*UP*GP*CP*GP*UP*CP*GP*UP*UP[...]			NR_4.0_77275.1
+  RNA (5'-R(*UP*UP*GP*GP*GP*CP*CP*AP*GP*CP[...]			NR_4.0_45159.1
+  RNA (5'-R(*UP*UP*GP*GP*GP*CP*CP*GP*GP*CP[...]			NR_4.0_62516.1
+  RNA (5'-R(*UP*UP*GP*GP*UP*GP*G)-3')			NR_4.0_23462.1
+  RNA (5'-R(*UP*UP*GP*UP*AP*U)-3')			NR_4.0_13395.1
+  RNA (5'-R(*UP*UP*GP*UP*UP*GP*UP*UP*UP*UP[...]			NR_4.0_20306.1
+  RNA (5'-R(*UP*UP*GP*UP*UP*UP)-3')			NR_4.0_12819.1
+  RNA (5'-R(*UP*UP*U*AP*UP*CP*UP*(P))-3')			NR_4.0_86182.1
+  RNA (5'-R(*UP*UP*UP*AP*CP*AP*GP*UP*AP*UP[...]			NR_4.0_00896.1
+  RNA (5'-R(*UP*UP*UP*CP*CP)-3')			NR_4.0_96572.1,      NR_4.0_95409.1
+  RNA (5'-R(*UP*UP*UP*GP*CP*AP*GP*GP*AP*CP[...]			NR_4.0_66896.1
+  RNA (5'-R(*UP*UP*UP*U)-3')			NR_4.0_96683.5
+  RNA (5'-R(*UP*UP*UP*UP*UP*A)-3')			NR_4.0_18600.1
+  RNA (5'-R(*UP*UP*UP*UP*UP*UP*UP*AP*UP*CP[...]			NR_4.0_88000.1
+  RNA (5'-R(*UP*UP*UP*UP*UP*UP*UP*UP*UP*U)[...]			NR_4.0_80904.1,      NR_4.0_15144.1,      NR_4.0_51156.1,      NR_4.0_58704.1,      NR_4.0_38094.1
+  RNA (5'-R(*UP*UP*UP*UP*UP*UP*UP*UP*UP*UP[...]			NR_4.0_28676.1,      NR_4.0_25170.1,      NR_4.0_76723.1,      NR_4.0_80545.1,      NR_4.0_37308.1
+  RNA (5'-R(P*(DU)P*CP*GP*CP*GP*CP*G)-3')			NR_4.0_76177.1
+  RNA (5'-R(P*(PO4)P*(PO4)P*AP*AP*AP*AP*(P[...]			NR_4.0_49228.1,      NR_4.0_16274.1
+  RNA (5'-R(P*AP*A)-3')			NR_4.0_53003.1
+  RNA (5'-R(P*AP*AP*A)-3')			NR_4.0_65223.4
+  RNA (5'-R(P*AP*AP*AP*AP*A)-3')			NR_4.0_27566.1,    NR_4.0_23233.1
+  RNA (5'-R(P*AP*AP*AP*AP*AP*A)-3')			NR_4.0_51587.2,      NR_4.0_81754.1,      NR_4.0_79034.1,      NR_4.0_61996.1,      NR_4.0_56199.1,      NR_4.0_25498.1
+  RNA (5'-R(P*AP*AP*AP*AP*AP*AP*A)-3')			NR_4.0_40400.1,      NR_4.0_75005.1,      NR_4.0_45210.1
+  RNA (5'-R(P*AP*AP*AP*AP*AP*AP*AP*AP*A)-3[...]			NR_4.0_60938.1,      NR_4.0_35047.1,      NR_4.0_21747.1,      NR_4.0_18559.1
+  RNA (5'-R(P*AP*AP*AP*AP*AP*AP*AP*AP*AP*A[...]			NR_4.0_70891.1,      NR_4.0_16975.1,      NR_4.0_88473.1,      NR_4.0_77116.1,      NR_4.0_64573.1,      NR_4.0_73600.1,      NR_4.0_70596.1,      NR_4.0_57097.1,      NR_4.0_53989.1,      NR_4.0_51844.1,      NR_4.0_16745.1,      NR_4.0_16683.1,      NR_4.0_08946.1,      NR_4.0_86056.1,      NR_4.0_80929.1,      NR_4.0_80150.1,      NR_4.0_71916.1,      NR_4.0_66900.1,      NR_4.0_47419.1,      NR_4.0_24132.2,      NR_4.0_36783.1,      NR_4.0_83188.1,      NR_4.0_15098.1,      NR_4.0_71246.1,      NR_4.0_32430.1,      NR_4.0_58839.1
+  RNA (5'-R(P*AP*AP*AP*AP*AP*AP*AP*U)-3')			NR_4.0_17334.1
+  RNA (5'-R(P*AP*AP*AP*AP*UP*CP*UP*AP*UP*A[...]			NR_4.0_01773.1
+  RNA (5'-R(P*AP*AP*AP*CP*AP*CP*CP*AP*UP*U[...]			NR_4.0_94871.1
+  RNA (5'-R(P*AP*AP*AP*GP*G)-3')			NR_4.0_64079.1
+  RNA (5'-R(P*AP*AP*AP*UP*AP*A)-3')			NR_4.0_51148.1,      NR_4.0_26105.1
+  RNA (5'-R(P*AP*AP*AP*UP*AP*AP*CP*AP*UP*U[...]			NR_4.0_97545.1
+  RNA (5'-R(P*AP*AP*AP*UP*UP*U)-3')			NR_4.0_02127.1
+  RNA (5'-R(P*AP*AP*CP*GP*UP*UP*AP*UP*CP*U[...]			NR_4.0_27448.1
+  RNA (5'-R(P*AP*AP*CP*UP*AP*GP*UP*UP*AP*A[...]			NR_4.0_65327.1
+  RNA (5'-R(P*AP*AP*UP*AP*AP*AP*C)-3')			NR_4.0_85531.1
+  RNA (5'-R(P*AP*AP*UP*AP*AP*AP*GP*G)-3')			NR_4.0_90607.1
+  RNA (5'-R(P*AP*AP*UP*AP*UP*UP*AP*AP*A*AP[...]			NR_4.0_79645.1
+  RNA (5'-R(P*AP*AP*UP*AP*UP*UP*AP*AP*AP*A[...]			NR_4.0_80035.1
+  RNA (5'-R(P*AP*AP*UP*U)-3')			NR_4.0_05788.1
+  RNA (5'-R(P*AP*AP*UP*UP*UP*CP*UP*AP*CP*U[...]			NR_4.0_09192.1
+  RNA (5'-R(P*AP*CP*AP*CP*GP*GP*CP*GP*A)-3[...]			NR_4.0_85719.1
+  RNA (5'-R(P*AP*CP*GP*AP*GP*UP*GP*UP*CP*G[...]			NR_4.0_69209.1
+  RNA (5'-R(P*AP*CP*GP*UP*CP*AP*UP*GP*CP*G[...]			NR_4.0_94716.1
+  RNA (5'-R(P*AP*CP*UP*CP*A)-3')			NR_4.0_73491.1
+  RNA (5'-R(P*AP*G)-3')			NR_4.0_94833.3
+  RNA (5'-R(P*AP*GP*AP*CP*AP*GP*CP*AP*UP*U[...]			NR_4.0_21658.1
+  RNA (5'-R(P*AP*GP*AP*CP*U)-3')			NR_4.0_38180.1
+  RNA (5'-R(P*AP*GP*AP*GP*U)-3')			NR_4.0_14761.1
+  RNA (5'-R(P*AP*GP*AP*UP*AP*C)-3')			NR_4.0_24223.1
+  RNA (5'-R(P*AP*GP*CP*A)-3')			NR_4.0_68310.1
+  RNA (5'-R(P*AP*GP*CP*C)-3')			NR_4.0_73186.1
+  RNA (5'-R(P*AP*GP*G)-3')			NR_4.0_80196.1
+  RNA (5'-R(P*AP*GP*GP*AP*CP*UP*GP*AP*AP*([...]			NR_4.0_67601.1
+  RNA (5'-R(P*AP*GP*GP*C)-3')			NR_4.0_48365.1
+  RNA (5'-R(P*AP*GP*GP*UP*AP*CP*GP*UP*AP*C[...]			NR_4.0_16377.1
+  RNA (5'-R(P*AP*GP*UP*AP*GP*AP*AP*AP*CP*A[...]			NR_4.0_41012.1
+  RNA (5'-R(P*AP*GP*UP*AP*GP*UP*GP*UP*GP*C[...]			NR_4.0_08043.1
+  RNA (5'-R(P*AP*GP*UP*GP*GP*CP*GP*GP*CP*C[...]			NR_4.0_63549.1
+  RNA (5'-R(P*AP*GP*UP*U)-3')			NR_4.0_38685.1
+  RNA (5'-R(P*AP*UP*AP*AP*A)-3')			NR_4.0_09823.1
+  RNA (5'-R(P*AP*UP*AP*CP*AP*AP*CP*CP*GP*U[...]			NR_4.0_14992.1
+  RNA (5'-R(P*AP*UP*C)-3')			NR_4.0_44617.1,      NR_4.0_42385.1
+  RNA (5'-R(P*AP*UP*CP*GP*AP*GP*AP*G)-3')			NR_4.0_45110.1
+  RNA (5'-R(P*AP*UP*CP*GP*AP*GP*AP*GP*GP*A[...]			NR_4.0_69936.1
+  RNA (5'-R(P*AP*UP*CP*GP*GP*CP*UP*CP*A)-3[...]			NR_4.0_81784.2
+  RNA (5'-R(P*AP*UP*CP*UP*GP*AP*GP*CP*CP*U[...]			NR_4.0_18349.1
+  RNA (5'-R(P*AP*UP*G)-3')			NR_4.0_40208.1
+  RNA (5'-R(P*AP*UP*GP*GP*GP*C)-3')			NR_4.0_60357.1
+  RNA (5'-R(P*AP*UP*UP*AP*AP*A)-3')			NR_4.0_94252.1,      NR_4.0_18857.1
+  RNA (5'-R(P*AP*UP*UP*UP*UP*AP*AP*UP*AP*G[...]			NR_4.0_05013.1
+  RNA (5'-R(P*CP*AP*AP*GP*CP*CP*GP*AP*GP*G[...]			NR_4.0_33534.2
+  RNA (5'-R(P*CP*AP*AP*GP*GP*UP*CP*AP*UP*U[...]			NR_4.0_94767.1
+  RNA (5'-R(P*CP*AP*CP*UP*GP*A)-3')			NR_4.0_81482.1
+  RNA (5'-R(P*CP*AP*GP*AP*GP*CP*CP*CP*CP*C[...]			NR_4.0_45605.1
+  RNA (5'-R(P*CP*AP*UP*(5MC)P*U)-3')			NR_4.0_65220.1
+  RNA (5'-R(P*CP*CP*(A9Z))-3')			NR_4.0_30547.1
+  RNA (5'-R(P*CP*CP*AP*AP*UP*GP*A)-3')			NR_4.0_83974.1
+  RNA (5'-R(P*CP*CP*AP*CP*AP*CP*CP*GP*UP*U[...]			NR_4.0_89230.1,      NR_4.0_58991.1
+  RNA (5'-R(P*CP*CP*AP*UP*CP*CP*UP*CP*UP*A[...]			NR_4.0_43598.1
+  RNA (5'-R(P*CP*CP*C)-3')			NR_4.0_13730.1
+  RNA (5'-R(P*CP*CP*CP*CP*AP*UP*AP*AP*CP*U[...]			NR_4.0_89699.1
+  RNA (5'-R(P*CP*CP*CP*CP*C)-3')			NR_4.0_09116.1
+  RNA (5'-R(P*CP*CP*CP*CP*CP*AP*CP*AP*UP*A[...]			NR_4.0_31876.1
+  RNA (5'-R(P*CP*CP*CP*CP*CP*CP*CP*CP*C)-3[...]			NR_4.0_06759.1
+  RNA (5'-R(P*CP*CP*CP*CP*CP*CP*CP*CP*CP*C[...]			NR_4.0_91810.1,      NR_4.0_42626.1
+  RNA (5'-R(P*CP*CP*CP*CP*CP*CP*CP*CP*CP*G[...]			NR_4.0_36586.1
+  RNA (5'-R(P*CP*CP*CP*GP*AP*U)-3')			NR_4.0_64715.1
+  RNA (5'-R(P*CP*CP*CP*UP*AP*UP*AP*AP*CP*U[...]			NR_4.0_48635.1,      NR_4.0_21052.1
+  RNA (5'-R(P*CP*CP*UP*AP*UP*AP*AP*CP*UP*U[...]			NR_4.0_61090.1
+  RNA (5'-R(P*CP*CP*UP*GP*AP*GP*UP*UP*CP*A[...]			NR_4.0_09579.1
+  RNA (5'-R(P*CP*G)-3')			NR_4.0_08576.3
+  RNA (5'-R(P*CP*GP*CP*CP*C)-3')			NR_4.0_85566.1
+  RNA (5'-R(P*CP*GP*CP*GP*CP*GP*CP*GP*CP*G[...]			NR_4.0_39323.1
+  RNA (5'-R(P*CP*GP*CP*UP*(5BU)P*CP*GP*AP*[...]			NR_4.0_37454.1
+  RNA (5'-R(P*CP*GP*GP*AP*GP*AP*GP*GP*UP*A[...]			NR_4.0_00306.1
+  RNA (5'-R(P*CP*GP*GP*CP*GP*GP*CP*GP*GP*CP*CP*[...])			NR_4.0_53426.1,      NR_4.0_33685.1
+  RNA (5'-R(P*CP*GP*GP*GP*AP*UP*GP*UP*CP*A[...]			NR_4.0_17854.1
+  RNA (5'-R(P*CP*GP*UP*AP*CP*GP*CP*GP*GP*A[...]			NR_4.0_88906.1
+  RNA (5'-R(P*CP*U)-3')			NR_4.0_96254.1
+  RNA (5'-R(P*CP*UP*AP*AP*CP*AP*A)-3')			NR_4.0_40895.1
+  RNA (5'-R(P*CP*UP*CP*AP*C)-3')			NR_4.0_65762.1
+  RNA (5'-R(P*CP*UP*CP*CP*CP*GP*GP*G)-3')			NR_4.0_63291.1
+  RNA (5'-R(P*CP*UP*CP*CP*U)-3')			NR_4.0_66381.1
+  RNA (5'-R(P*CP*UP*CP*GP*AP*UP*AP*AP*CP*C[...]			NR_4.0_93513.1
+  RNA (5'-R(P*CP*UP*GP*CP*CP*GP*GP*GP*UP*A[...]			NR_4.0_30582.1
+  RNA (5'-R(P*CP*UP*UP*C)-3')			NR_4.0_32973.1
+  RNA (5'-R(P*CP*UP*UP*GP*UP*AP*UP*AP*UP*A[...]			NR_4.0_06376.1
+  RNA (5'-R(P*GP*A)-3')			NR_4.0_04288.3
+  RNA (5'-R(P*GP*AP*A)-3')			NR_4.0_88520.1,      NR_4.0_67592.1,      NR_4.0_66187.1,      NR_4.0_35023.1,      NR_4.0_23150.1
+  RNA (5'-R(P*GP*C)-3')			NR_4.0_65789.1
+  RNA (5'-R(P*GP*CP*AP*CP*UP*AP*GP*AP*UP*C[...]			NR_4.0_56975.1
+  RNA (5'-R(P*GP*CP*CP*C)-3')			NR_4.0_02089.1
+  RNA (5'-R(P*GP*CP*CP*CP*AP*UP*UP*AP*G)-3[...]			NR_4.0_56860.1
+  RNA (5'-R(P*GP*CP*CP*U)-3')			NR_4.0_78647.1
+  RNA (5'-R(P*GP*CP*CP*UP*GP*GP*UP*GP*UP*C[...]			NR_4.0_21999.1
+  RNA (5'-R(P*GP*CP*GP*CP*GP*CP*GP*CP*GP*C[...]			NR_4.0_91231.1
+  RNA (5'-R(P*GP*CP*GP*UP*CP*GP*CP*GP*CP*C[...]			NR_4.0_71199.3
+  RNA (5'-R(P*GP*G)-3')			NR_4.0_98428.1
+  RNA (5'-R(P*GP*GP*AP*AP*AP*UP*UP*AP*UP*A[...]			NR_4.0_50760.1
+  RNA (5'-R(P*GP*GP*AP*CP*GP*UP*CP*AP*UP*G[...]			NR_4.0_52870.1
+  RNA (5'-R(P*GP*GP*CP*AP*AP*A)-3')			NR_4.0_10013.1
+  RNA (5'-R(P*GP*GP*CP*GP*CP*GP*CP*G)-3')			NR_4.0_77704.1
+  RNA (5'-R(P*GP*GP*CP*GP*GP*C)-3')			NR_4.0_08138.1
+  RNA (5'-R(P*GP*GP*GP*(RPC))-3')			NR_4.0_12137.1
+  RNA (5'-R(P*GP*GP*GP*CP*C)-3')			NR_4.0_35816.1
+  RNA (5'-R(P*GP*GP*GP*GP*GP*G)-3')			NR_4.0_37313.1
+  RNA (5'-R(P*GP*GP*GP*GP*GP*GP*GP*GP*G)-3[...]			NR_4.0_07366.1
+  RNA (5'-R(P*GP*GP*GP*GP*GP*GP*GP*GP*GP*G[...]			NR_4.0_86951.1
+  RNA (5'-R(P*GP*GP*GP*UP*GP*GP*UP*GP*CP*G[...]			NR_4.0_17580.1
+  RNA (5'-R(P*GP*GP*U)-3')			NR_4.0_74729.1,      NR_4.0_47227.1,      NR_4.0_32785.1,      NR_4.0_24630.1
+  RNA (5'-R(P*GP*GP*UP*AP*CP*GP*UP*AP*CP*C[...]			NR_4.0_87852.1,      NR_4.0_19209.1
+  RNA (5'-R(P*GP*GP*UP*AP*GP*CP*GP*CP*UP*A[...]			NR_4.0_60222.1
+  RNA (5'-R(P*GP*GP*UP*AP*GP*UP*AP*CP*AP*C[...]			NR_4.0_22308.1
+  RNA (5'-R(P*GP*GP*UP*GP*CP*CP*UP*AP*AP*U[...]			NR_4.0_24985.1
+  RNA (5'-R(P*GP*UP*AP*GP*GP*AP*CP*CP*AP*U[...]			NR_4.0_86801.1
+  RNA (5'-R(P*GP*UP*G)-3')			NR_4.0_58041.1
+  RNA (5'-R(P*GP*UP*GP*GP*GP*CP*CP*GP*AP*C[...]			NR_4.0_15457.1
+  RNA (5'-R(P*GP*UP*UP*AP*AP*U)-3')			NR_4.0_08084.1
+  RNA (5'-R(P*GP*UP*UP*CP*GP*AP*UP*CP*CP*A[...]			NR_4.0_96977.1
+  RNA (5'-R(P*GP*UP*UP*GP*UP*UP*UP*UP*UP*U[...]			NR_4.0_61964.1,      NR_4.0_09952.1
+  RNA (5'-R(P*UP*(70U)P*UP*UP*(12A)P*A)-3'[...]			NR_4.0_49764.1
+  RNA (5'-R(P*UP*AP*AP*AP*AP*AP*AP*A)-3')			NR_4.0_34681.1
+  RNA (5'-R(P*UP*AP*AP*AP*AP*AP*AP*AP*A)-3')			NR_4.0_29401.1
+  RNA (5'-R(P*UP*AP*AP*AP*GP*UP*GP*CP*UP*U[...]			NR_4.0_88847.1
+  RNA (5'-R(P*UP*AP*AP*U)-3')			NR_4.0_09020.1
+  RNA (5'-R(P*UP*AP*CP*UP*AP*AP*CP*A)-3')			NR_4.0_94396.3
+  RNA (5'-R(P*UP*AP*GP*AP*CP*UP*(70U)P*UP*[...]			NR_4.0_93152.1
+  RNA (5'-R(P*UP*AP*GP*UP*UP*UP*AP*A)-3')			NR_4.0_61711.1
+  RNA (5'-R(P*UP*AP*UP*AP*AP*UP*AP*GP*UP*A[...]			NR_4.0_88592.1
+  RNA (5'-R(P*UP*AP*UP*AP*UP*AP*CP*AP*UP*A[...]			NR_4.0_53912.1
+  RNA (5'-R(P*UP*AP*UP*AP*UP*AP*UP*AP*UP*A[...]			NR_4.0_30784.1
+  RNA (5'-R(P*UP*AP*UP*CP*UP*C)-3')			NR_4.0_66740.1
+  RNA (5'-R(P*UP*AP*UP*CP*UP*CP*A)-3')			NR_4.0_18291.1
+  RNA (5'-R(P*UP*AP*UP*GP*CP*AP*UP*GP*CP*A[...]			NR_4.0_37706.1
+  RNA (5'-R(P*UP*AP*UP*UP*C)-3')			NR_4.0_65501.1
+  RNA (5'-R(P*UP*AP*UP*UP*UP*A)-3')			NR_4.0_57261.1
+  RNA (5'-R(P*UP*AP*UP*UP*UP*UP*UP*UP*UP*U[...]			NR_4.0_13679.1
+  RNA (5'-R(P*UP*CP*AP*AP*CP*U)-3')			NR_4.0_82993.1
+  RNA (5'-R(P*UP*CP*AP*CP*U)-3')			NR_4.0_45166.1
+  RNA (5'-R(P*UP*CP*AP*CP*UP*UP*GP*CP*GP*U[...]			NR_4.0_31915.1
+  RNA (5'-R(P*UP*CP*AP*UP*CP*U)-3')			NR_4.0_23427.1
+  RNA (5'-R(P*UP*CP*AP*UP*GP*U)-3')			NR_4.0_50496.1
+  RNA (5'-R(P*UP*CP*AP*UP*UP*CP*AP*GP*UP*U[...]			NR_4.0_77791.1,      NR_4.0_30196.1
+  RNA (5'-R(P*UP*CP*CP*AP*UP*GP*CP*GP*CP*A[...]			NR_4.0_36248.2
+  RNA (5'-R(P*UP*CP*G)-3')			NR_4.0_75659.1
+  RNA (5'-R(P*UP*CP*GP*AP*GP*AP*GP*GP*A)-3[...]			NR_4.0_20325.1
+  RNA (5'-R(P*UP*CP*GP*AP*GP*AP*GP*GP*AP*U[...]			NR_4.0_16525.1
+  RNA (5'-R(P*UP*CP*UP*CP*AP*GP*(OMC))-3')			NR_4.0_42729.1
+  RNA (5'-R(P*UP*CP*UP*CP*UP*UP*GP*AP*GP*U[...]			NR_4.0_18350.1
+  RNA (5'-R(P*UP*CP*UP*GP*UP*GP*AP*UP*AP*A[...]			NR_4.0_18726.1
+  RNA (5'-R(P*UP*CP*UP*UP*GP*AP*AP*GP*CP*A[...]			NR_4.0_91999.1
+  RNA (5'-R(P*UP*CP*UP*UP*UP*UP*AP*UP*UP*U[...]			NR_4.0_60559.1
+  RNA (5'-R(P*UP*GP*AP*CP*UP*GP*CP*GP*UP*U[...]			NR_4.0_39506.1,      NR_4.0_16758.1
+  RNA (5'-R(P*UP*GP*AP*GP*GP*UP*AP*GP*UP*A[...]			NR_4.0_82818.1
+  RNA (5'-R(P*UP*GP*CP*AP*CP*UP*GP*CP*GP*U[...]			NR_4.0_29032.1
+  RNA (5'-R(P*UP*GP*CP*UP*GP*A)-3')			NR_4.0_73482.1
+  RNA (5'-R(P*UP*GP*CP*UP*GP*AP*CP*U)-3')			NR_4.0_15174.1
+  RNA (5'-R(P*UP*GP*GP*AP*GP*UP*GP*UP*GP*A[...]			NR_4.0_97675.1
+  RNA (5'-R(P*UP*GP*GP*GP*AP*GP*AP*GP*GP*U[...]			NR_4.0_55512.1
+  RNA (5'-R(P*UP*GP*GP*UP*GP*G)-3')			NR_4.0_99552.1
+  RNA (5'-R(P*UP*GP*UP*AP*UP*AP*UP*A)-3')			NR_4.0_51454.1
+  RNA (5'-R(P*UP*UP*AP*AP*UP*AP*AP*CP*UP*U[...]			NR_4.0_12115.1
+  RNA (5'-R(P*UP*UP*AP*CP*U)-3')			NR_4.0_64976.1
+  RNA (5'-R(P*UP*UP*AP*CP*UP*GP*CP*AP*CP*A[...]			NR_4.0_12111.2
+  RNA (5'-R(P*UP*UP*AP*CP*UP*GP*CP*GP*CP*A[...]			NR_4.0_05919.1
+  RNA (5'-R(P*UP*UP*AP*GP*UP*AP*GP*UP*AP*C[...]			NR_4.0_05610.1
+  RNA (5'-R(P*UP*UP*AP*UP*CP*UP*CP*A)-3')			NR_4.0_92104.1,      NR_4.0_78848.1
+  RNA (5'-R(P*UP*UP*AP*UP*CP*UP*CP*C)-3')			NR_4.0_79660.1
+  RNA (5'-R(P*UP*UP*CP*A)-3')			NR_4.0_37135.1
+  RNA (5'-R(P*UP*UP*CP*AP*CP*AP*UP*UP*CP*A[...]			NR_4.0_83036.1
+  RNA (5'-R(P*UP*UP*CP*AP*CP*AP*UP*UP*GP*C[...]			NR_4.0_25585.3
+  RNA (5'-R(P*UP*UP*CP*AP*UP*AP*AP*CP*UP*U[...]			NR_4.0_59092.1
+  RNA (5'-R(P*UP*UP*CP*U)-3')			NR_4.0_43614.1
+  RNA (5'-R(P*UP*UP*GP*A)-3')			NR_4.0_40848.1,      NR_4.0_11898.1
+  RNA (5'-R(P*UP*UP*GP*GP*GP*CP*CP*UP*GP*C[...]			NR_4.0_86744.1
+  RNA (5'-R(P*UP*UP*UP*AP*AP*AP*CP*CP*UP*A[...]			NR_4.0_63322.1,      NR_4.0_48333.1
+  RNA (5'-R(P*UP*UP*UP*AP*UP*UP*U)-3')			NR_4.0_45842.1
+  RNA (5'-R(P*UP*UP*UP*GP*UP*UP*GP*U)-3')			NR_4.0_28023.1
+  RNA (5'-R(P*UP*UP*UP*UP*U)-3')			NR_4.0_17996.4
+  RNA (5'-R(P*UP*UP*UP*UP*UP)-3')			NR_4.0_60948.1
+  RNA (5'-R(P*UP*UP*UP*UP*UP*U)-3')			NR_4.0_80915.1,      NR_4.0_74924.17,      NR_4.0_58396.1
+  RNA (5'-R(P*UP*UP*UP*UP*UP*UP*U)-3')			NR_4.0_59826.1,      NR_4.0_03657.1,      NR_4.0_34318.1
+  RNA (5'-R(P*UP*UP*UP*UP*UP*UP*UP*U)-3')			NR_4.0_67886.1,      NR_4.0_52561.1,      NR_4.0_72146.1,      NR_4.0_57114.1,      NR_4.0_08929.1
+  RNA (5'-R(P*UP*UP*UP*UP*UP*UP*UP*UP*U)-3[...]			NR_4.0_59443.1,      NR_4.0_24045.1,      NR_4.0_85397.1
+  RNA (5'-R(P*UP*UP*UP*UP*UP*UP*UP*UP*UP*U[...]			NR_4.0_26393.1,      NR_4.0_10062.1,      NR_4.0_88361.1,      NR_4.0_63978.1,      NR_4.0_10146.1,      NR_4.0_04094.1,      NR_4.0_96884.1,      NR_4.0_64483.1,      NR_4.0_58324.1,      NR_4.0_51111.1,      NR_4.0_44115.1,      NR_4.0_37621.1,      NR_4.0_17672.1,      NR_4.0_46052.1,      NR_4.0_04998.1,      NR_4.0_02486.1,      NR_4.0_15746.1
+  RNA (5'-R(UP*U)-3')			NR_4.0_21736.6
+  RNA (5'-R(UP*UP*UP*UP*UP*UP*UP*UP*UP*UP*[...]			NR_4.0_50007.1
+  RNA (5'-UAA(-2'GU)CA[...])			NR_4.0_25521.1
+  RNA (5'-UACUAA(2'-GU[...])			NR_4.0_25155.1,      NR_4.0_28661.1,    NR_4.0_33619.1
+  RNA (5'-pAGUAGUAACAAGAGGG)			NR_4.0_19377.2
+  RNA (5- R(PPP*GP*GP*G)-3)			NR_4.0_27378.1
+  RNA (50-MER)			NR_4.0_80776.1,      NR_4.0_24394.1,      NR_4.0_18633.1
+  RNA (51-MER)			NR_4.0_48255.1,      NR_4.0_12561.1,      NR_4.0_39499.1
+  RNA (52-MER)			NR_4.0_02553.1,      NR_4.0_31462.1,      NR_4.0_04979.1,      NR_4.0_79951.1
+  RNA (55-MER)			NR_4.0_47836.1,      NR_4.0_29106.1
+  RNA (55-mer)			NR_4.0_74260.1
+  RNA (56-MER)			NR_4.0_75133.1
+  RNA (56-mer)			NR_4.0_26368.1
+  RNA (57-MER)			NR_4.0_24522.1
+  RNA (58-MER)			NR_4.0_90696.1,      NR_4.0_39651.1
+  RNA (59-MER)			NR_4.0_74739.1,      NR_4.0_36591.1,      NR_4.0_99303.1,      NR_4.0_52315.1
+  RNA (60-MER)			NR_4.0_59627.1,      NR_4.0_84582.1,      NR_4.0_66641.1,      NR_4.0_93100.1,      NR_4.0_59317.1,      NR_4.0_29366.1
+  RNA (61-MER)			NR_4.0_46720.2
+  RNA (62-MER)			NR_4.0_72776.1,      NR_4.0_17498.1
+  RNA (621-MER)			NR_4.0_18903.1
+  RNA (65-MER)			NR_4.0_80074.1
+  RNA (66-MER)			NR_4.0_47330.1,      NR_4.0_41935.1
+  RNA (68-MER)			NR_4.0_21705.1
+  RNA (69-MER)			NR_4.0_23920.1,      NR_4.0_88566.1,      NR_4.0_57264.1
+  RNA (692-MER)			NR_4.0_56999.2
+  RNA (70-MER)			NR_4.0_93427.1,      NR_4.0_06506.1
+  RNA (71-MER)			NR_4.0_90969.1,      NR_4.0_59327.1,      NR_4.0_28348.1,      NR_4.0_01439.1
+  RNA (73-MER)			NR_4.0_96162.2
+  RNA (74-MER)			NR_4.0_89906.2
+  RNA (75-MER)			NR_4.0_83593.2,      NR_4.0_97214.1,      NR_4.0_69638.1,      NR_4.0_58761.1,      NR_4.0_14254.1
+  RNA (76-MER)			NR_4.0_27778.1,      NR_4.0_69813.10,      NR_4.0_97575.1,      NR_4.0_04953.1
+  RNA (77-MER)			NR_4.0_95556.5,      NR_4.0_44698.1,      NR_4.0_11374.1
+  RNA (78-MER)			NR_4.0_56041.1,      NR_4.0_39307.1,      NR_4.0_26354.1,      NR_4.0_12697.1
+  RNA (79-mer)			NR_4.0_70863.1
+  RNA (80-MER)			NR_4.0_73731.2
+  RNA (81-MER)			NR_4.0_85745.1
+  RNA (82-MER)			NR_4.0_18859.1
+  RNA (84-MER)			NR_4.0_31480.1,      NR_4.0_27557.1,      NR_4.0_98075.1
+  RNA (87-MER)			NR_4.0_19099.1
+  RNA (90-MER)			NR_4.0_86192.1,      NR_4.0_43225.1
+  RNA (92-MER)			NR_4.0_49553.1,      NR_4.0_62057.1
+  RNA (94-MER)			NR_4.0_12576.1
+  RNA (95-MER)			NR_4.0_91539.1,      NR_4.0_89968.1
+  RNA (97-mer)			NR_4.0_62996.1
+  RNA (98-MER)			NR_4.0_03365.1
+  RNA (99-MER)			NR_4.0_80684.1,      NR_4.0_32399.1,      NR_4.0_18848.1
+  RNA (S)-C5'-M[...]			NR_4.0_87665.1
+  RNA (TRANSCRIPTION BUBBLE)			NR_4.0_24952.1
+  RNA (TRNA GLN II )			NR_4.0_31819.2
+  RNA (UVP)UAUAGAGCAAGAACACUGUU			NR_4.0_30259.1
+  RNA (intron or U6 snRNA)			NR_4.0_04353.1
+  RNA 125a_oligo1			NR_4.0_16093.1
+  RNA 14-mer BCh12			NR_4.0_39003.1
+  RNA 17-mer			NR_4.0_41718.1
+  RNA 3-mer (de novo synthesized)			NR_4.0_93339.3
+  RNA 3D nanocage			NR_4.0_45061.1
+  RNA 4-mer			NR_4.0_08809.1
+  RNA 47-MER			NR_4.0_42222.1
+  RNA 5' substrate strand			NR_4.0_83079.1
+  RNA 6-mer			NR_4.0_75510.1
+  RNA 7-mer			NR_4.0_46370.1
+  RNA AACCAA			NR_4.0_18267.1
+  RNA AAGGA			NR_4.0_28508.1
+  RNA AAGGAA			NR_4.0_67948.1
+  RNA AAUUAA			NR_4.0_19332.1
+  RNA ACGG			NR_4.0_01782.1
+  RNA AGCC			NR_4.0_61884.1
+  RNA AGU			NR_4.0_45187.1
+  RNA APTAMER			NR_4.0_88496.1
+  RNA AUCC			NR_4.0_98152.1
+  RNA CCCC			NR_4.0_19855.1
+  RNA CGCCU			NR_4.0_05533.1,      NR_4.0_84250.1,      NR_4.0_67009.1,      NR_4.0_08270.1
+  RNA Diels-Alder ribozyme			NR_4.0_90215.1
+  RNA G(CUG)8C duplex			NR_4.0_21041.1
+  RNA HAIRPIN RIBOZYME			NR_4.0_75326.1
+  RNA HAMMERHEAD RIBOZYME			NR_4.0_65028.2
+  RNA LARGE SUBUNIT ALPHA			NR_4.0_25467.1
+  RNA LARGE SUBUNIT BETA			NR_4.0_97060.1
+  RNA OF CRICKET-PARALYSIS-VIRUS-IRES			NR_4.0_28848.1
+  RNA PRIMER			NR_4.0_91665.4
+  RNA PRIMER TEMPLATE ACAAAUUU			NR_4.0_02402.1
+  RNA PRIMER TEMPLATE AGAAAUUU			NR_4.0_83415.1
+  RNA PRIMER TEMPLATE AUAAAUUU			NR_4.0_97864.1
+  RNA Peak 9 Bernoulli Plot			NR_4.0_21434.1
+  RNA Pseudoknot			NR_4.0_96653.1,      NR_4.0_08420.1
+  RNA Template			NR_4.0_55504.1
+  RNA UACC			NR_4.0_82735.1
+  RNA UAGG			NR_4.0_70063.1
+  RNA aptamer			NR_4.0_55924.2
+  RNA component of mitochondrial RNAase P [...]			NR_4.0_43181.1
+  RNA comprising the 5' Stem-Loop RNA of [...]			NR_4.0_22747.1
+  RNA dodecamer with a 6-hydrazino-2-amino[...]			NR_4.0_17726.3
+  RNA duplex			NR_4.0_27625.1
+  RNA duplex containing CCG repeats			NR_4.0_13174.1,      NR_4.0_55926.1
+  RNA fragment			NR_4.0_71379.1
+  RNA hairpin			NR_4.0_41649.1
+  RNA message			NR_4.0_99181.1
+  RNA nano bracelet			NR_4.0_51052.1
+  RNA operator hairpin			NR_4.0_51487.1
+  RNA product			NR_4.0_82338.1
+  RNA product strand			NR_4.0_06721.1,      NR_4.0_98642.1,      NR_4.0_16585.1
+  RNA promoter stem-loop A fused with tRNA			NR_4.0_38802.1,      NR_4.0_00361.1
+  RNA pseudoknot			NR_4.0_37735.1
+  RNA rU10			NR_4.0_43929.1,      NR_4.0_20040.1
+  RNA strand			NR_4.0_07342.1
+  RNA substrate analog			NR_4.0_42653.1
+  RNA template			NR_4.0_37566.1,      NR_4.0_77778.1,      NR_4.0_39179.1
+  RNA tetramer			NR_4.0_78802.1
+  RNA transcript			NR_4.0_09148.1
+  RNA transcript (5-MER)			NR_4.0_75761.1
+  RNA(5'-R(*CP*GP*CP*CP*AP*GP*CP*G)-3')			NR_4.0_12677.1
+  RNA(5-R(*CP*GP*UP*AP*GP*CP*UP*AP*UP*CP*A[...]			NR_4.0_33521.1
+  RNA-ASL			NR_4.0_22639.1
+  RNA-DNA (5'-R(*CP*GP*UP*AP*CP*DG)-3')			NR_4.0_70871.1
+  RNA-octamer (5'-R(P*UP*GP*UP*UP*UP*UP*UP[...]			NR_4.0_85964.1
+  RNA/DNA Hybrid (31-MER)			NR_4.0_08924.1
+  RNA/DNA chimera (5'-D(CP*)R(UP*UP*)-D(C)[...]			NR_4.0_40973.1
+  RNA/DNA chimera (5'-D(CP*)R(UP*UP*)D(CP*[...]			NR_4.0_07227.1
+  RNA/DNA chimera (5'-D(CP*CP*)R(UP*UP*)D([...]			NR_4.0_65664.1
+  RNA/DNA chimera 5'-D(P*CP*)R(UP*U)-3'			NR_4.0_25967.1
+  RNA/DNA chimera 5'-R(P*UP*UP*)D(C)-3'			NR_4.0_58433.1
+  RNA/DNA(5'-R(*CP*GP*UP*GP*AP*UP*CP*GP)-D[...]			NR_4.0_73255.1
+  RNA301			NR_4.0_38781.1,      NR_4.0_95874.1
+  RNA_9 mer			NR_4.0_05749.1
+  RNU2			NR_4.0_99276.1
+  RNase P RNA			NR_4.0_82016.1,      NR_4.0_39625.1
+  RYDC			NR_4.0_75200.1
+  Random cellular RNA fragments			NR_4.0_39301.1
+  Random cellular RNAs			NR_4.0_99371.1
+  Rev-Response-Element RNA			NR_4.0_36990.1
+  Ribonuclease MRP RNA subunit NME1			NR_4.0_64006.2
+  Ribonuclease P RNA			NR_4.0_27991.1
+  Riboswitch			NR_4.0_20814.1
+  Ribozyme strand III			NR_4.0_98705.4
+  RsmZ-2			NR_4.0_72481.1
+  S-ADENOSYLHOMOCYSTEINE RIBOSWITCH			NR_4.0_83027.1
+  SAM-I RIBOSWITCH			NR_4.0_29205.1,      NR_4.0_84517.1
+  SAM-I riboswitch aptamer with an enginee[...]			NR_4.0_47433.1
+  SAM-I/IV riboswitch			NR_4.0_12869.1
+  SAM-II riboswitch			NR_4.0_83080.1
+  SAM-III riboswitch			NR_4.0_86306.1
+  SECIS RNA			NR_4.0_68957.1
+  SECIS mRNA			NR_4.0_97393.1
+  SELEX RNA aptamer			NR_4.0_18718.1
+  SGRNA			NR_4.0_99121.1
+  SINGLE STRANDED RNA (55-MER)			NR_4.0_55702.1
+  SMK box (SAM-III) Riboswitch			NR_4.0_58167.1
+  SNR14 snRNA			NR_4.0_25994.1
+  SRP RNA			NR_4.0_27023.1,      NR_4.0_00810.1,      NR_4.0_32874.1,      NR_4.0_53105.1,      NR_4.0_08831.2
+  SRP RNA (266-MER)			NR_4.0_21305.1
+  SRS2 fragment of Rgs4 3' UTR			NR_4.0_13447.1
+  SSRNA MOLECULE: 5'-R(*AP*CP*AP*GP*UP*AP*[...]			NR_4.0_29005.1
+  SSU rRNA_2			NR_4.0_27244.1
+  Saccharomyces cerevisiae strain HB_S_GIM[...]			NR_4.0_82055.1
+  Saccharomyces cerevisiae strain T.52_2H [...]			NR_4.0_83830.1
+  Saccharomyces cerevisiae strain T8 chrom[...]			NR_4.0_02335.1
+  Sec-tRNASec			NR_4.0_76892.2
+  Self-alkylating ribozyme (58-MER)			NR_4.0_49161.1
+  Single guide RNA (116-MER)			NR_4.0_15683.2
+  Spinach aptamer RNA			NR_4.0_80828.1
+  Squash RNA aptamer bound to DFHBI-1T wit[...]			NR_4.0_30254.1
+  T-BOX RIBOSWITCH STEM I			NR_4.0_26576.1
+  T-RNA (76-MER)			NR_4.0_83181.1
+  T-box riboswitch discriminator			NR_4.0_68144.1
+  T.el4h RNA			NR_4.0_26496.1
+  TAR RNA			NR_4.0_93158.1,      NR_4.0_51639.1
+  TAS1a RNA reverse strand			NR_4.0_18685.1
+  TAS1a reverse strand			NR_4.0_83025.1
+  TEMPLATE DNA			NR_4.0_29999.1
+  THE REV BINDING ELEMENT			NR_4.0_24974.1
+  THF riboswitch			NR_4.0_78797.5
+  THREONINE TRNA			NR_4.0_85174.1
+  TLC1			NR_4.0_83665.1
+  TMRNA DELA			NR_4.0_45855.1
+  TOXI			NR_4.0_46564.1,      NR_4.0_38950.2
+  TPP riboswitch			NR_4.0_42241.2
+  TPP-specific riboswitch			NR_4.0_27756.1
+  TRANS-ACTIVATION RESPONSE ELEMENT			NR_4.0_32738.1
+  TRANSCRIPT RNA			NR_4.0_07798.1
+  TRANSCRIPT RNA (5'-R(*CP*CP*AP*GP*GP*AP)-[...])			NR_4.0_82856.2
+  TRNA (PHE)			NR_4.0_19061.1
+  TRNA(ARG)			NR_4.0_59690.1
+  TRNA(THR)			NR_4.0_79184.1
+  TRNA(VAL)			NR_4.0_57348.1
+  TRNA-LEU TAA ISOACCEPTOR			NR_4.0_09775.1
+  TRNA-LEU UAA ISOACCEPTOR			NR_4.0_11709.1
+  TRNALEU TRANSCRIPT WITH ANTICODON CAG			NR_4.0_23989.1
+  TRNAPHE			NR_4.0_36393.1
+  TRNAPRO(CGG)			NR_4.0_26284.1
+  TRNASER			NR_4.0_03470.1
+  TSKT-23			NR_4.0_23939.1
+  Telomerase RNA			NR_4.0_71507.1
+  Telomerase TR			NR_4.0_11458.2
+  Template			NR_4.0_46784.1
+  Template RNA			NR_4.0_13077.1,      NR_4.0_95868.1,      NR_4.0_51758.1
+  Template RNA (33-MER)			NR_4.0_13312.1
+  Template RNA (5'-R(P*AP*AP*AP*AP*AP*AP*A[...]			NR_4.0_24846.1
+  Template RNA (5'-R(P*AP*GP*AP*AP*AP*AP*A[...]			NR_4.0_87226.1
+  Template-RNA (5'-R(P*AP*CP*UP*AP*GP*CP*U[...]			NR_4.0_68817.1
+  Templete			NR_4.0_73553.1
+  TetR-binding aptamer K1 (43-MER)			NR_4.0_00338.1
+  Tetracycline aptamer and artificial ribo[...]			NR_4.0_30439.1
+  Tetrahymena ribozyme RNA			NR_4.0_54845.1
+  The hepatitis delta virus ribozyme			NR_4.0_55424.1
+  Thermus thermophilus tRNAPhe			NR_4.0_64404.2
+  Threonyl-tRNA synthetase mRNA			NR_4.0_14947.1
+  Transcribed RNA			NR_4.0_83369.1
+  Turnip yellow mosaic virus mRNA for the [...]			NR_4.0_02656.1
+  Twister RNA sequence			NR_4.0_34740.1
+  Twister Ribozyme			NR_4.0_05707.1
+  U-Helix RNA from Trypanosome editing			NR_4.0_79481.1
+  U-U-U-U-U-U-U-U-U-U-U-U-U-U			NR_4.0_13685.1
+  U1 RNA variant (48-MER) with 4-helix jun[...]			NR_4.0_84961.1
+  U1 snRNA			NR_4.0_33460.3,      NR_4.0_64405.1,      NR_4.0_34961.3
+  U1 snRNA stem-loops 1 and 2 (55-MER)			NR_4.0_24202.1
+  U1-SL2			NR_4.0_64766.1,      NR_4.0_56099.1
+  U2 snRNA			NR_4.0_73426.1,      NR_4.0_38699.1,      NR_4.0_10510.1,      NR_4.0_01643.1,      NR_4.0_90613.1,      NR_4.0_99228.1,      NR_4.0_22385.1,      NR_4.0_01315.2,      NR_4.0_36828.1
+  U2-SL4			NR_4.0_81641.1
+  U2snRNA			NR_4.0_81267.1
+  U3 snoRNA			NR_4.0_43482.1,      NR_4.0_90918.1,      NR_4.0_07561.2,      NR_4.0_47865.1
+  U4 small nuclear RNA variant: Native seq[...]			NR_4.0_13899.1
+  U4 snRNA			NR_4.0_89185.1,      NR_4.0_07902.3,      NR_4.0_67328.2
+  U4 snRNA (5'-R(*AP*UP*UP*UP*UP*UP*G)-3')			NR_4.0_67036.1
+  U4 snRNA (5'-R(*GP*CP*AP*AP*UP*UP*UP*UP*[...]			NR_4.0_69774.1
+  U44 ssRNA			NR_4.0_84781.1
+  U4atac snRNA			NR_4.0_14513.1,      NR_4.0_08155.1
+  U5 snRNA			NR_4.0_73286.15,      NR_4.0_87230.1,      NR_4.0_97263.1,      NR_4.0_71335.1,      NR_4.0_30457.14
+  U6 snRNA			NR_4.0_42085.1,      NR_4.0_17764.1,      NR_4.0_89190.1,      NR_4.0_60469.1,      NR_4.0_34349.1,      NR_4.0_76442.1,      NR_4.0_57834.2
+  U6 snRNA fragment			NR_4.0_79685.1,      NR_4.0_24573.1
+  U6atac snRNA			NR_4.0_51220.1
+  U7 snRNA			NR_4.0_02872.1
+  UGUAAUA			NR_4.0_85126.1
+  VS ribozyme RNA			NR_4.0_33922.2
+  Vibrio Vulnificus Adenine Riboswitch			NR_4.0_94683.1
+  Vibrio vulnificus A-riboswitch			NR_4.0_69516.1
+  Vibrio vulnificus strain 93U204 chromoso[...]			NR_4.0_56345.1
+  WILD-TYPE TRNATYR(GUA)			NR_4.0_13221.1
+  X. oryzae Mn riboswitch optimized constr[...]			NR_4.0_70719.1
+  XRN1-resistant flaviviral RNA			NR_4.0_72021.1
+  Y RNA			NR_4.0_08150.1,      NR_4.0_10769.1,      NR_4.0_65678.1
+  YEAST INITIATOR TRNA			NR_4.0_46777.1
+  YitJ S box/SAM-I riboswitch			NR_4.0_35479.1
+  YrlA effector-binding module			NR_4.0_75310.1
+  Z-site tRNA			NR_4.0_33997.1
+  Zm1a-6 RNA			NR_4.0_29277.1
+  ai5g group II Self-splicing intron			NR_4.0_26998.1
+  alfalfa mosaic virus RNA 3' UTR			NR_4.0_30667.1
+  anticodon stem-loop of t-RNA-Arg2 (nucle[...]			NR_4.0_21689.1,      NR_4.0_42126.1
+  aptamer			NR_4.0_22632.1
+  atRNA synthetic Stop tRNA (76-MER)			NR_4.0_20230.1
+  bacterial tRNA			NR_4.0_76729.1,      NR_4.0_65114.1
+  box H/ACA sRNA			NR_4.0_73551.1
+  c-di-GMP riboswitch			NR_4.0_12260.3
+  c-di-GMP-II riboswitch			NR_4.0_65073.1
+  cA6			NR_4.0_00429.1
+  cRNA			NR_4.0_98303.1,     NR_4.0_79079.1
+  chr17.trna16-GlnTTG			NR_4.0_20115.1
+  class I ligase product			NR_4.0_58564.1
+  cobalamin riboswitch aptamer domain			NR_4.0_01779.1
+  constitutive transport element(CTE)of Ma[...]			NR_4.0_76909.1
+  crRNA			NR_4.0_52030.1,      NR_4.0_31329.1,      NR_4.0_36664.1,      NR_4.0_81676.1,      NR_4.0_38728.1,      NR_4.0_47453.1,      NR_4.0_79722.1,      NR_4.0_74407.1,      NR_4.0_48252.1,      NR_4.0_28021.1,      NR_4.0_23975.1,      NR_4.0_12661.1,      NR_4.0_91756.1,      NR_4.0_15699.1,      NR_4.0_38581.2,      NR_4.0_23423.1,      NR_4.0_39792.1,   NR_4.0_88747.1,      NR_4.0_40386.1
+  crRNA (50-MER)			NR_4.0_65403.1
+  crRNA (52-MER)			NR_4.0_27521.1,      NR_4.0_70511.1
+  crRNA (61-MER)			NR_4.0_70313.2
+  crRNA with 32nt spacer sequence			NR_4.0_73836.1
+  cyclic AMP-AMP-GMP			NR_4.0_78109.1
+  deacylated A/R-tRNA			NR_4.0_34846.1
+  domain II of glycine riboswitch			NR_4.0_32185.1
+  double-stranded RNA			NR_4.0_19387.1,      NR_4.0_09715.1
+  dsRNA strand 1			NR_4.0_48575.1
+  env22 twister ribozyme			NR_4.0_19502.2
+  eutP P2			NR_4.0_90670.1,      NR_4.0_24584.1
+  fMet-tRNA			NR_4.0_64397.1
+  fMet-tRNAMet (P site)			NR_4.0_97773.1
+  ferritin H IRE RNA			NR_4.0_22327.1
+  frag-23S rRNA			NR_4.0_51791.1
+  fragment of 23S rRNA			NR_4.0_46884.1
+  ggPAN RNA (39-MER)			NR_4.0_35127.1
+  glmS ribozyme RNA			NR_4.0_35133.5
+  glyQS T box riboswitch			NR_4.0_19112.1
+  glycine-tRNA glyT			NR_4.0_70416.1
+  guide RNA			NR_4.0_70662.1
+  guide RNA 2			NR_4.0_48282.1
+  guide RNA 40-mer			NR_4.0_81464.1
+  hammerhead ribozyme			NR_4.0_10054.2
+  hexaribonucleotide (rGUCUUUA)			NR_4.0_15037.1
+  histone mRNA stem-loop			NR_4.0_26321.3
+  hp1x-RNA (29-MER)			NR_4.0_51124.1
+  hp6-RNA (25-MER)			NR_4.0_34039.1
+  human 7SK RNA stem-loop 1 proximal methy[...]			NR_4.0_14959.1
+  human 7SK RNA stem-loop 4			NR_4.0_79100.1
+  human MenBeta minihelix			NR_4.0_33059.1
+  human telomerase RNA			NR_4.0_27302.1
+  iMango-III aptamer			NR_4.0_08239.1
+  initiator Met-tRNA fMet from E. coli (A1[...]			NR_4.0_15937.1
+  initiator methionylated tRNA			NR_4.0_19534.1
+  initiator tRNA-Met			NR_4.0_79129.1
+  let-7f-1 pre-element			NR_4.0_93599.1
+  leucyl tRNA			NR_4.0_42604.1
+  m7G-capped RNA			NR_4.0_23607.1
+  mRNA			NR_4.0_96179.1,      NR_4.0_69202.1,      NR_4.0_60842.1,      NR_4.0_60942.1,      NR_4.0_09916.1,      NR_4.0_95786.1,     NR_4.0_86129.1,      NR_4.0_35284.1,     NR_4.0_73146.1,     NR_4.0_58357.1,      NR_4.0_31741.1,   NR_4.0_30824.1
+  mRNA containing SARS-CoV-2 sequence			NR_4.0_37888.1
+  mature crRNA			NR_4.0_67137.1,      NR_4.0_85536.1
+  metY SAM V (53-MER)			NR_4.0_44868.1
+  miR-122			NR_4.0_35200.1
+  miRNA			NR_4.0_30596.1
+  mimic U6 snRNA			NR_4.0_24721.1
+  mitochondrial tRNAVal			NR_4.0_73428.15
+  msl2 mRNA			NR_4.0_29353.1
+  mt-tRNA			NR_4.0_80025.2
+  mt-tRNAVal			NR_4.0_46354.1,      NR_4.0_74768.1
+  nascent RNA 4-mer			NR_4.0_95963.4
+  non-coding mRNA sequence roX2			NR_4.0_31040.1
+  oligo-A RNA			NR_4.0_63520.1,  NR_4.0_64918.10
+  pRNA			NR_4.0_14758.1
+  pe/E-site-tRNA			NR_4.0_01147.1
+  pfI Riboswitch			NR_4.0_45659.1
+  pfl RNA			NR_4.0_48352.1
+  phage MS2 genome			NR_4.0_14458.1
+  phenylalanyl transfer RNA			NR_4.0_78506.1
+  phi29 pRNA 3WJ core RNA 20 mer			NR_4.0_45626.1
+  piRNA			NR_4.0_67557.1
+  poly(U)-15mer			NR_4.0_92635.2,      NR_4.0_51514.1
+  poly-A RNA			NR_4.0_41668.1,     NR_4.0_54515.1,     NR_4.0_77788.1,     NR_4.0_41042.3,     NR_4.0_32733.1
+  poly-GC RNA			NR_4.0_68756.1
+  poly-U RNA			NR_4.0_09580.1,      NR_4.0_19677.1,     NR_4.0_43421.1,      NR_4.0_62870.1,     NR_4.0_72651.1,     NR_4.0_00747.1,     NR_4.0_08724.1,      NR_4.0_78862.1,     NR_4.0_77057.1,     NR_4.0_93101.1
+  ppGpp Riboswitch			NR_4.0_86427.1
+  product RNA			NR_4.0_17501.1
+  psaJ RNA			NR_4.0_55785.1,      NR_4.0_27182.1
+  rA12: RNA (5'-R(P*AP*AP*AP*AP*AP*AP*A)-3[...]			NR_4.0_88451.1
+  rRNA			NR_4.0_58101.1,      NR_4.0_42738.1
+  rRNA (5'- AGAACUCAAUAG -3')			NR_4.0_28532.1
+  rRNA (5'- GAACUCAAUAG -3')			NR_4.0_37298.1
+  rRNA alpha			NR_4.0_36683.2
+  rRNA beta			NR_4.0_60178.1
+  rRNA delta			NR_4.0_01258.2
+  rRNA epsilon			NR_4.0_41222.1
+  rRNA gamma			NR_4.0_22273.1
+  rRNA zeta			NR_4.0_91296.1
+  rU12: 5'-R(P*UP*UP*UP*UP*UP*UP*UP*UP*UP*[...]			NR_4.0_78605.1
+  rU12: RNA (5'-R(P*UP*UP*UP*UP*UP*UP*U)-3[...]			NR_4.0_31449.1
+  r[CGCG(5-fluoro)CG]2			NR_4.0_50890.1
+  ribonuclease P RNA			NR_4.0_03631.1
+  riboswitch a pseudo-dimeric RNA			NR_4.0_00626.1
+  rrnGnut			NR_4.0_60644.1
+  rut RNA			NR_4.0_03741.2
+  s2m RNA			NR_4.0_08212.1
+  sarcin/ricin 28S rRNA			NR_4.0_57955.2
+  sc1			NR_4.0_70098.1,      NR_4.0_02963.1
+  selenocysteine tRNA			NR_4.0_63789.1,      NR_4.0_44691.1,      NR_4.0_90840.2
+  sgRNA			NR_4.0_43299.1,      NR_4.0_92730.1,      NR_4.0_09588.1,      NR_4.0_60079.1,      NR_4.0_50424.1,      NR_4.0_79594.1,      NR_4.0_92086.1,      NR_4.0_38966.1,      NR_4.0_37444.2
+  short palindromic RNA AGACAGCAUAUGCUGUCU			NR_4.0_00536.1
+  siRNA			NR_4.0_26975.1
+  signal recognition particle RNA S domain			NR_4.0_70955.1
+  single-guide RNA			NR_4.0_30925.2
+  srRNA1			NR_4.0_26892.1
+  srRNA2			NR_4.0_90150.1
+  srRNA4			NR_4.0_79575.1
+  ssRNA			NR_4.0_84179.1,      NR_4.0_89476.1,      NR_4.0_97995.1,      NR_4.0_12236.1,      NR_4.0_88533.1,      NR_4.0_60024.1
+  stem-loop of 23S rRNA			NR_4.0_86334.1
+  synthRNA			NR_4.0_45934.1
+  tRNA			NR_4.0_32613.1,      NR_4.0_74766.1,      NR_4.0_16888.1,      NR_4.0_98299.1,      NR_4.0_30486.2,      NR_4.0_36843.2,      NR_4.0_18471.1,     NR_4.0_76426.1,     NR_4.0_73684.1,      NR_4.0_79459.1,     NR_4.0_74880.3,      NR_4.0_99134.1,      NR_4.0_45040.1,      NR_4.0_79496.3,      NR_4.0_33389.1,      NR_4.0_18038.1,      NR_4.0_99471.1,      NR_4.0_62804.1,      NR_4.0_62940.1,      NR_4.0_39569.1,      NR_4.0_03720.1,      NR_4.0_96269.10,      NR_4.0_71217.2,      NR_4.0_56633.6,      NR_4.0_86891.1,      NR_4.0_71445.1,      NR_4.0_66347.1,      NR_4.0_45742.1,      NR_4.0_40788.1,      NR_4.0_30383.1,      NR_4.0_25652.1,      NR_4.0_17351.2,      NR_4.0_29909.1,      NR_4.0_09297.1,      NR_4.0_37397.1,      NR_4.0_93290.1,      NR_4.0_46102.2,   NR_4.0_74971.1,     NR_4.0_02825.1
+  tRNA (34-MER)			NR_4.0_66108.1
+  tRNA (76-MER)			NR_4.0_35542.91,      NR_4.0_47349.1
+  tRNA (E/E)			NR_4.0_96274.1
+  tRNA ASL Escherichia coli Arg1			NR_4.0_78414.1,      NR_4.0_66570.1
+  tRNA ASL Escherichia coli Arg2			NR_4.0_35459.1,      NR_4.0_63494.1
+  tRNA CCA-acceptor			NR_4.0_45693.1
+  tRNA E-site			NR_4.0_87724.1
+  tRNA Glu			NR_4.0_65615.1,      NR_4.0_42502.1
+  tRNA Lys3			NR_4.0_47714.1
+  tRNA P/E state			NR_4.0_99566.1
+  tRNA Pro			NR_4.0_96870.1
+  tRNA acceptor stem mimic			NR_4.0_85104.1
+  tRNA(Asp) acceptor stem/T stem-loop			NR_4.0_92029.1
+  tRNA(Glu)			NR_4.0_29085.1
+  tRNA(Gly)			NR_4.0_06496.1
+  tRNA(P/P) and tRNA(E*)			NR_4.0_96834.1
+  tRNA(Phe)			NR_4.0_79523.1,      NR_4.0_54588.1
+  tRNA(Sec)			NR_4.0_57598.2
+  tRNA(Tyr)			NR_4.0_70420.1
+  tRNA(Val)			NR_4.0_52282.1
+  tRNA(gly)			NR_4.0_12156.1
+  tRNA(his)			NR_4.0_42401.1
+  tRNA-Ala			NR_4.0_21015.1
+  tRNA-Ala-1-1			NR_4.0_83985.1
+  tRNA-Arg			NR_4.0_55114.1,      NR_4.0_65284.1
+  tRNA-Asn			NR_4.0_79254.1
+  tRNA-Gln			NR_4.0_79672.1
+  tRNA-Gly			NR_4.0_04298.1,      NR_4.0_51862.1
+  tRNA-Gly-CCC-2-2			NR_4.0_19188.1
+  tRNA-Leu			NR_4.0_02527.1,      NR_4.0_55925.1,      NR_4.0_73216.5
+  tRNA-Lys			NR_4.0_76703.6,      NR_4.0_32332.1,      NR_4.0_07733.2
+  tRNA-Met			NR_4.0_80098.1
+  tRNA-Phe			NR_4.0_12290.1
+  tRNA-Phe anticodon stem			NR_4.0_83196.1
+  tRNA-Ser			NR_4.0_47926.1
+  tRNA-Tyr			NR_4.0_89292.5
+  tRNA-Val			NR_4.0_35945.1
+  tRNA-fMet			NR_4.0_20721.9,      NR_4.0_48295.1
+  tRNA-glycine			NR_4.0_31699.2
+  tRNA-met			NR_4.0_92831.2
+  tRNA3Lys			NR_4.0_72172.1
+  tRNAArg			NR_4.0_24890.3,      NR_4.0_12548.1
+  tRNACys			NR_4.0_10787.1
+  tRNAGln			NR_4.0_04935.1
+  tRNALys			NR_4.0_08854.1
+  tRNAThr			NR_4.0_65561.1,      NR_4.0_61171.1
+  tRNATrp			NR_4.0_51962.3
+  tRNAVal			NR_4.0_61479.1
+  tRNAasp			NR_4.0_56204.1
+  tRNAi			NR_4.0_99632.7
+  tRNAphe			NR_4.0_19951.52
+  tmRNA			NR_4.0_97269.1,      NR_4.0_22035.1,      NR_4.0_00075.1,     NR_4.0_08930.1
+  tmRNA (63-MER)			NR_4.0_39150.1
+  trCUG-3('5)			NR_4.0_52610.1
+  transfer RNA			NR_4.0_78233.3
+  transfer RNA-Trp			NR_4.0_52699.1
+  transfer-messanger RNA (tmRNA)			NR_4.0_23849.1
+  transferrin receptor iron regulatory ele[...]			NR_4.0_75875.1
+  vRNA			NR_4.0_40309.1,      NR_4.0_96736.1,      NR_4.0_04414.1,      NR_4.0_30539.1
+  ykkC riboswitch			NR_4.0_04754.1
