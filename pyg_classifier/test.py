@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from pyg_classifier.utility import loss_plot, rmsd_scatter, e_rmsd_scatter
 
 @th.no_grad()
-def diff_test_loop(model, loader, e_dict, title, device):
+def pool_test_loop(model, loader, e_dict, title, device):
     model.eval()
     max_label = 0
     max_loss = 0
@@ -21,7 +21,7 @@ def diff_test_loop(model, loader, e_dict, title, device):
     prmsds_f_en = []
     for test_graph in loader:
         test_graph = test_graph.to(device)
-        test_pred, _, _ = model(test_graph)
+        test_pred, _ = model(test_graph)
         test_loss = F.smooth_l1_loss(test_pred, test_graph.y).item() # l1_loss(th.reshape(test_pred, (-1,)), test_graph.y).item() #
         test_losses.append(float(test_loss))
         true_rmsds.append(float(test_graph.y))

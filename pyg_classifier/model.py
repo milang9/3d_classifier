@@ -9,7 +9,7 @@ class GNN(th.nn.Module):
         self.in_c = in_c
         self.hidden_c = hidden_c
         self.out_c = out_c
-        super(GNN, self).__init__()
+        super().__init__()
 
         self.conv = th.nn.ModuleList()
         self.norm = th.nn.ModuleList()
@@ -30,12 +30,134 @@ class GNN(th.nn.Module):
         
         return x
 
+# CG RNA Classifier Model using DMoN pooling
+class DMoN_CG_Classifier(th.nn.Module):
+    def __init__(self, num_node_feats):
+        self.num_node_feats = num_node_feats
+        super().__init__()
+
+        num_nodes = math.ceil(0.25 * 64)
+        self.gcn1 = GNN(self.num_node_feats, 64, 64)
+        self.pool1 = tgnn.DMoNPooling([64, 64], num_nodes)
+        
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.gcn2 = GNN(64, 64, 64)
+        self.pool2 = tgnn.DMoNPooling([64, 64], num_nodes)
+
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.gcn3 = GNN(64, 64, 64)
+        self.pool3 = tgnn.DMoNPooling([64, 64], num_nodes)
+
+        self.gcn4 = GNN(64, 64, 64)
+        
+        self.classify = th.nn.Sequential(
+            th.nn.Linear(64, 128),
+            th.nn.ELU(),
+            th.nn.Linear(128, 128),
+            th.nn.ELU(),
+            th.nn.Linear(128, 1)
+        )
+        self.pos = th.nn.ReLU()#th.nn.Softplus(threshold=1)
+
+    def forward(self, data, training=False):
+        x = data.x
+        adj = data.adj
+
+        x = self.gcn1(x, adj)
+        _, x, adj, sp1, o1, c1 = self.pool1(x, adj)
+
+        x = self.gcn2(x, adj)
+        _, x, adj, sp2, o2, c2 = self.pool2(x, adj)        
+
+        x = self.gcn3(x, adj)
+        _, x, adj, sp3, o3, c3 = self.pool3(x, adj)
+
+        x = self.gcn4(x, adj)
+        #x = tgnn.global_mean_pool(x, batch)
+        x = x.mean(dim=1)
+
+        x = self.classify(x)
+
+        if training:
+            return x, sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3
+        else:
+            return self.pos(x), sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3
+
+
+# CG RNA Classifier Model using MinCut pooling
+class MinCut_CG_Classifier(th.nn.Module):
+    def __init__(self, num_node_feats):
+        self.num_node_feats = num_node_feats
+        super().__init__()
+
+        num_nodes = math.ceil(0.25 * 64)
+        self.gcn_pool1 = GNN(self.num_node_feats, 64, num_nodes)
+        self.gcn_embed1 = GNN(self.num_node_feats, 64, 64)
+
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.gcn_pool2 = GNN(64, 64, num_nodes)
+        self.gcn_embed2 = GNN(64, 64, 64)
+
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.gcn_pool3 = GNN(64, 64, num_nodes)
+        self.gcn_embed3 = GNN(64, 64, 64)
+
+        self.gcn_embed4 = GNN(64, 64, 64)
+        
+        self.classify = th.nn.Sequential(
+            th.nn.Linear(64, 128),# 512),
+            th.nn.ELU(),
+            th.nn.Linear(128, 128), #(512, 512),
+            th.nn.ELU(),
+            #th.nn.Linear(256, 256), #(512, 512),
+            #th.nn.ELU(),
+            #th.nn.Linear(256, 256), #(512, 512),
+            #th.nn.ELU(),
+            th.nn.Linear(128, 1) #(512, 1)
+        )
+        self.pos = th.nn.ReLU()#th.nn.Softplus(threshold=1)
+
+    def forward(self, data, training=False):
+        x = data.x
+        adj = data.adj
+
+        s = self.gcn_pool1(x, adj)
+        x = self.gcn_embed1(x, adj)
+
+        x, adj, mcl, ol = tgnn.dense_mincut_pool(x, adj, s)
+
+        s = self.gcn_pool2(x, adj)
+        x = self.gcn_embed2(x, adj)
+
+        x, adj, mcl2, ol2 = tgnn.dense_mincut_pool(x, adj, s)
+        mcl+=mcl2
+        ol+=ol2
+
+        s = self.gcn_pool3(x, adj)
+        x = self.gcn_embed3(x, adj)
+
+        x, adj, mcl3, ol3 = tgnn.dense_mincut_pool(x, adj, s)
+        mcl+=mcl3
+        ol+=ol3
+
+        x = self.gcn_embed4(x, adj)
+        
+        #x = tgnn.global_mean_pool(x, batch)
+        x = x.mean(dim=1)
+
+        x = self.classify(x)
+
+        if training:
+            return x, mcl + ol
+        else:
+            return self.pos(x), mcl + ol
+
 
 #Coarse Grain RNA Classifier Model
 class Diff_CG_Classifier(th.nn.Module):
     def __init__(self, num_node_feats):
         self.num_node_feats = num_node_feats
-        super(Diff_CG_Classifier, self).__init__()
+        super().__init__()
 
         num_nodes = math.ceil(0.25 * 64)
         self.gcn_pool1 = GNN(self.num_node_feats, 64, num_nodes)
@@ -101,16 +223,16 @@ class Diff_CG_Classifier(th.nn.Module):
         #return x, l, e
 
         if training:
-            return x, l, e
+            return x, l + e
         else:
-            return self.pos(x), l, e
+            return self.pos(x), l + e
 
 #Coarse Grain RNA Classifier Model
 class CG_Classifier(th.nn.Module):
     def __init__(self, num_node_feats):
         self.num_node_feats = num_node_feats
         self.c = 0
-        super(CG_Classifier, self).__init__()
+        super().__init__()
         
         self.conv1 = tgnn.TAGConv(self.num_node_feats, 64, K=2)
         self.norm1 = th.nn.LayerNorm(64)
