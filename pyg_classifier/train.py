@@ -20,7 +20,6 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     os.mkdir(path)
     epoch_dir = os.path.join(path, "model_data/")
     os.mkdir(epoch_dir)
-    
 
     start = time.perf_counter()
     if seed is not None:
@@ -35,14 +34,12 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
 
     opt = th.optim.Adam(model.parameters(), lr=lr)
     scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
-
-
+    epochs += burn_in
     #training setup
     epoch_losses = []
     val_losses = []
     mae_losses = []
     learning_rates = []
-    
     for epoch in range(epochs):
         model.train()
         epoch_loss = 0
@@ -51,7 +48,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             data = data.to(device)
             opt.zero_grad()
             pred, add_loss = model(data, model.training)
-            loss = F.smooth_l1_loss(pred, data.y, reduction="mean") + add_loss
+            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")# + add_loss
             loss.backward()
             opt.step()
             epoch_loss += loss.detach().item()
@@ -71,7 +68,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             for i, v_data in enumerate(val_dataloader):
                 v_data = v_data.to(device)
                 val_pred, vadd_loss = model(v_data)
-                v_loss = F.smooth_l1_loss(val_pred, v_data.y, reduction="mean") + vadd_loss
+                v_loss = F.smooth_l1_loss(val_pred, v_data.y, reduction="mean")# + vadd_loss
                 mae_l= F.l1_loss(val_pred, v_data.y, reduction="mean")
                 mae_loss += mae_l.detach().item()
                 val_loss += v_loss.detach().item()
@@ -86,11 +83,10 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         
         if epoch % 5 == 0:
             print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}, Validation loss {val_loss:.4f}, learning rate {scheduler.get_last_lr()[0]:.5f}")
+            print(f"\t{add_loss = } {vadd_loss = }")
             print(f"\t Validation MAE: {mae_loss:.4f}")
             
     end = time.perf_counter()
-
-    
 
     print(f"Training took {(end - start)/60/60:.2f} hours")
     print(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}")

@@ -1,0 +1,14 @@
+DMoN_CG_Classifier
+Seed: 17853016548730061173
+Training time: 0.82 hours
+Vectorized Data: False
+Nearest Elements Used (0=False): 0
+Epochs: 5050
+Batch Size: 64
+Learning Rate: 0.001
+Schedule Intervals: 500
+Burn in: 50
+
+Minimum Training Loss 0.0008 in epoch 5012
+Minimum Validation Loss (after 50 epochs) 13.4627 in epoch 4553
+Minimum MAE (after 50 epochs) 13.9562 in epoch 4553

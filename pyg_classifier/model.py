@@ -48,7 +48,7 @@ class DMoN_CG_Classifier(th.nn.Module):
         self.gcn3 = GNN(64, 64, 64)
         self.pool3 = tgnn.DMoNPooling([64, 64], num_nodes)
 
-        self.gcn4 = GNN(64, 64, 64)
+        self.gcn4 = tgnn.DenseGraphConv(64, 64) # GNN(64, 64, 64)
         
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 128),
@@ -62,20 +62,21 @@ class DMoN_CG_Classifier(th.nn.Module):
     def forward(self, data, training=False):
         x = data.x
         adj = data.adj
-
-        x = self.gcn1(x, adj)
+        
+        x = F.elu(self.gcn1(x, adj))
         _, x, adj, sp1, o1, c1 = self.pool1(x, adj)
-
-        x = self.gcn2(x, adj)
+        
+        x = F.elu(self.gcn2(x, adj))
         _, x, adj, sp2, o2, c2 = self.pool2(x, adj)        
 
-        x = self.gcn3(x, adj)
+        x = F.elu(self.gcn3(x, adj))
         _, x, adj, sp3, o3, c3 = self.pool3(x, adj)
 
-        x = self.gcn4(x, adj)
+        x = F.elu(self.gcn4(x, adj))
         #x = tgnn.global_mean_pool(x, batch)
+        
         x = x.mean(dim=1)
-
+        
         x = self.classify(x)
 
         if training:
