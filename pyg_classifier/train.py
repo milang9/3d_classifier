@@ -54,8 +54,8 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             data = data.to(device)
             opt.zero_grad()
             pred, add_loss  = model(data, model.training)
-            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")
-            (loss  + add_loss).backward()
+            loss = F.smooth_l1_loss(pred, data.y, reduction="mean") + add_loss
+            loss.backward()
             opt.step()
             epoch_loss += loss.detach().item()
             eadd_loss += add_loss
@@ -94,8 +94,8 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         
         if epoch % 5 == 0:
             print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}, Validation loss {val_loss:.4f}, learning rate {learning_rates[-1]:.5f}")
-            print(f"\t{eadd_loss = } {vadd_loss = }")
-            print(f"\t Validation MAE: {mae_loss:.4f}")
+            print(f"\t\t{eadd_loss = :.4f} {vadd_loss = :.4f}")
+            print(f"\t\tValidation MAE: {mae_loss:.4f}")
             
     end = time.perf_counter()
 
@@ -144,4 +144,4 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         fh.write(str(mae_losses) + "\n")
         fh.write(str(epoch_add_losses))
 
-    return epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses
+    return #epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses

@@ -90,63 +90,112 @@ class MinCut_CG_Classifier(th.nn.Module):
         self.num_node_feats = num_node_feats
         super().__init__()
 
+        self.gcn1 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(self.num_node_feats, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])
         num_nodes = math.ceil(0.25 * 64)
-        self.gcn_pool1 = GNN(self.num_node_feats, 64, num_nodes)
-        self.gcn_embed1 = GNN(self.num_node_feats, 64, 64)
-
-        num_nodes = math.ceil(0.25 * num_nodes)
-        self.gcn_pool2 = GNN(64, 64, num_nodes)
-        self.gcn_embed2 = GNN(64, 64, 64)
-
-        num_nodes = math.ceil(0.25 * num_nodes)
-        self.gcn_pool3 = GNN(64, 64, num_nodes)
-        self.gcn_embed3 = GNN(64, 64, 64)
-
-        self.gcn_embed4 = GNN(64, 64, 64)
-        
-        self.classify = th.nn.Sequential(
-            th.nn.Linear(64, 128),# 512),
+        self.pool1 = th.nn.Sequential(
+            th.nn.Linear(64, 64),
             th.nn.ELU(),
-            th.nn.Linear(128, 128), #(512, 512),
+            th.nn.Linear(64, 64),
             th.nn.ELU(),
-            #th.nn.Linear(256, 256), #(512, 512),
-            #th.nn.ELU(),
-            #th.nn.Linear(256, 256), #(512, 512),
-            #th.nn.ELU(),
-            th.nn.Linear(128, 1) #(512, 1)
+            th.nn.Linear(64, num_nodes),
+            th.nn.ELU()
         )
-        self.pos = th.nn.ReLU()#th.nn.Softplus(threshold=1)
+
+        self.gcn2 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.pool2 = th.nn.Sequential(
+            th.nn.Linear(64, 64),
+            th.nn.ELU(),
+            th.nn.Linear(64, 64),
+            th.nn.ELU(),
+            th.nn.Linear(64, num_nodes),
+            th.nn.ELU()
+        ) 
+        
+        self.gcn3 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])
+        num_nodes = math.ceil(0.25 * num_nodes)
+        self.pool3 = th.nn.Sequential(
+            th.nn.Linear(64, 64),
+            th.nn.ELU(),
+            th.nn.Linear(64, 64),
+            th.nn.ELU(),
+            th.nn.Linear(64, num_nodes),
+            th.nn.ELU()
+        ) 
+
+        self.gcn4 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])
+
+        self.classify = th.nn.Sequential(
+            th.nn.Linear(64, 128),
+            th.nn.ELU(),
+            th.nn.Linear(128, 128),
+            th.nn.ELU(),
+            #th.nn.Linear(128, 128),
+            #th.nn.ELU(),
+            #th.nn.Linear(128, 128),
+            #th.nn.ELU(),
+            th.nn.Linear(128, 1)
+        )
+        self.pos = th.nn.ReLU()
 
     def forward(self, data, training=False):
         x = data.x
         adj = data.adj
 
-        s = self.gcn_pool1(x, adj)
-        x = self.gcn_embed1(x, adj)
+        x = self.gcn1(x, adj)
+        s = self.pool1(x)
 
         x, adj, mcl, ol = tgnn.dense_mincut_pool(x, adj, s)
 
-        s = self.gcn_pool2(x, adj)
-        x = self.gcn_embed2(x, adj)
+        x = self.gcn2(x, adj)
+        s = self.pool2(x)
 
         x, adj, mcl2, ol2 = tgnn.dense_mincut_pool(x, adj, s)
         mcl+=mcl2
         ol+=ol2
 
-        s = self.gcn_pool3(x, adj)
-        x = self.gcn_embed3(x, adj)
+        x = self.gcn3(x, adj)
+        s = self.pool3(x)
 
         x, adj, mcl3, ol3 = tgnn.dense_mincut_pool(x, adj, s)
         mcl+=mcl3
         ol+=ol3
 
-        x = self.gcn_embed4(x, adj)
-        
-        #x = tgnn.global_mean_pool(x, batch)
+        x = self.gcn4(x, adj)
+
         x = x.mean(dim=1)
 
         x = self.classify(x)
 
+        return x, (mcl + ol).item()
         if training:
             return x, (mcl + ol).item()
         else:
