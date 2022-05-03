@@ -73,16 +73,15 @@ class DMoN_CG_Classifier(th.nn.Module):
         _, x, adj, sp3, o3, c3 = self.pool3(x, adj)
 
         x = F.elu(self.gcn4(x, adj))
-        #x = tgnn.global_mean_pool(x, batch)
         
         x = x.mean(dim=1)
         
         x = self.classify(x)
 
         if training:
-            return x, sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3
+            return x, (sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3).item()
         else:
-            return self.pos(x), sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3
+            return self.pos(x), (sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 +c3).item() # should this be added when not training?
 
 
 # CG RNA Classifier Model using MinCut pooling
@@ -149,12 +148,12 @@ class MinCut_CG_Classifier(th.nn.Module):
         x = self.classify(x)
 
         if training:
-            return x, mcl + ol
+            return x, (mcl + ol).item()
         else:
-            return self.pos(x), mcl + ol
+            return self.pos(x), (mcl + ol).item()
 
 
-#Coarse Grain RNA Classifier Model
+# Coarse Grain RNA Classifier Model using differentiable pooling
 class Diff_CG_Classifier(th.nn.Module):
     def __init__(self, num_node_feats):
         self.num_node_feats = num_node_feats

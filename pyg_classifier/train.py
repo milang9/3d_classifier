@@ -33,32 +33,43 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     val_dataloader = DenseDataLoader(val_dataset, batch_size=b_size)
 
     opt = th.optim.Adam(model.parameters(), lr=lr)
-    scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
+    if sched_T0 > 0:
+        scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
     epochs += burn_in
     #training setup
     epoch_losses = []
+    epoch_add_losses = []
     val_losses = []
     mae_losses = []
     learning_rates = []
     for epoch in range(epochs):
         model.train()
         epoch_loss = 0
-        learning_rates.append(scheduler.get_last_lr()[0])
+        if sched_T0 > 0:
+            learning_rates.append(scheduler.get_last_lr()[0])
+        else:
+            learning_rates.append(lr)
+        eadd_loss = 0
         for iter, data in enumerate(train_dataloader):
             data = data.to(device)
             opt.zero_grad()
-            pred, add_loss = model(data, model.training)
-            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")# + add_loss
-            loss.backward()
+            pred, add_loss  = model(data, model.training)
+            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")
+            (loss  + add_loss).backward()
             opt.step()
             epoch_loss += loss.detach().item()
+            eadd_loss += add_loss
+            
 
         #apply lr changes according to scheme
-        if epoch >= burn_in:
-            scheduler.step()
+        if sched_T0 > 0:
+            if epoch >= burn_in:
+                scheduler.step()
 
         epoch_loss /= (iter + 1)
         epoch_losses.append(epoch_loss)
+        eadd_loss /= (iter + 1)
+        epoch_add_losses.append(eadd_loss)
 
         #val setup
         with th.no_grad():
@@ -67,8 +78,8 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             mae_loss = 0
             for i, v_data in enumerate(val_dataloader):
                 v_data = v_data.to(device)
-                val_pred, vadd_loss = model(v_data)
-                v_loss = F.smooth_l1_loss(val_pred, v_data.y, reduction="mean")# + vadd_loss
+                val_pred, vadd_loss  = model(v_data)
+                v_loss = F.smooth_l1_loss(val_pred, v_data.y, reduction="mean") + vadd_loss
                 mae_l= F.l1_loss(val_pred, v_data.y, reduction="mean")
                 mae_loss += mae_l.detach().item()
                 val_loss += v_loss.detach().item()
@@ -82,8 +93,8 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         th.save(model.state_dict(), f"{epoch_dir}epoch_{str(epoch)}.pth")
         
         if epoch % 5 == 0:
-            print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}, Validation loss {val_loss:.4f}, learning rate {scheduler.get_last_lr()[0]:.5f}")
-            print(f"\t{add_loss = } {vadd_loss = }")
+            print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}, Validation loss {val_loss:.4f}, learning rate {learning_rates[-1]:.5f}")
+            print(f"\t{eadd_loss = } {vadd_loss = }")
             print(f"\t Validation MAE: {mae_loss:.4f}")
             
     end = time.perf_counter()
@@ -94,7 +105,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     print(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
     print(f"Seed used for training was: {th.initial_seed()}")
 
-    #plot the training run
+    # plot the training run
     fig, ax1 = plt.subplots(layout="constrained", figsize=(20, 6))
     ax1.secondary_yaxis("left")
     ax1.plot(epoch_losses, label="Training Loss")
@@ -114,6 +125,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     plt.savefig(path + "training_run.png", bbox_inches="tight", facecolor='w', edgecolor='w')
     plt.savefig(path + "training_run_tight.pdf", bbox_inches="tight", facecolor='w', edgecolor='w')
 
+    # write training setup to file
     with open(path + "training_setup.txt", "w") as fh:
         fh.write(f"{model._get_name()}\n")
         fh.write(f"Seed: {th.initial_seed()}\n")
@@ -124,10 +136,12 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         fh.write(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}\n")
         fh.write(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
 
+    # write training metrics to file
     with open(path + "loss_data.txt", "w") as fh:
         fh.write(str(epoch_losses) + "\n")
         fh.write(str(val_losses) + "\n")
         fh.write(str(learning_rates) + "\n")
-        fh.write(str(mae_losses))
+        fh.write(str(mae_losses) + "\n")
+        fh.write(str(epoch_add_losses))
 
-    return epoch_losses, val_losses, mae_losses, learning_rates
+    return epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses
