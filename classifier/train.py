@@ -9,9 +9,48 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 
-#TODO: Work in progress
-#       - include logger
+#TODO: include logger
 
+# plot the training run
+def plot_training(epoch_losses, val_losses, mae_losses, learning_rates, model, path):
+    fig, ax1 = plt.subplots(layout="constrained", figsize=(20, 6))
+    ax1.secondary_yaxis("left")
+    ax1.plot(epoch_losses, label="Training Loss")
+    ax1.plot(val_losses, "r", label="Validation Loss")
+    ax1.plot(mae_losses, "orange", label="MAE (Val. Set)")
+    ax2 = ax1.twinx()
+    ax2.secondary_yaxis("right")
+    ax2.plot(learning_rates, "g", label="Learning Rate")
+    plt.title(f"Training Run, {model._get_name()}")
+    ax1.set_xlabel("Epochs")
+    ax1.set_ylabel("Mean RMSD difference")
+    ax2.set_ylabel("Learning rate")
+    ax1.set_ybound(lower=0, upper=max(val_losses)+2)
+    han1, lab1 = ax1.get_legend_handles_labels()
+    han2, lab2 = ax2.get_legend_handles_labels()
+    plt.legend(han1 + han2, lab1 + lab2, loc="upper right")
+    plt.savefig(path + "training_run.png", bbox_inches="tight", facecolor='w', edgecolor='w')
+    plt.savefig(path + "training_run_tight.pdf", bbox_inches="tight", facecolor='w', edgecolor='w')
+
+def write_logs(path, model, start, end, vectorize, k, epochs, b_size, lr, sched_T0, burn_in, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses):
+    # write training setup to file
+    with open(path + "training_setup.txt", "w") as fh:
+        fh.write(f"{model._get_name()}\n")
+        fh.write(f"Seed: {th.initial_seed()}\n")
+        fh.write(f"Training time: {(end - start)/60/60:.2f} hours\n")
+        fh.write(f"Vectorized Data: {vectorize}\nNearest Elements Used (0=False): {k}\n")
+        fh.write(f"Epochs: {epochs}\nBatch Size: {b_size}\nLearning Rate: {lr}\nSchedule Intervals: {sched_T0}\nBurn in: {burn_in}\n\n")
+        fh.write(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}\n")
+        fh.write(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}\n")
+        fh.write(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
+
+    # write training metrics to file
+    with open(path + "loss_data.txt", "w") as fh:
+        fh.write(str(epoch_losses) + "\n")
+        fh.write(str(val_losses) + "\n")
+        fh.write(str(learning_rates) + "\n")
+        fh.write(str(mae_losses) + "\n")
+        fh.write(str(epoch_add_losses))
 
 def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, seed=None, burn_in=0):
     e = datetime.datetime.now()
@@ -105,43 +144,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     print(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
     print(f"Seed used for training was: {th.initial_seed()}")
 
-    # plot the training run
-    fig, ax1 = plt.subplots(layout="constrained", figsize=(20, 6))
-    ax1.secondary_yaxis("left")
-    ax1.plot(epoch_losses, label="Training Loss")
-    ax1.plot(val_losses, "r", label="Validation Loss")
-    ax1.plot(mae_losses, "orange", label="MAE (Val. Set)")
-    ax2 = ax1.twinx()
-    ax2.secondary_yaxis("right")
-    ax2.plot(learning_rates, "g", label="Learning Rate")
-    plt.title(f"Training Run, {model._get_name()}")
-    ax1.set_xlabel("Epochs")
-    ax1.set_ylabel("Mean RMSD difference")
-    ax2.set_ylabel("Learning rate")
-    ax1.set_ybound(lower=0, upper=20)
-    han1, lab1 = ax1.get_legend_handles_labels()
-    han2, lab2 = ax2.get_legend_handles_labels()
-    plt.legend(han1 + han2, lab1 + lab2)
-    plt.savefig(path + "training_run.png", bbox_inches="tight", facecolor='w', edgecolor='w')
-    plt.savefig(path + "training_run_tight.pdf", bbox_inches="tight", facecolor='w', edgecolor='w')
-
-    # write training setup to file
-    with open(path + "training_setup.txt", "w") as fh:
-        fh.write(f"{model._get_name()}\n")
-        fh.write(f"Seed: {th.initial_seed()}\n")
-        fh.write(f"Training time: {(end - start)/60/60:.2f} hours\n")
-        fh.write(f"Vectorized Data: {vectorize}\nNearest Elements Used (0=False): {k}\n")
-        fh.write(f"Epochs: {epochs}\nBatch Size: {b_size}\nLearning Rate: {lr}\nSchedule Intervals: {sched_T0}\nBurn in: {burn_in}\n\n")
-        fh.write(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}\n")
-        fh.write(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}\n")
-        fh.write(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
-
-    # write training metrics to file
-    with open(path + "loss_data.txt", "w") as fh:
-        fh.write(str(epoch_losses) + "\n")
-        fh.write(str(val_losses) + "\n")
-        fh.write(str(learning_rates) + "\n")
-        fh.write(str(mae_losses) + "\n")
-        fh.write(str(epoch_add_losses))
+    plot_training(epoch_losses, val_losses, mae_losses, learning_rates, model, path)
+    write_logs(path, model, start, end, vectorize, k, epochs, b_size, lr, sched_T0, burn_in, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses)
 
     return #epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses

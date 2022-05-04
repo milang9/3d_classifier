@@ -37,18 +37,39 @@ class DMoN_CG_Classifier(th.nn.Module):
         super().__init__()
 
         num_nodes = math.ceil(0.25 * 64)
-        self.gcn1 = GNN(self.num_node_feats, 64, 64)
+        self.gcn1 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(self.num_node_feats, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])#GNN(self.num_node_feats, 64, 64)
         self.pool1 = tgnn.DMoNPooling([64, 64], num_nodes)
         
         num_nodes = math.ceil(0.25 * num_nodes)
-        self.gcn2 = GNN(64, 64, 64)
+        self.gcn2 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])#GNN(64, 64, 64)
         self.pool2 = tgnn.DMoNPooling([64, 64], num_nodes)
 
         num_nodes = math.ceil(0.25 * num_nodes)
-        self.gcn3 = GNN(64, 64, 64)
+        self.gcn3 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])#GNN(64, 64, 64)
         self.pool3 = tgnn.DMoNPooling([64, 64], num_nodes)
 
-        self.gcn4 = tgnn.DenseGraphConv(64, 64) # GNN(64, 64, 64)
+        self.gcn4 = tgnn.Sequential("x, adj", [
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU(),
+
+            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            th.nn.ELU()
+        ])#tgnn.DenseGraphConv(64, 64) # GNN(64, 64, 64)
         
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 128),
