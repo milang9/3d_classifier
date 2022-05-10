@@ -68,16 +68,20 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 def train(train_loader):
     model.train()
     loss_all = 0
-
-    for data in train_loader:
+    tot_all = 0
+    for i, data in enumerate(train_loader):
         data = data.to(device)
         optimizer.zero_grad()
         out, tot_loss = model(data.x, data.edge_index, data.batch)
         loss = F.nll_loss(out, data.y.view(-1)) + tot_loss
+        if i == 0:
+            print(f"\t{tot_loss = }, {type(tot_loss) = }")
         loss.backward()
         loss_all += data.y.size(0) * float(loss)
         optimizer.step()
-    return loss_all / len(train_dataset)
+        tot_all += tot_loss.detach().item()
+    tot_all /= (i + 1)
+    return loss_all / len(train_dataset), tot_all
 
 
 @torch.no_grad()
@@ -85,23 +89,25 @@ def test(loader):
     model.eval()
     correct = 0
     loss_all = 0
-
-    for data in loader:
+    tot_all = 0
+    for i, data in enumerate(loader):
         data = data.to(device)
         pred, tot_loss = model(data.x, data.edge_index, data.batch)
         loss = F.nll_loss(pred, data.y.view(-1)) + tot_loss
         loss_all += data.y.size(0) * float(loss)
         correct += int(pred.max(dim=1)[1].eq(data.y.view(-1)).sum())
-
-    return loss_all / len(loader.dataset), correct / len(loader.dataset)
+        tot_all += tot_loss.detach().item()
+    tot_all /= (i + 1)
+    return loss_all / len(loader.dataset), correct / len(loader.dataset), tot_all
 
 
 for epoch in range(1, 101):
-    train_loss = train(train_loader)
-    _, train_acc = test(train_loader)
-    val_loss, val_acc = test(val_loader)
-    test_loss, test_acc = test(test_loader)
+    train_loss, ttot_loss = train(train_loader)
+    _, train_acc, ttrain_tot_loss = test(train_loader)
+    val_loss, val_acc, tval_tot_loss = test(val_loader)
+    test_loss, test_acc, ttest_tot_loss = test(test_loader)
     print(f'Epoch: {epoch:03d}, Train Loss: {train_loss:.3f}, '
           f'Train Acc: {train_acc:.3f}, Val Loss: {val_loss:.3f}, '
           f'Val Acc: {val_acc:.3f}, Test Loss: {test_loss:.3f}, '
           f'Test Acc: {test_acc:.3f}')
+    print(f"\t{ttot_loss = :.3f}, {ttrain_tot_loss = :.3f}, {tval_tot_loss = :.3f}, {ttest_tot_loss = :.3f}")
