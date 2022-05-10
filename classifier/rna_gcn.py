@@ -1,22 +1,22 @@
 #!/usr/bin/python
 import argparse
 import torch as th
-from classifier.train import pool_train_loop, add_train_specific_args
-from classifier.model import MinCut2_CG_Classifier
+import classifier.train as ct #import pool_train_loop, add_train_specific_args
+import classifier.model as cm # import MinCut2_CG_Classifier
 
 def main():
     parser = argparse.ArgumentParser(description="Neural Network Model for the classification of coarse grained RNA 3D structures, using Graph Convolution.")
     parser.add_argument("-train", action="store_true")
     parser.add_argument("-test", action="store_true")
-    parser = add_train_specific_args(parser)
+    parser = ct.add_train_specific_args(parser)
     args = parser.parse_args()
     device = th.device("cuda" if th.cuda.is_available() else "cpu")
 
 
 
     if args.train:
-        model = MinCut2_CG_Classifier
-        pool_train_loop(
+        model = cm.MinCut2_CG_Classifier
+        ct.pool_train_loop(
             model=model,
             train_dataset=args.t,
             val_dataset=args.v,
