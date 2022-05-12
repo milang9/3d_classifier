@@ -2,7 +2,7 @@
 import argparse
 import torch as th
 from train import pool_train_loop, add_train_specific_args
-from model import CG_Classifier, Diff_CG_Classifier, MinCut_CG_Classifier, MinCut2_CG_Classifier
+from model import CG_Classifier, Diff_CG_Classifier, MinCut_CG_Classifier #, MinCut2_CG_Classifier
 from data import CGDataset
 import torch_geometric.transforms as T
 
@@ -45,8 +45,8 @@ def main():
         m = Diff_CG_Classifier(training_dataset.num_node_features)
     elif args.model == "mincut":
         m = MinCut_CG_Classifier(training_dataset.num_node_features)
-    elif args.model == "mincut2":
-        m = MinCut2_CG_Classifier(training_dataset.num_node_features)
+    #elif args.model == "mincut2":
+    #    m = MinCut2_CG_Classifier(training_dataset.num_node_features)
 
     if args.train:
         pool_train_loop(

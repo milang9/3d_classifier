@@ -117,6 +117,7 @@ class DMoN_CG_Classifier(th.nn.Module):
 
 
 # CG RNA Classifier Model using MinCut pooling
+"""
 class MinCut_CG_Classifier(th.nn.Module):
     def __init__(self, num_node_feats):
         self.num_node_feats = num_node_feats
@@ -233,8 +234,9 @@ class MinCut_CG_Classifier(th.nn.Module):
         #    return x, (mcl + ol).item()
         # else:
         #    return self.pos(x), (mcl + ol).item()
+"""
 
-class MinCut2_CG_Classifier(th.nn.Module):
+class MinCut_CG_Classifier(th.nn.Module):
     def __init__(self, num_node_feats):
         self.num_node_feats = num_node_feats
         super().__init__()
@@ -290,22 +292,7 @@ class MinCut2_CG_Classifier(th.nn.Module):
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
             th.nn.ELU(),
             ])
-        """
-        num_nodes = 1 
-        self.pool4 = th.nn.Sequential(
-            th.nn.Linear(64, 64),
-            th.nn.ELU(),
-            th.nn.Linear(64, num_nodes),
-            th.nn.ELU())
 
-        self.gcn5 = tgnn.Sequential(
-            "x, adj",
-            [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            th.nn.ELU(),
-            (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            th.nn.ELU(),
-            ])
-        """
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
             th.nn.ELU(),
@@ -341,13 +328,7 @@ class MinCut2_CG_Classifier(th.nn.Module):
         
 
         x = self.gcn4(x, adj)
-        '''
-        s = self.pool4(x)
 
-        x, adj, mcl4, ol4 = tgnn.dense_mincut_pool(x, adj, s)
-        
-        x = self.gcn5(x, adj)
-        '''
         x = x.mean(dim=1)
 
         x = self.classify(x)
