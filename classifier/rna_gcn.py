@@ -1,9 +1,9 @@
 #!/usr/bin/python
 import argparse
 import torch as th
-from train import pool_train_loop, add_train_specific_args
-from model import CG_Classifier, Diff_CG_Classifier, MinCut_CG_Classifier #, MinCut2_CG_Classifier
-from data import CGDataset
+from .train import pool_train_loop, add_train_specific_args
+from .model import CG_Classifier, Diff_CG_Classifier, MinCut_CG_Classifier #, MinCut2_CG_Classifier
+from .data import CGDataset
 import torch_geometric.transforms as T
 
 def add_args():

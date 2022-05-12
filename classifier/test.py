@@ -40,11 +40,11 @@ def pool_test_loop(model, loader, e_dict, title, device):
             min_label = test_graph.y
             min_pred = test_pred
         if test_pred < 0:
-            print(test_graph.y, test_pred)
+            print(f"{test_graph.y.item() = }, {test_pred.item() = }")
     
     print(title)
-    print(min_label, min_pred, min_loss)
-    print(max_label, max_pred, max_loss)
+    print(f"Minimum Loss: Label = {min_label.item():.4f}, Prediction = {min_pred.item():.4f}, Loss = {min_loss:.4f}")
+    print(f"Maximum Loss: Label = {max_label.item():.4f}, Prediction = {max_pred.item():.4f}, Loss = {max_loss:.4f}")
     test_mean = np.mean(test_losses)
     test_std = np.std(test_losses)
     test_fq = np.quantile(test_losses, q = 0.25)
@@ -92,19 +92,19 @@ def test_loop(model, loader, e_dict, title, device):
             prmsds_f_en.append(float(test_pred))
             trmsds_f_en.append(float(test_graph.y))
         if test_loss > max_loss:
-            max_loss = test_loss
-            max_label = test_graph.y
-            max_pred = test_pred
+            max_loss = test_loss.item()
+            max_label = test_graph.y.item()
+            max_pred = test_pred.item()
         if test_loss < min_loss:
-            min_loss = test_loss
-            min_label = test_graph.y
-            min_pred = test_pred
+            min_loss = test_loss.item()
+            min_label = test_graph.y.item()
+            min_pred = test_pred.item()
         if test_pred < 0:
-            print(test_graph.y, test_pred)
+            print(f"{test_graph.y = }, {test_pred = }")
     
     print(title)
-    print(min_label, min_pred, min_loss)
-    print(max_label, max_pred, max_loss)
+    print(f"Minimum Loss: Label = {min_label.item():.4f}, Prediction = {min_pred.item():.4f}, Loss = {min_loss.item():.4f}")
+    print(f"Maximum Loss: Label = {max_label.item():.4f}, Prediction = {max_pred.item():.4f}, Loss = {max_loss.item():.4f}")
     test_mean = np.mean(test_losses)
     test_std = np.std(test_losses)
     test_fq = np.quantile(test_losses, q = 0.25)

@@ -5,7 +5,7 @@ import os
 import datetime
 import numpy as np
 import torch as th
-from torch_geometric.loader import DenseDataLoader
+from torch_geometric.loader import DenseDataLoader, DataLoader
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
@@ -24,6 +24,15 @@ def add_train_specific_args(parent_parser):
     parser.add_argument("-burn_in", type=int, default=0)
     return parser
 
+def store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses):
+    # write training metrics to file
+    with open(path + "loss_data.txt", "w") as fh:
+        fh.write(str(epoch_losses) + "\n")
+        fh.write(str(val_losses) + "\n")
+        fh.write(str(learning_rates) + "\n")
+        fh.write(str(mae_losses) + "\n")
+        fh.write(str(epoch_add_losses))
+
 def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, seed=None, burn_in=0):
     e = datetime.datetime.now()
     m_dir = f"{e.date()}_{e.hour}-{e.minute}_{model._get_name()}/"
@@ -40,8 +49,10 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     
     model.to(device)
 
-    train_dataloader = DenseDataLoader(train_dataset, batch_size=b_size, shuffle=True)
-    val_dataloader = DenseDataLoader(val_dataset, batch_size=b_size)
+    train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True)
+    #DenseDataLoader(train_dataset, batch_size=b_size, shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=b_size) 
+    #DenseDataLoader(val_dataset, batch_size=b_size)
 
     opt = th.optim.Adam(model.parameters(), lr=lr)
     if sched_T0 > 0:
@@ -66,11 +77,12 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             data = data.to(device)
             opt.zero_grad()
             pred, add_loss  = model(data, model.training)
-            loss = th.add(F.smooth_l1_loss(pred, data.y, reduction="mean"), add_loss)
+            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")
+            loss += add_loss
             loss.backward()
             opt.step()
             epoch_loss += loss.detach().item()
-            eadd_loss += (add_loss.detach().item() if type(eadd_loss) == th.Tensor else add_loss)
+            eadd_loss += (add_loss.detach().item() if type(add_loss) == th.Tensor else add_loss)
             
 
         #apply lr changes according to scheme
@@ -103,11 +115,14 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         mae_losses.append(mae_loss)
 
         th.save(model.state_dict(), f"{epoch_dir}epoch_{str(epoch)}.pth")
-        
+
+        store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses)
+
         if epoch % 5 == 0:
-            print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}, Validation loss {val_loss:.4f}, learning rate {learning_rates[-1]:.5f}")
-            print(f"\t\t{eadd_loss = :.4f} {vadd_loss = :.4f}")
-            print(f"\t\tValidation MAE: {mae_loss:.4f}")
+            print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}; Validation loss {val_loss:.4f}, MAE: {mae_loss:.4f}; lr: {learning_rates[-1]:.5f}")
+            print(f"\tAdd. Loss: Training {eadd_loss:.4f}, Validation {vadd_loss:.4f}")
+
+            
             
     end = time.perf_counter()
 
@@ -117,6 +132,9 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     print(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
     print(f"Seed used for training was: {th.initial_seed()}")
 
+    #store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses)
+
+    # plot the training run
     fig, ax1 = plt.subplots(layout="constrained", figsize=(20, 6))
     ax1.secondary_yaxis("left")
     ax1.plot(epoch_losses, label="Training Loss")
@@ -146,7 +164,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         fh.write(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}\n")
         fh.write(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}\n")
         fh.write(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
-
+    '''
     # write training metrics to file
     with open(path + "loss_data.txt", "w") as fh:
         fh.write(str(epoch_losses) + "\n")
@@ -156,3 +174,4 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         fh.write(str(epoch_add_losses))
 
     return #epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses
+    '''
