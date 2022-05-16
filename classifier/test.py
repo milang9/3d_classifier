@@ -40,7 +40,7 @@ def pool_test_loop(model, loader, e_dict, title, device):
             min_label = test_graph.y
             min_pred = test_pred
         if test_pred < 0:
-            print(f"{test_graph.y.item() = }, {test_pred.item() = }")
+            print(f"Prediction below 0: {test_graph.y.item() = }, {test_pred.item() = }")
     
     print(title)
     print(f"Minimum Loss: Label = {min_label.item():.4f}, Prediction = {min_pred.item():.4f}, Loss = {min_loss:.4f}")

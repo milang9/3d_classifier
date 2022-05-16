@@ -115,6 +115,8 @@ class MinCut_CG_Classifier(th.nn.Module):
             [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
             th.nn.ELU(),
             (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            th.nn.ELU(),
+            (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
             th.nn.ELU()
             ])
 
