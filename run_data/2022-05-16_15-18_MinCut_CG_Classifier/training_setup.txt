@@ -1,0 +1,14 @@
+MinCut_CG_Classifier
+Seed: 11443609280689560685
+Training time: 0.47 hours
+Vectorized Data: True
+Nearest Elements Used (0=False): 0
+Epochs: 5050
+Batch Size: 64
+Learning Rate: 0.001
+Schedule Intervals: 50
+Burn in: 50
+
+Minimum Training Loss -0.0374 in epoch 4491
+Minimum Validation Loss (after 50 epochs) 13.0062 in epoch 4913
+Minimum MAE (after 50 epochs) 13.3899 in epoch 4913

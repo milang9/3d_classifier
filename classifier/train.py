@@ -77,8 +77,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             data = data.to(device)
             opt.zero_grad()
             pred, add_loss  = model(data, model.training)
-            loss = F.smooth_l1_loss(pred, data.y, reduction="mean")
-            loss += add_loss
+            loss = F.smooth_l1_loss(pred, data.y, reduction="mean") + add_loss
             loss.backward()
             opt.step()
             epoch_loss += loss.detach().item()
@@ -114,7 +113,13 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         val_losses.append(val_loss)
         mae_losses.append(mae_loss)
 
-        th.save(model.state_dict(), f"{epoch_dir}epoch_{str(epoch)}.pth")
+        th.save({
+            "epoch": epoch,
+            "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": opt.state_dict(),
+            "scheduler_state_dict": scheduler.state_dict(),
+            "loss": loss
+            }, f"{epoch_dir}epoch_{str(epoch)}.pth")
 
         store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses)
 

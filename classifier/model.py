@@ -110,51 +110,70 @@ class MinCut_CG_Classifier(th.nn.Module):
         self.num_node_feats = num_node_feats
         super().__init__()
 
-        self.tagconv = tgnn.Sequential(
-            "x, edge_index",
-            [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
+        self.pre = th.nn.Sequential(
+            th.nn.Linear(self.num_node_feats, 64),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
-            (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
-            th.nn.ELU(),
-            (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            th.nn.Linear(64, 64),
+            #tgnn.GraphNorm(64),
             th.nn.ELU()
-            ])
+            )
+
+            #tgnn.Sequential(
+            #"x, edge_index",
+            #[(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
+            #th.nn.ELU(),
+            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            #th.nn.ELU(),
+            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            #th.nn.ELU()
+            #])
 
         self.gcn1 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU()
             ])
         num_nodes = 16 #math.ceil(0.25 * 64)
         self.pool1 = th.nn.Sequential(
             th.nn.Linear(64, 64),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             th.nn.Linear(64, num_nodes),
+            #tgnn.GraphNorm(num_nodes),
             th.nn.ELU()
             )
 
         self.gcn2 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU()
             ])
         num_nodes = 4
         self.pool2 = th.nn.Sequential(
             th.nn.Linear(64, 64),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             th.nn.Linear(64, num_nodes),
+            #tgnn.GraphNorm(num_nodes),
             th.nn.ELU()
             )
 
         self.gcn3 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
+            #tgnn.GraphNorm(64),
             th.nn.ELU(),
             ])
 
@@ -180,10 +199,10 @@ class MinCut_CG_Classifier(th.nn.Module):
             th.nn.ELU(),
             th.nn.Linear(64, 64),
             th.nn.ELU(),
-            th.nn.Linear(64, 64),
-            th.nn.ELU(),
-            th.nn.Linear(64, 64),
-            th.nn.ELU(),
+            #th.nn.Linear(64, 64),
+            #th.nn.ELU(),
+            #th.nn.Linear(64, 64),
+            #th.nn.ELU(),
             th.nn.Linear(64, 1)
             )
         self.pos = th.nn.ReLU()
@@ -193,10 +212,10 @@ class MinCut_CG_Classifier(th.nn.Module):
         batch = data.batch
         edge_index = data.edge_index
 
-        x = self.tagconv(x, edge_index)
+        x = self.pre(x)#, edge_index)
 
-        x, mask = tgu.to_dense_batch(x, batch)
-        adj = tgu.to_dense_adj(edge_index, batch)
+        x, mask = tgu.to_dense_batch(x, batch, max_num_nodes=64)
+        adj = tgu.to_dense_adj(edge_index, batch, max_num_nodes=64)
 
         x = self.gcn1(x, adj)
         s = self.pool1(x)
