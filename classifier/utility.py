@@ -43,6 +43,20 @@ def e_rmsd_scatter(energy, rmsd, title):
     plt.xlabel("RMSD")
     plt.show()
 
+def type_histo(names, title, cutoff):
+    labels_dic = {}
+    for struc in names:
+        label = struc[-7:-3]
+        if label not in labels_dic:
+            labels_dic[label] = 1
+        else:
+            labels_dic[label] += 1
+
+    fg, ax = plt.subplots(layout='constrained', figsize=(8, 6))
+    plt.title(f"{title}, Structure Types above with more than {cutoff[0]} loss, below labeled RMSD {cutoff[1]}")
+    plt.bar(list(labels_dic.keys()), labels_dic.values())#, color='g')
+    plt.show()
+
 def get_energy_dict(e_list):
     energy_dict = {}
     with open(e_list, "r") as fh:
@@ -50,3 +64,4 @@ def get_energy_dict(e_list):
             name, energy = (line.rstrip()).split("\t")
             energy_dict[name] = float(energy)
     return energy_dict
+

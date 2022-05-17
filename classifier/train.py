@@ -3,6 +3,7 @@ import argparse
 import time
 import os
 import datetime
+import logging
 import numpy as np
 import torch as th
 from torch_geometric.loader import DenseDataLoader, DataLoader
@@ -33,9 +34,13 @@ def store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, e
         fh.write(str(mae_losses) + "\n")
         fh.write(str(epoch_add_losses))
 
-def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, seed=None, burn_in=0):
+def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, resume=False,seed=None, burn_in=0):
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%d.%m.%Y %I:%M:%S', level=logging.INFO)
     e = datetime.datetime.now()
     m_dir = f"{e.date()}_{e.hour}-{e.minute}_{model._get_name()}/"
+
+    logging.info(f"Creating Training Directory at {m_dir}")
+    
     path = os.path.join(model_dir, m_dir)
     os.mkdir(path)
     epoch_dir = os.path.join(path, "model_data/")
@@ -49,15 +54,25 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     
     model.to(device)
 
+    logging.info("Loading Datasets")
     train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True)
     #DenseDataLoader(train_dataset, batch_size=b_size, shuffle=True)
     val_dataloader = DataLoader(val_dataset, batch_size=b_size) 
     #DenseDataLoader(val_dataset, batch_size=b_size)
 
     opt = th.optim.Adam(model.parameters(), lr=lr)
+
     if sched_T0 > 0:
         scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
     epochs += burn_in
+
+    if resume:
+        logging.info(f"Resume training from checkpoint {resume}")
+        checkpoint = th.load(resume)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        opt.load_state_dict(checkpoint["optimizer_state_dict"])
+        scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
+        loss = checkpoint["loss"]
 
     #training setup
     epoch_losses = []
@@ -65,6 +80,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     val_losses = []
     mae_losses = []
     learning_rates = []
+    logging.info("Start Training")
     for epoch in range(epochs):
         model.train()
         epoch_loss = 0
@@ -131,11 +147,11 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             
     end = time.perf_counter()
 
-    print(f"Training took {(end - start)/60/60:.2f} hours")
-    print(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}")
-    print(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}")
-    print(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
-    print(f"Seed used for training was: {th.initial_seed()}")
+    logging.info(f"Training took {(end - start)/60/60:.2f} hours")
+    logging.info(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}")
+    logging.info(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}")
+    logging.info(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
+    logging.info(f"Seed used for training was: {th.initial_seed()}")
 
     #store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses)
 
@@ -163,6 +179,8 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     with open(path + "training_setup.txt", "w") as fh:
         fh.write(f"{model._get_name()}\n")
         fh.write(f"Seed: {th.initial_seed()}\n")
+        if resume:
+            fh.write(f"Resumed Training from checkpoint:\n\t{resume}\n")
         fh.write(f"Training time: {(end - start)/60/60:.2f} hours\n")
         fh.write(f"Vectorized Data: {vectorize}\nNearest Elements Used (0=False): {k}\n")
         fh.write(f"Epochs: {epochs}\nBatch Size: {b_size}\nLearning Rate: {lr}\nSchedule Intervals: {sched_T0}\nBurn in: {burn_in}\n\n")

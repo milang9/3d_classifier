@@ -2,10 +2,10 @@ import math
 import numpy as np
 import torch as th
 import torch.nn.functional as F
-from classifier.utility import loss_plot, rmsd_scatter, e_rmsd_scatter
+from classifier.utility import loss_plot, rmsd_scatter, e_rmsd_scatter, type_histo
 
 @th.no_grad()
-def pool_test_loop(model, loader, e_dict, title, device):
+def pool_test_loop(model, loader, e_dict, title, device, cutoff = [10, 5]):
     model.eval()
     max_label = 0
     max_loss = 0
@@ -19,6 +19,7 @@ def pool_test_loop(model, loader, e_dict, title, device):
     energies = []
     trmsds_f_en = []
     prmsds_f_en = []
+    large_diff = []
     for test_graph in loader:
         test_graph = test_graph.to(device)
         test_pred, _ = model(test_graph)
@@ -39,8 +40,10 @@ def pool_test_loop(model, loader, e_dict, title, device):
             min_loss = test_loss
             min_label = test_graph.y
             min_pred = test_pred
+        if test_loss > cutoff[0] and test_graph.y < cutoff[1]:
+            large_diff += test_graph.name
         if test_pred < 0:
-            print(f"Prediction below 0: {test_graph.y.item() = }, {test_pred.item() = }")
+            print(f"Prediction below 0: Label {test_graph.y.item():.4f}, Pred {test_pred.item():.4f}")
     
     print(title)
     print(f"Minimum Loss: Label = {min_label.item():.4f}, Prediction = {min_pred.item():.4f}, Loss = {min_loss:.4f}")
@@ -62,6 +65,8 @@ def pool_test_loop(model, loader, e_dict, title, device):
     rmsd_scatter(pred_rmsds, true_rmsds, test_losses, title)
     e_rmsd_scatter(energies, trmsds_f_en, title + ", True RMSDs vs Energy")
     e_rmsd_scatter(energies, prmsds_f_en, title + ", Predicted RMSDs vs Energy")
+    if large_diff != []:
+        type_histo(large_diff, title, cutoff)
     return energies, trmsds_f_en, prmsds_f_en, test_losses
 
 @th.no_grad()

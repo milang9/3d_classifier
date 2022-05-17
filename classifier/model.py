@@ -3,6 +3,7 @@ import torch.nn.functional as F
 import torch_geometric.nn as tgnn
 import torch_geometric.utils as tgu
 import math
+from .modules import dense_mincut_pool_adapted
 
 # Dense/Diffpool Model
 class GNN(th.nn.Module):
@@ -220,12 +221,12 @@ class MinCut_CG_Classifier(th.nn.Module):
         x = self.gcn1(x, adj)
         s = self.pool1(x)
 
-        x, adj, mcl1, ol1 = tgnn.dense_mincut_pool(x, adj, s, mask)
+        x, adj, mcl1, ol1 = dense_mincut_pool_adapted(x, adj, s, mask) #tgnn.dense_mincut_pool(x, adj, s, mask)
 
         x = self.gcn2(x, adj)
         s = self.pool2(x)
 
-        x, adj, mcl2, ol2 = tgnn.dense_mincut_pool(x, adj, s)
+        x, adj, mcl2, ol2 = dense_mincut_pool_adapted(x, adj, s) #tgnn.dense_mincut_pool(x, adj, s)
         
 
         x = self.gcn3(x, adj)
