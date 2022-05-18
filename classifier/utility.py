@@ -39,6 +39,7 @@ def e_rmsd_scatter(energy, rmsd, title):
     axs1.scatter(rmsd, energy)
     if max(energy) > 200:
         axs1.set_ybound(lower = min(energy) - 1, upper = 200)
+    axs1.set_xbound(lower = -1, upper=max(rmsd)+1)
     plt.ylabel("Energy")
     plt.xlabel("RMSD")
     plt.show()

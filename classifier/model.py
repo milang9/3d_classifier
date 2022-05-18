@@ -111,25 +111,24 @@ class MinCut_CG_Classifier(th.nn.Module):
         self.num_node_feats = num_node_feats
         super().__init__()
 
-        self.pre = th.nn.Sequential(
-            th.nn.Linear(self.num_node_feats, 64),
-            #tgnn.GraphNorm(64),
+        self.pre = tgnn.Sequential(
+            "x, edge_index",
+            [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
             th.nn.ELU(),
-            th.nn.Linear(64, 64),
-            #tgnn.GraphNorm(64),
+            (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            th.nn.ELU(),
+            (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
             th.nn.ELU()
-            )
+            ])
 
-            #tgnn.Sequential(
-            #"x, edge_index",
-            #[(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
+            #th.nn.Sequential(
+            #th.nn.Linear(self.num_node_feats, 64),
+            ##tgnn.GraphNorm(64),
             #th.nn.ELU(),
-            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
-            #th.nn.ELU(),
-            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            #th.nn.Linear(64, 64),
+            ##tgnn.GraphNorm(64),
             #th.nn.ELU()
-            #])
-
+            #)
         self.gcn1 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
@@ -213,7 +212,7 @@ class MinCut_CG_Classifier(th.nn.Module):
         batch = data.batch
         edge_index = data.edge_index
 
-        x = self.pre(x)#, edge_index)
+        x = self.pre(x, edge_index)
 
         x, mask = tgu.to_dense_batch(x, batch, max_num_nodes=64)
         adj = tgu.to_dense_adj(edge_index, batch, max_num_nodes=64)

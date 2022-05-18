@@ -32,14 +32,16 @@ def s1_angle(cg_d: dict) -> np.ndarray:
     return np.arccos(np.dot(vec1, vec2)/(len_v1 * len_v2))
 
 #Graph Dataset Class
-class CGDataset(InMemoryDataset): #Dataset):#
-    def __init__(self, root, rmsd_list, vectorize, k, transform=None, pre_transform=None):
+class CGDataset(Dataset):#InMemoryDataset):
+    def __init__(self, root, rmsd_list, vectorize, k, transform=None, pre_transform=None, pre_filter=None):
         self.file_path = root
         self.rmsd_list = rmsd_list
         self.vectorize = vectorize
         self.k = k
-        super().__init__(root, transform, pre_transform) #super(CGDataset, self)
-        self.data, self.slices = th.load(self.processed_paths[0])
+        self.rmsd_dict = {}
+        self.pr_files = []
+        super().__init__(root, transform, pre_transform, pre_filter)
+        #self.data, self.slices = th.load(self.processed_paths[0])
 
     @property
     def raw_file_names(self):
@@ -47,26 +49,45 @@ class CGDataset(InMemoryDataset): #Dataset):#
     
     @property
     def processed_file_names(self):
-        return ["data.pt"]
+        return self.pr_files#[pr for pr in os.listdir(self.file_path) if os.path.isfile(os.path.join(self.processed_paths[0], pr))]# ["data.pt"]
 
     def process(self):
-        self.graphs = []
+        #self.graphs = []
         self.get_rmsd_dict()
-
+        idx = 0
         for struc in self.raw_file_names:
             if struc in self.rmsd_dict:
                 self.load_cg_file(os.path.join(self.file_path, struc))
                 graph = self.build_graph(self.rmsd_dict[struc], struc)
-                self.graphs.append(graph)
+                #self.graphs.append(graph)
 
-        if self.pre_filter is not None:
-            self.graphs = [data for data in self.graphs if self.pre_filter(data)]
+                if self.pre_filter is not None and not self.pre_filter(graph):
+                    continue
 
-        if self.pre_transform is not None:
-            self.graphs = [self.pre_transform(data) for data in self.graphs]
+                if self.pre_transform is not None:
+                    graph = self.pre_transform(graph)
+                
+                data_file = f"data_{idx}.pt"
+                th.save(graph, os.path.join(self.processed_dir, data_file))#f'data_{idx}.pt'))
+                self.pr_files.append(data_file)
+                idx += 1
 
-        data, slices = self.collate(self.graphs)
-        th.save((data, slices), self.processed_paths[0])
+
+        #if self.pre_filter is not None:
+        #    self.graphs = [data for data in self.graphs if self.pre_filter(data)]
+
+        #if self.pre_transform is not None:
+        #    self.graphs = [self.pre_transform(data) for data in self.graphs]
+
+        #data, slices = self.collate(self.graphs)
+        #th.save((data, slices), self.processed_paths[0])
+    
+    def get(self, idx):
+        data = th.load(os.path.join(self.processed_dir, f'data_{idx}.pt'))
+        return data
+
+    def len(self):
+        return len(self.processed_file_names)
     
     #Graph Building
     #load coarse grain file
@@ -116,7 +137,6 @@ class CGDataset(InMemoryDataset): #Dataset):#
         '''
         Load the file containing the RMSD for each structure into a dictionary.
         '''
-        self.rmsd_dict = {}
         with open(self.rmsd_list, "r") as fh:
             for line in fh.readlines():
                 name, rmsd = (line.rstrip()).split("\t")
@@ -247,11 +267,5 @@ class CGDataset(InMemoryDataset): #Dataset):#
         graph = Data(x=x, edge_index=edge_index, y=label, name=name)
         return graph
     
-    '''
-    def get(self, idx):
-        data = th.load(os.path.join(self.processed_dir, f'data_{idx}.pt'))
-        return data
 
-    def len(self):
-        return len(self.graphs)
-    '''
+
