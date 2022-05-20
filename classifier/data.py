@@ -32,7 +32,7 @@ def s1_angle(cg_d: dict) -> np.ndarray:
     return np.arccos(np.dot(vec1, vec2)/(len_v1 * len_v2))
 
 #Graph Dataset Class
-class CGDataset(Dataset):#InMemoryDataset):
+class CGDataset(InMemoryDataset): #Dataset):
     def __init__(self, root, rmsd_list, vectorize, k, transform=None, pre_transform=None, pre_filter=None):
         self.file_path = root
         self.rmsd_list = rmsd_list
@@ -41,7 +41,8 @@ class CGDataset(Dataset):#InMemoryDataset):
         self.rmsd_dict = {}
         self.pr_files = []
         super().__init__(root, transform, pre_transform, pre_filter)
-        #self.data, self.slices = th.load(self.processed_paths[0])
+        #InMemoryDataset
+        self.data, self.slices = th.load(self.processed_paths[0])
 
     @property
     def raw_file_names(self):
@@ -49,18 +50,26 @@ class CGDataset(Dataset):#InMemoryDataset):
     
     @property
     def processed_file_names(self):
-        return self.pr_files#[pr for pr in os.listdir(self.file_path) if os.path.isfile(os.path.join(self.processed_paths[0], pr))]# ["data.pt"]
+        #InMemoryDataset
+        return ["data.pt"]
+        #Dataset
+        #return self.pr_files#[pr for pr in os.listdir(self.file_path) if os.path.isfile(os.path.join(self.processed_paths[0], pr))]# 
 
     def process(self):
-        #self.graphs = []
+        #InMemoryDataset
+        self.graphs = []
         self.get_rmsd_dict()
-        idx = 0
+        #Dataset
+        #idx = 0
         for struc in self.raw_file_names:
             if struc in self.rmsd_dict:
                 self.load_cg_file(os.path.join(self.file_path, struc))
                 graph = self.build_graph(self.rmsd_dict[struc], struc)
-                #self.graphs.append(graph)
+                #InMemoryDataset
+                self.graphs.append(graph)
 
+                #Dataset
+                '''
                 if self.pre_filter is not None and not self.pre_filter(graph):
                     continue
 
@@ -71,24 +80,29 @@ class CGDataset(Dataset):#InMemoryDataset):
                 th.save(graph, os.path.join(self.processed_dir, data_file))#f'data_{idx}.pt'))
                 self.pr_files.append(data_file)
                 idx += 1
+                '''
 
+        #InMemoryDataset
+        #'''
+        if self.pre_filter is not None:
+            self.graphs = [data for data in self.graphs if self.pre_filter(data)]
 
-        #if self.pre_filter is not None:
-        #    self.graphs = [data for data in self.graphs if self.pre_filter(data)]
+        if self.pre_transform is not None:
+            self.graphs = [self.pre_transform(data) for data in self.graphs]
 
-        #if self.pre_transform is not None:
-        #    self.graphs = [self.pre_transform(data) for data in self.graphs]
-
-        #data, slices = self.collate(self.graphs)
-        #th.save((data, slices), self.processed_paths[0])
-    
+        data, slices = self.collate(self.graphs)
+        th.save((data, slices), self.processed_paths[0])
+        #'''
+    #Dataset
+    '''
     def get(self, idx):
         data = th.load(os.path.join(self.processed_dir, f'data_{idx}.pt'))
         return data
 
     def len(self):
         return len(self.processed_file_names)
-    
+    '''
+
     #Graph Building
     #load coarse grain file
     def load_cg_file(self, file: str):

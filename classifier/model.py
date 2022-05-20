@@ -82,10 +82,14 @@ class DMoN_CG_Classifier(th.nn.Module):
 
     def forward(self, data, training=False):
         x = data.x
-        adj = data.adj
+        batch = data.batch
+        edge_index = data.edge_index
+
+        x, mask = tgu.to_dense_batch(x, batch, max_num_nodes=64)
+        adj = tgu.to_dense_adj(edge_index, batch, max_num_nodes=64)
 
         x = F.elu(self.gcn1(x, adj))
-        _, x, adj, sp1, o1, c1 = self.pool1(x, adj)
+        _, x, adj, sp1, o1, c1 = self.pool1(x, adj, mask)
 
         x = F.elu(self.gcn2(x, adj))
         _, x, adj, sp2, o2, c2 = self.pool2(x, adj)
@@ -98,11 +102,12 @@ class DMoN_CG_Classifier(th.nn.Module):
         x = x.mean(dim=1)
 
         x = self.classify(x)
+        x = th.flatten(x)
 
         if training:
-            return x, (sp1 + sp2 + o1 + o2 + c1 + c2).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item()
+            return x, sp1 + sp2 + o1 + o2 + c1 + c2#).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item()
         else:
-            return self.pos(x), (sp1 + sp2 + o1 + o2 + c1 + c2).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item() # should this be added when not training?
+            return self.pos(x), sp1 + sp2 + o1 + o2 + c1 + c2#).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item() # should this be added when not training?
 
 
 # CG RNA Classifier Model using MinCut pooling
@@ -239,7 +244,7 @@ class MinCut_CG_Classifier(th.nn.Module):
         x = x.mean(dim=1)
 
         x = self.classify(x)
-        x = th.flatten(x)
+        
 
         return x, mcl1 + mcl2 + ol1 + ol2#(mcl1 + mcl2 + mcl3 + ol1 + ol2 + ol3).detach().item()
         # if training:
@@ -282,14 +287,16 @@ class Diff_CG_Classifier(th.nn.Module):
 
     def forward(self, data, training=False):
         x = data.x
-        edge_index = data.edge_index
         batch = data.batch
-        adj = data.adj
+        edge_index = data.edge_index
+
+        x, mask = tgu.to_dense_batch(x, batch, max_num_nodes=64)
+        adj = tgu.to_dense_adj(edge_index, batch, max_num_nodes=64)
 
         s = self.gcn_pool1(x, adj)
         x = self.gcn_embed1(x, adj)
 
-        x, adj, l1, e1 = tgnn.dense_diff_pool(x, adj, s)
+        x, adj, l1, e1 = tgnn.dense_diff_pool(x, adj, s, mask)
         l = l1
         e = e1
 
@@ -313,7 +320,7 @@ class Diff_CG_Classifier(th.nn.Module):
         x = x.mean(dim=1)
 
         x = self.classify(x)
-
+        x = th.flatten(x)
         # return x, l, e
 
         if training:
