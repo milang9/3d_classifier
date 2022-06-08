@@ -129,11 +129,19 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         val_losses.append(val_loss)
         mae_losses.append(mae_loss)
 
-        th.save({
+        if sched_T0 > 0:
+            th.save({
             "epoch": epoch,
             "model_state_dict": model.state_dict(),
             "optimizer_state_dict": opt.state_dict(),
             "scheduler_state_dict": scheduler.state_dict(),
+            "loss": loss
+            }, f"{epoch_dir}epoch_{str(epoch)}.pth")
+        else:
+            th.save({
+            "epoch": epoch,
+            "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": opt.state_dict(),
             "loss": loss
             }, f"{epoch_dir}epoch_{str(epoch)}.pth")
 

@@ -244,7 +244,7 @@ class MinCut_CG_Classifier(th.nn.Module):
         x = x.mean(dim=1)
 
         x = self.classify(x)
-        
+        x = th.flatten(x)
 
         return x, mcl1 + mcl2 + ol1 + ol2#(mcl1 + mcl2 + mcl3 + ol1 + ol2 + ol3).detach().item()
         # if training:

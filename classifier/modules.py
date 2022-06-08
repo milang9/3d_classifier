@@ -89,7 +89,7 @@ def dense_mincut_pool_adapted(x, adj, s, mask=None):
     # Don't zero out the diagonal --> leads to nan values
     #out_adj[:, ind, ind] = 0
     # Use EPS as diagonal
-    out_adj[:, ind, ind] = EPS
+    out_adj[:, ind, ind] = 1e-8 #EPS
     # Use 1 as diagonal
     #out_adj[:, ind, ind] = 1
 
