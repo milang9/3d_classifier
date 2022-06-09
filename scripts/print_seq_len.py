@@ -32,8 +32,10 @@ for file in listdir(p):
     if struc[-4:] == ".cif":
         print(struc)
         parser = MMCIFParser()
-        s = parser.get_structure(structure_id=file, filename=struc) #PDBParser().get_structure("RNA", struc)
-
+        try:
+            s = parser.get_structure(structure_id=file, filename=struc) #PDBParser().get_structure("RNA", struc)
+        except:
+            print(f"Error wit {file}")
         for chain in s.get_chains():
             chain_len = len([_ for _ in chain.get_residues() if not PDB.is_aa(_)])
             print(file, chain_len)
