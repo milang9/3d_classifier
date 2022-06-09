@@ -24,13 +24,12 @@ c = 0
 d = 0
 l = []
 m = []
-upper = 500
+upper = 1000
 lower = 40
 for file in listdir(p):
     #if file not in used_pdbs and file not in m_pdbs:
     struc = p + file
     if struc[-4:] == ".cif":
-        print(struc)
         parser = MMCIFParser()
         try:
             s = parser.get_structure(structure_id=file, filename=struc) #PDBParser().get_structure("RNA", struc)
@@ -51,4 +50,4 @@ for file in listdir(p):
 print(f"seqs greater {upper}: {c}")
 print(l)
 print(f"seqs shorter {lower}: {d}")
-print(m)
+#print(m)
