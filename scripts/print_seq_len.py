@@ -1,5 +1,5 @@
 #!/bin/python
-from Bio.PDB import PDBParser
+from Bio.PDB import PDBParser, MMCIFParser
 from Bio import PDB
 from os import listdir
 from os.path import isfile, join
@@ -29,20 +29,23 @@ lower = 40
 for file in listdir(p):
     #if file not in used_pdbs and file not in m_pdbs:
     struc = p + file
-    s = PDBParser().get_structure("RNA", struc)
-    print(file)
-    for chain in s.get_chains():
-        chain_len = len([_ for _ in chain.get_residues() if not PDB.is_aa(_)])
-        print(chain_len)
-        if chain_len >= upper:
-            c += 1
-            l.append(file)
-        if chain_len <= lower:
-            d += 1
-            m.append(file)
-            #os.remove(struc)
-        #if chain_len >= 140:
-            #os.remove(struc)
+    if struc[-4:] == ".cif":
+        print(struc)
+        parser = MMCIFParser()
+        s = parser.get_structure(structure_id=file, filename=struc) #PDBParser().get_structure("RNA", struc)
+
+        for chain in s.get_chains():
+            chain_len = len([_ for _ in chain.get_residues() if not PDB.is_aa(_)])
+            print(file, chain_len)
+            if chain_len >= upper:
+                c += 1
+                l.append(file)
+            if chain_len <= lower:
+                d += 1
+                m.append(file)
+                #os.remove(struc)
+            #if chain_len >= 140:
+                #os.remove(struc)
 print(f"seqs greater {upper}: {c}")
 print(l)
 print(f"seqs shorter {lower}: {d}")
