@@ -24,6 +24,8 @@ c = 0
 d = 0
 l = []
 m = []
+upper = 500
+lower = 40
 for file in listdir(p):
     #if file not in used_pdbs and file not in m_pdbs:
     struc = p + file
@@ -32,16 +34,16 @@ for file in listdir(p):
     for chain in s.get_chains():
         chain_len = len([_ for _ in chain.get_residues() if not PDB.is_aa(_)])
         print(chain_len)
-        if chain_len >= 130:
+        if chain_len >= upper:
             c += 1
             l.append(file)
-        if chain_len <= 40:
+        if chain_len <= lower:
             d += 1
             m.append(file)
-            os.remove(struc)
-        if chain_len >= 140:
-            os.remove(struc)
-print("seqs greater 130", c)
+            #os.remove(struc)
+        #if chain_len >= 140:
+            #os.remove(struc)
+print(f"seqs greater {upper}: {c}")
 print(l)
-print("seqs shorter 40", d)
+print(f"seqs shorter {lower}: {d}")
 print(m)
