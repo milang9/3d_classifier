@@ -5,6 +5,7 @@ from os import listdir
 from os.path import isfile, join
 import sys
 import os
+import shutil
 
 p = sys.argv[1] #'/scr/risa/mgeyer/ernwinenv/data/tset_5st_new/'
 
@@ -34,13 +35,14 @@ for file in listdir(p):
         try:
             s = parser.get_structure(structure_id=file, filename=struc) #PDBParser().get_structure("RNA", struc)
         except:
-            print(f"Error wit {file}")
+            print(f"Error with {file}")
         for chain in s.get_chains():
             chain_len = len([_ for _ in chain.get_residues() if not PDB.is_aa(_)])
             print(file, chain_len)
             if chain_len >= upper:
                 c += 1
                 l.append(file)
+                shutil.move(struc, "/scr/risa/mgeyer/data/long/" + file)
             if chain_len <= lower:
                 d += 1
                 m.append(file)
