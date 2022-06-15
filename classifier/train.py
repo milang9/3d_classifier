@@ -34,8 +34,8 @@ def store_run_data(path, epoch_losses, val_losses, mae_losses, learning_rates, e
         fh.write(str(mae_losses) + "\n")
         fh.write(str(epoch_add_losses))
 
-def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, resume=False,seed=None, burn_in=0):
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%d.%m.%Y %I:%M:%S', level=logging.INFO)
+def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, epochs, sched_T0, vectorize, k, num_workers=0, resume=False, seed=None, burn_in=0):
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%d.%m.%Y %H:%M:%S', level=logging.INFO)
     e = datetime.datetime.now()
     m_dir = f"{e.date()}_{e.hour}-{e.minute}_{model._get_name()}/"
 
@@ -52,19 +52,22 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         th.cuda.manual_seed(seed)
         #pyg.seed_everything(seed)
     
+    if device == th.device("cuda"):
+        th.backends.cudnn.benchmark = True
+
     model.to(device)
 
     logging.info("Loading Datasets")
-    train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True)#, num_workers=8, pin_memory=True)
-    #DenseDataLoader(train_dataset, batch_size=b_size, shuffle=True)
-    val_dataloader = DataLoader(val_dataset, batch_size=b_size)#, num_workers=8, pin_memory=True) 
-    #DenseDataLoader(val_dataset, batch_size=b_size)
+    train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True, num_workers=num_workers)#, pin_memory=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=b_size, num_workers=num_workers)#, pin_memory=True) 
 
-    opt = th.optim.Adam(model.parameters(), lr=lr)
+    opt = th.optim.RAdam(model.parameters(), lr=lr) # AdamW had a large performance increase
 
     if sched_T0 > 0:
-        scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
-    epochs += burn_in
+        scheduler1 = th.optim.lr_scheduler.CyclicLR(opt, base_lr=lr/1000, max_lr=lr, step_size_up=int(burn_in/2), mode="triangular", gamma=0.9, cycle_momentum=False)
+        scheduler2 = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
+        scheduler = th.optim.lr_scheduler.SequentialLR(opt, schedulers=[scheduler1, scheduler2], milestones=[burn_in])
+    #epochs += burn_in
 
     if resume:
         logging.info(f"Resume training from checkpoint {resume}")
@@ -83,6 +86,9 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     logging.info("Start Training")
     for epoch in range(epochs):
         model.train()
+        if epoch == burn_in and sched_T0 > 0:
+            opt.param_groups[0]["lr"] = lr
+            scheduler2.base_lrs = [lr]
         epoch_loss = 0
         if sched_T0 > 0:
             learning_rates.append(scheduler.get_last_lr()[0])
@@ -102,8 +108,7 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
 
         #apply lr changes according to scheme
         if sched_T0 > 0:
-            if epoch >= burn_in:
-                scheduler.step()
+            scheduler.step()
 
         epoch_loss /= (iter + 1)
         epoch_losses.append(epoch_loss)
@@ -151,8 +156,6 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
             print(f"Epoch {epoch}: Training loss {epoch_loss:.4f}; Validation loss {val_loss:.4f}, MAE: {mae_loss:.4f}; lr: {learning_rates[-1]:.5f}")
             print(f"\tAdd. Loss: Training {eadd_loss:.4f}, Validation {vadd_loss:.4f}")
 
-            
-            
     end = time.perf_counter()
 
     logging.info(f"Training took {(end - start)/60/60:.2f} hours")
@@ -195,14 +198,3 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
         fh.write(f"Minimum Training Loss {min(epoch_losses):.4f} in epoch {epoch_losses.index(min(epoch_losses))}\n")
         fh.write(f"Minimum Validation Loss (after {burn_in} epochs) {min(val_losses[burn_in:]):.4f} in epoch {val_losses.index(min(val_losses[burn_in:]))}\n")
         fh.write(f"Minimum MAE (after {burn_in} epochs) {min(mae_losses[burn_in:]):.4f} in epoch {mae_losses.index(min(mae_losses[burn_in:]))}")
-    '''
-    # write training metrics to file
-    with open(path + "loss_data.txt", "w") as fh:
-        fh.write(str(epoch_losses) + "\n")
-        fh.write(str(val_losses) + "\n")
-        fh.write(str(learning_rates) + "\n")
-        fh.write(str(mae_losses) + "\n")
-        fh.write(str(epoch_add_losses))
-
-    return #epoch_losses, val_losses, mae_losses, learning_rates, epoch_add_losses
-    '''
