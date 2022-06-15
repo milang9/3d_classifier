@@ -42,7 +42,7 @@ for file in listdir(p):
             if chain_len >= upper:
                 c += 1
                 l.append(file)
-                shutil.move(struc, "/scr/risa/mgeyer/data/long/" + file)
+                #shutil.move(struc, "/scr/risa/mgeyer/data/long/" + file)
             if chain_len <= lower:
                 d += 1
                 m.append(file)
