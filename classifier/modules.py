@@ -90,8 +90,6 @@ def dense_mincut_pool_adapted(x, adj, s, mask=None):
     #out_adj[:, ind, ind] = 0
     # Use EPS as diagonal
     out_adj[:, ind, ind] = 1e-8 #EPS
-    # Use 1 as diagonal
-    #out_adj[:, ind, ind] = 1
 
     d = torch.einsum('ijk->ij', out_adj)
     d = torch.sqrt(d)[:, None] + EPS

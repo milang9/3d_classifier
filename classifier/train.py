@@ -55,9 +55,9 @@ def pool_train_loop(model, train_dataset, val_dataset, model_dir, device, b_size
     model.to(device)
 
     logging.info("Loading Datasets")
-    train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True)
+    train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True)#, num_workers=8, pin_memory=True)
     #DenseDataLoader(train_dataset, batch_size=b_size, shuffle=True)
-    val_dataloader = DataLoader(val_dataset, batch_size=b_size) 
+    val_dataloader = DataLoader(val_dataset, batch_size=b_size)#, num_workers=8, pin_memory=True) 
     #DenseDataLoader(val_dataset, batch_size=b_size)
 
     opt = th.optim.Adam(model.parameters(), lr=lr)
