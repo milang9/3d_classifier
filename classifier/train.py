@@ -53,6 +53,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
         #pyg.seed_everything(seed)
     
     if device == th.device("cuda"):
+        logging.info("Using CUDNN Benchmark")
         th.backends.cudnn.benchmark = True
 
     model.to(device)
@@ -67,7 +68,6 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
         scheduler1 = th.optim.lr_scheduler.CyclicLR(opt, base_lr=lr/1000, max_lr=lr, step_size_up=int(burn_in/2), mode="triangular", gamma=0.9, cycle_momentum=False)
         scheduler2 = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
         scheduler = th.optim.lr_scheduler.SequentialLR(opt, schedulers=[scheduler1, scheduler2], milestones=[burn_in])
-    #epochs += burn_in
 
     if resume:
         logging.info(f"Resume training from checkpoint {resume}")
