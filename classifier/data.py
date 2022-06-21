@@ -33,7 +33,7 @@ def s1_angle(cg_d: dict) -> np.ndarray:
 
 #Graph Dataset Class
 class CGDataset(InMemoryDataset): #Dataset):
-    def __init__(self, root, rmsd_list, transform=None, pre_transform=None, pre_filter=None):
+    def __init__(self, root, rmsd_list, transform=None, pre_transform=None, pre_filter=None, **kwargs):
         self.file_path = root
         self.rmsd_list = rmsd_list
         self.rmsd_dict = {}
@@ -203,13 +203,13 @@ class CGDataset(InMemoryDataset): #Dataset):
             x.append(z)
         
         x = np.array(x)
-        x = th.tensor(x, dtype=th.float32)
+        x = th.as_tensor(x, dtype=th.float32)
 
         graph = Data(x=x, edge_index=edge_index, y=label, name=name)
         return graph
     
 class VectorCGDataset(InMemoryDataset): #Dataset):
-    def __init__(self, root, rmsd_list, transform=None, pre_transform=None, pre_filter=None):
+    def __init__(self, root, rmsd_list, transform=None, pre_transform=None, pre_filter=None, **kwargs):
         self.file_path = root
         self.rmsd_list = rmsd_list
         self.rmsd_dict = {}
@@ -388,15 +388,16 @@ class VectorCGDataset(InMemoryDataset): #Dataset):
             x.append(z)
         
         x = np.array(x)
-        x = th.tensor(x, dtype=th.float32)
+        x = th.as_tensor(x, dtype=th.float32)
 
         graph = Data(x=x, edge_index=edge_index, y=label, name=name)
         return graph
 
 class NeighbourCGDataset(InMemoryDataset): #Dataset):
-    def __init__(self, root, rmsd_list, transform=None, pre_transform=None, pre_filter=None):
+    def __init__(self, root, rmsd_list, k, transform=None, pre_transform=None, pre_filter=None, **kwargs):
         self.file_path = root
         self.rmsd_list = rmsd_list
+        self.k = k
         self.rmsd_dict = {}
         self.pr_files = []
         super().__init__(root, transform, pre_transform, pre_filter)
@@ -515,26 +516,22 @@ class NeighbourCGDataset(InMemoryDataset): #Dataset):
                 name, rmsd = (line.rstrip()).split("\t")
                 self.rmsd_dict[name] = float(rmsd)
     
-    def n_neighbours(self):
+    def k_neighbours(self):
         '''
-        Calculates the middle point for each element. Returns for each element its center and the center points of the k nearest elements.
+        Calculates the distance between start- and endpoints of elements. Elements are sorted by the shortest distance.
+        The set of k vectors pointing from the start and from the end of the current element to the nearest one are returned.
         '''
-        #calculate the midpoint for each element
-        mp_dir = {"null": [0, 0, 0]}
-        for elem in self.coord_dict:
-            mp = (self.coord_dict[elem][0] + self.coord_dict[elem][1])/2
-            mp_dir[elem] = mp
 
-        #calculate distance from each midpoint to every other
+        #calculate distance between start- and endpoints of elements, sort by shortest
         dist_dir = {}
-        for a in mp_dir:
-            helper_d = {}
-            for b in mp_dir:
+        for a in self.coord_dict:
+            helper_dict = {}
+            for b in self.coord_dict:
                 if a != b:
-                    dist = np.linalg.norm(mp_dir[b] - mp_dir[a])
-                    helper_d[b] = dist
-            if helper_d != {}:
-                dist_dir[a] = helper_d
+                    start_dist = np.linalg.norm(self.coord_dict[a][0] - self.coord_dict[b][0])
+                    end_dist = np.linalg.norm(self.coord_dict[a][1] - self.coord_dict[b][1])
+                    helper_dict[b] = sorted([start_dist, end_dist])
+            dist_dir[a] = helper_dict
 
         #get the nearest k elements
         n_dict = {}
@@ -554,11 +551,17 @@ class NeighbourCGDataset(InMemoryDataset): #Dataset):
         for elem in n_dict:
             v_arr = []
             for e in n_dict[elem]:
-                vec = []
-                for i in range(3):
-                    p = mp_dir[e][i] - mp_dir[elem][i]
-                    vec.append(p)
-                v_arr.append(np.array(vec))#mp_dir[e]))
+                if elem == "null" or e == "null":
+                    v_arr.append(np.array([0, 0, 0, 0, 0, 0]))
+                else:
+                    start_vec = []
+                    end_vec = []
+                    for i in range(3):
+                        start_p = self.coord_dict[e][0][i] - self.coord_dict[elem][0][i]
+                        end_p = self.coord_dict[e][1][i] - self.coord_dict[elem][1][i]
+                        start_vec.append(start_p)
+                        end_vec.append(end_p)
+                    v_arr.append(np.array(start_vec + end_vec))
             self.neighbour_dict[elem] = np.concatenate(v_arr)
 
     def build_graph(self, label: float, name: str) -> Data:
@@ -592,7 +595,7 @@ class NeighbourCGDataset(InMemoryDataset): #Dataset):
         
         edge_index = th.tensor([u, v], dtype=th.long)
 
-        self.n_neighbours()
+        self.k_neighbours()
 
         x = []
         for elem in sorted(self.connections):
@@ -606,7 +609,7 @@ class NeighbourCGDataset(InMemoryDataset): #Dataset):
             x.append(z)
         
         x = np.array(x)
-        x = th.tensor(x, dtype=th.float32)
+        x = th.as_tensor(x, dtype=th.float32)
 
         graph = Data(x=x, edge_index=edge_index, y=label, name=name)
         return graph
