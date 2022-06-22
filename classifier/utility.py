@@ -21,7 +21,7 @@ def rmsd_scatter(pred, true, losses, title):
     ax1.scatter(true, pred)
     ax1.axline(xy1=(0, reg.intercept), slope=reg.slope, linestyle="--", color="k")
     ax1.text(max(true), 0.01, f"R = {reg.rvalue:.4f}", fontsize = 14, verticalalignment="bottom", horizontalalignment="right")
-    ax2.boxplot(losses)
+    ax2.violinplot(losses, showextrema=True, showmedians=True, quantiles=[0.25, 0.75])# boxplot(losses)
     ax1.set_title("Predicted vs True RMSDs")
     ax1.set_ylabel("Predicted RMSD")
     ax1.set_xlabel("True RMSD")
