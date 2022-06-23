@@ -78,9 +78,8 @@ class DMoN_CG_Classifier(th.nn.Module):
             th.nn.ELU(),
             th.nn.Linear(128, 1)
             )
-        self.pos = th.nn.ReLU()  # th.nn.Softplus(threshold=1)
 
-    def forward(self, data, training=False):
+    def forward(self, data):
         x = data.x
         batch = data.batch
         edge_index = data.edge_index
@@ -104,11 +103,7 @@ class DMoN_CG_Classifier(th.nn.Module):
         x = self.classify(x)
         x = th.flatten(x)
 
-        if training:
-            return x, sp1 + sp2 + o1 + o2 + c1 + c2#).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item()
-        else:
-            return self.pos(x), sp1 + sp2 + o1 + o2 + c1 + c2#).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item() # should this be added when not training?
-
+        return x, sp1 + sp2 + o1 + o2 + c1 + c2#).detach().item() #(sp1 + sp2 + sp3 + o1 + o2 + o3 + c1 + c2 + c3).detach().item()
 
 # CG RNA Classifier Model using MinCut pooling
 class MinCut_CG_Classifier(th.nn.Module):
@@ -119,61 +114,61 @@ class MinCut_CG_Classifier(th.nn.Module):
         self.pre = tgnn.Sequential(
             "x, edge_index",
             [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64), #InstanceNorm(64), #
             th.nn.ELU(),
             (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64), #InstanceNorm(64), #
             th.nn.ELU(),
             (tgnn.TAGConv(64, 64), "x, edge_index -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64), #InstanceNorm(64), #
             th.nn.ELU()
             ])
 
         self.gcn1 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64), #InstanceNorm(64), #
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(64), # InstanceNorm(64), #
             th.nn.ELU()
             ])
-        num_nodes = 16 #math.ceil(0.25 * 64)
+        num_nodes = 16
         self.pool1 = th.nn.Sequential(
             th.nn.Linear(64, 64),
-            #tgnn.norm.BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #InstanceNorm(64), #
             th.nn.ELU(),
             th.nn.Linear(64, num_nodes),
-            #tgnn.norm.BatchNorm(num_nodes),
+            tgnn.norm.GraphNorm(num_nodes), #InstanceNorm(num_nodes), #
             th.nn.ELU()
             )
 
         self.gcn2 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(16, 1), #BatchNorm(16),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(16, 1), #BatchNorm(16), #InstanceNorm(64), #
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(16, 1), #BatchNorm(16),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(16, 1), #BatchNorm(16), #InstanceNorm(64), #
             th.nn.ELU()
             ])
         num_nodes = 4
         self.pool2 = th.nn.Sequential(
             th.nn.Linear(64, 64),
-            #tgnn.norm.BatchNorm(64),
+            tgnn.norm.GraphNorm(64), #InstanceNorm(64), #
             th.nn.ELU(),
             th.nn.Linear(64, num_nodes),
-            #tgnn.norm.BatchNorm(num_nodes),
+            tgnn.norm.GraphNorm(num_nodes), #InstanceNorm(num_nodes), #
             th.nn.ELU()
             )
 
         self.gcn3 = tgnn.Sequential(
             "x, adj",
             [(tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(4),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(4), #InstanceNorm(64), #
             th.nn.ELU(),
             (tgnn.DenseGraphConv(64, 64), "x, adj -> x"),
-            #tgnn.norm.InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(4),
+            tgnn.norm.GraphNorm(64), #DiffGroupNorm(64, 1), #BatchNorm(4), #InstanceNorm(64), #
             th.nn.ELU(),
             ])
 
@@ -207,7 +202,7 @@ class MinCut_CG_Classifier(th.nn.Module):
             )
         self.pos = th.nn.ReLU()
 
-    def forward(self, data, training=False):
+    def forward(self, data):
         x = data.x
         batch = data.batch
         edge_index = data.edge_index
@@ -243,10 +238,6 @@ class MinCut_CG_Classifier(th.nn.Module):
         x = th.flatten(x)
 
         return x, mcl1 + mcl2 + ol1 + ol2#(mcl1 + mcl2 + mcl3 + ol1 + ol2 + ol3).detach().item()
-        # if training:
-        #    return x, (mcl + ol).item()
-        # else:
-        #    return self.pos(x), (mcl + ol).item()
 
 # Coarse Grain RNA Classifier Model using differentiable pooling
 class Diff_CG_Classifier(th.nn.Module):
@@ -281,7 +272,7 @@ class Diff_CG_Classifier(th.nn.Module):
         )
         self.pos = th.nn.ReLU()  # th.nn.Softplus(threshold=1)
 
-    def forward(self, data, training=False):
+    def forward(self, data):
         x = data.x
         batch = data.batch
         edge_index = data.edge_index
@@ -317,13 +308,8 @@ class Diff_CG_Classifier(th.nn.Module):
 
         x = self.classify(x)
         x = th.flatten(x)
-        # return x, l, e
 
-        if training:
-            return x, l + e
-        else:
-            return self.pos(x), l + e
-
+        return x, l + e
 
 # Coarse Grain RNA Classifier Model
 class CG_Classifier(th.nn.Module):
@@ -366,9 +352,7 @@ class CG_Classifier(th.nn.Module):
             th.nn.Linear(256, 1),  # (512, 1)
         )
 
-        self.pos = th.nn.ReLU()
-
-    def forward(self, data, training=False):
+    def forward(self, data):
         x = data.x
         edge_index = data.edge_index
         batch = data.batch
@@ -399,9 +383,4 @@ class CG_Classifier(th.nn.Module):
 
         x = self.classify(x)
         x = th.flatten(x)
-        # return x
-
-        if training:
-            return x
-        else:
-            return self.pos(x)
+        return x

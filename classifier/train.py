@@ -98,7 +98,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
         for iter, data in enumerate(train_dataloader):
             data = data.to(device)
             opt.zero_grad(set_to_none=True)
-            pred, add_loss  = model(data, model.training)
+            pred, add_loss  = model(data)
             loss = F.smooth_l1_loss(pred, data.y, reduction="mean") + add_loss
             loss.backward()
             opt.step()
