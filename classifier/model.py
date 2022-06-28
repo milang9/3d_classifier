@@ -312,9 +312,9 @@ class DiffCG(th.nn.Module):
         return x, l + e
 
 # Coarse Grain RNA Classifier Model
-class CGClassifier(th.nn.Module):
+class DeepCG(th.nn.Module):
     def __init__(self, num_node_feats):
-        self.num_layers = 64
+        self.num_layers = 56
         self.num_node_feats = num_node_feats
         self.c = 0
         super().__init__()
@@ -331,14 +331,16 @@ class CGClassifier(th.nn.Module):
 
         self.conv = tgnn.Sequential('x, x_0, edge_index', layer_list)
         '''
-        self.pre = th.nn.Linear(self.num_node_feats, 64)
-        self.act = th.nn.ELU()
+        self.pre = tgnn.TAGConv(self.num_node_feats, 64) #th.nn.Linear(self.num_node_feats, 64)
+        self.act = th.nn.ELU(inplace=True)
 
         self.conv = th.nn.ModuleList()
+        self.norm = th.nn.ModuleList()
         for layer in range(self.num_layers):
             self.conv.append(
-                tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1)
+                tgnn.GENConv(64, 64, aggr="add", learn_t=True, learn_p=True) #GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1) #
             )
+            self.norm.append(tgnn.norm.LayerNorm(64)) #BatchNorm(64)) #
 
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
@@ -353,14 +355,17 @@ class CGClassifier(th.nn.Module):
         edge_index = data.edge_index
         batch = data.batch
 
-        x = x_0 = self.act(self.pre(x))
+        #x = x_0 = self.act(self.pre(x, edge_index))
+        x = self.act(self.pre(x, edge_index))
 
-        for conv in self.conv:
-            x = conv(x, x_0, edge_index)
+        for conv , norm in zip(self.conv, self.norm): #in self.conv: #
+            #x = conv(x, x_0, edge_index)
+            x = conv(x, edge_index)
+            x = norm(x)#, batch)
             x = self.act(x)
 
-        
+        x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
         x = self.classify(x)
 
-        #x = th.flatten(x)
+        x = th.flatten(x)
         return x, th.tensor(0)
