@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-move .coord files from the ernwin output dir to their respective dirs (train, val, test) and rename them
+move .coord files from the ernwin output dir to another dir and rename them
 """
 
 import os
@@ -14,35 +14,42 @@ origin = sys.argv[1] #ernwin output directory
 
 destination = sys.argv[2]
 
-set_dir = sys.argv[3]
+number = int(sys.argv[3])
 
-number = 10
-
-for rna in os.listdir(origin):
+for rna in os.scandir(origin):
+    if not os.path.isdir(rna.path):
+        print(rna.path, os.path.isdir(rna))
+        continue
+    else:
+        print(rna.path)
     #get the best rmsd structures
     for a in range(3):
-        best_r = rna + "/best_rmsd" + str(a) + ".coord"
-        shutil.copy(origin + best_r, destination + set_dir + rna + "_br" + str(a) + ".cg")
+        best_r = rna.path + "/best_rmsd" + str(a) + ".coord"
+        shutil.copy(best_r, destination + rna.name + "_br" + str(a) + ".cg")
 
     rnd_list = []
-    for sim in range(1, 5):
+    for sim in range(1, 10):
+        if len(str(sim)) < 2:
+            sim = "0" + str(sim)
+        else:
+            sim = str(sim)
 
         #get the best structures of each sim
         for b in range(3):
-            best = rna + "/simulation_0" + str(sim) + "/" + "best" + str(b) + ".coord"
-            shutil.copy(origin + best, destination + set_dir + rna + "_be" + str(sim) + str(b) + ".cg")
+            best = rna.path + "/simulation_" + sim + "/" + "best" + str(b) + ".coord"
+            shutil.copy(best, destination + rna.name + "_be" + sim + str(b) + ".cg")
 
         #get random structures
         rng = []
         while len(rng) < number:
-            rnd = str(random.randrange(1, 100))
+            rnd = str(random.randrange(1, 1000))
             while len(rnd) < 4:
                 rnd = "0" + rnd
             if rnd not in rng:
                 rng.append(rnd)
 
         for i in rng:
-            rnd_list.append(rna + "/simulation_0" + str(sim) + "/" + "step" + i + "00.coord")
+            rnd_list.append(rna.path + "/simulation_" + sim + "/" + "step" + i + "00.coord")
 
 
 
@@ -53,5 +60,5 @@ for rna in os.listdir(origin):
             j = "0" + str(i)
         else:
             j = str(i)
-        shutil.copy(origin + x, destination + set_dir + rna + "_rn" + j + ".cg")
+        shutil.copy(x, destination + rna.name + "_rn" + j + ".cg")
         i+=1

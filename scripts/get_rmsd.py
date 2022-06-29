@@ -9,6 +9,8 @@ import sys
 
 file_path = sys.argv[1] #directory for selected ernwin simulated structures
 pdb_fp = sys.argv[2] #directory original pdbs
+rmsd_file = sys.argv[3]
+error_file = sys.argv[4]
 
 #argv[3]: output rmsd list files
 #argv[4]: error file, if a rmsd cant be calculated the structure name is recorded here
@@ -22,14 +24,10 @@ l = []
 error_f = []
 
 for cg in cg_files:
-    if len(cg) > 14:
-        if "br" in cg:
-            name = cg[:-9]
-        else:
-            name = cg[:-10]
-    else:
-        name = cg[:-3]
-    pdb = name + ".cg"
+    spl = cg.rsplit("_", 2)
+    name = spl[0]
+
+    pdb = name + ".cif"
     #if "001.cg" in cg:
     #    pdb = cg
     #else:
@@ -50,10 +48,10 @@ for cg in cg_files:
     else:
         print("PDB file not found:", pdb)
 
-with open(sys.argv[3], "w") as fh:
+with open(rmsd_file, "w") as fh:
     for elem in l:
         fh.write(elem)
 
-with open(sys.argv[4], "w") as fj:
+with open(error_file, "w") as fj:
     for line in error_f:
         fj.write(line)

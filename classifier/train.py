@@ -10,8 +10,8 @@ from torch_geometric.loader import DenseDataLoader, DataLoader
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
-def add_train_specific_args(parent_parser):
-    parser = argparse.ArgumentParser(parents=[parent_parser])
+def add_train_specific_args(parser):
+    #parser = argparse.ArgumentParser(parents=[parent_parser])
     parser.add_argument("-t", "--training_set")
     parser.add_argument("-v", "--val_set")
     parser.add_argument("-o", "--output_dir")
@@ -40,7 +40,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
     m_dir = f"{e.date()}_{e.hour}-{e.minute}_{model._get_name()}/"
 
     logging.info(f"Creating Training Directory at {m_dir}")
-    
+
     path = os.path.join(model_dir, m_dir)
     os.mkdir(path)
     epoch_dir = os.path.join(path, "model_data/")
@@ -51,7 +51,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
         th.manual_seed(seed)
         th.cuda.manual_seed(seed)
         #pyg.seed_everything(seed)
-    
+
     if device == th.device("cuda"):
         logging.info("Using CUDNN Benchmark")
         th.backends.cudnn.benchmark = True
@@ -60,7 +60,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
 
     logging.info("Loading Datasets")
     train_dataloader = DataLoader(train_dataset, batch_size=b_size, shuffle=True, num_workers=num_workers)#, pin_memory=True)
-    val_dataloader = DataLoader(val_dataset, batch_size=b_size, num_workers=num_workers)#, pin_memory=True) 
+    val_dataloader = DataLoader(val_dataset, batch_size=b_size, num_workers=num_workers)#, pin_memory=True)
 
     opt = th.optim.RAdam(model.parameters(), lr=lr) # AdamW had a large performance increase
 
@@ -99,13 +99,13 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
             data = data.to(device)
             opt.zero_grad(set_to_none=True)
             pred, add_loss  = model(data)
-            
+
             loss = F.smooth_l1_loss(pred, data.y, reduction="mean") + add_loss
             loss.backward()
             opt.step()
             epoch_loss += loss.detach().item()
             eadd_loss += (add_loss.detach().item() if type(add_loss) == th.Tensor else add_loss)
-            
+
 
         #apply lr changes according to scheme
         if sched_T0 > 0:
@@ -131,7 +131,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
 
             val_loss /= (i + 1)
             mae_loss /= (i + 1)
-        
+
         val_losses.append(val_loss)
         mae_losses.append(mae_loss)
 

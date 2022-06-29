@@ -2,16 +2,17 @@
 import argparse
 import logging
 import torch as th
-from .train import training, add_train_specific_args
-from .model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
-from .data import CGDataset
+from train import training, add_train_specific_args
+from model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
+from data import CGDataset
 import torch_geometric.transforms as T
 
 def add_args():
     parser = argparse.ArgumentParser(description="Neural Network Model for the classification of coarse grained RNA 3D structures, using Graph Convolution.")
-    parser.add_argument("-model", default="mincut", const="mincut", nargs="?", choices=["tag", "diffpool", "mincut", "dmon"])
+    parser.add_argument("-model", default="mincut", const="mincut", nargs="?", choices=["deep", "diffpool", "mincut"])
     parser.add_argument("-train", action="store_true")
     parser.add_argument("-test", action="store_true")
+    '''
     parser.add_argument("-t", "--training_set")
     parser.add_argument("-t_rmsd")
     parser.add_argument("-v", "--val_set")
@@ -25,22 +26,23 @@ def add_args():
     parser.add_argument("-k", type=int, default=0, help="Use the start and end of the element vectors, pointing to the next k elements.")
     parser.add_argument("-seed", type=int, default=None)
     parser.add_argument("-burn_in", type=int, default=0)
+    '''
     return parser
 
 
 def main():
     parser = add_args()
-    #parser = add_train_specific_args(parser)
+    parser = add_train_specific_args(parser)
     args = parser.parse_args()
     device = th.device("cuda" if th.cuda.is_available() else "cpu")
-    
+
     if args.training_set:
         training_dataset = CGDataset(args.training_set, args.t_rmsd, args.vector, args.k)
     if args.val_set:
         val_dataset = CGDataset(args.val_set, args.v_rmsd, args.vector, args.k)
 
 
-    if args.model == "tag":
+    if args.model == "deep":
         m = DeepCG(training_dataset.num_node_features)
     elif args.model == "diffpool":
         m = DiffCG(training_dataset.num_node_features)
