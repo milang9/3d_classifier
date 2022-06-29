@@ -2,8 +2,8 @@
 import argparse
 import logging
 import torch as th
-from .train import pool_train_loop, add_train_specific_args
-from .model import CG_Classifier, Diff_CG_Classifier, MinCut_CG_Classifier #, MinCut2_CG_Classifier
+from .train import training, add_train_specific_args
+from .model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
 from .data import CGDataset
 import torch_geometric.transforms as T
 
@@ -41,15 +41,15 @@ def main():
 
 
     if args.model == "tag":
-        m = CG_Classifier(training_dataset.num_node_features)
+        m = DeepCG(training_dataset.num_node_features)
     elif args.model == "diffpool":
-        m = Diff_CG_Classifier(training_dataset.num_node_features)
+        m = DiffCG(training_dataset.num_node_features)
     elif args.model == "mincut":
-        m = MinCut_CG_Classifier(training_dataset.num_node_features)
+        m = MinCutCG(training_dataset.num_node_features)
 
 
     if args.train:
-        pool_train_loop(
+        training(
             model=m,
             train_dataset=training_dataset,
             val_dataset=val_dataset,
