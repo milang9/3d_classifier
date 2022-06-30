@@ -3,30 +3,20 @@ import argparse
 import logging
 import torch as th
 from run.train import training, add_train_specific_args
+from run.test import test
 from model.model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
-from model.data import CGDataset
+from model.data import CGDataset, VectorCGDataset, NeighbourCGDataset
 import torch_geometric.transforms as T
 
 def add_args():
     parser = argparse.ArgumentParser(description="Neural Network Model for the classification of coarse grained RNA 3D structures, using Graph Convolution.")
-    parser.add_argument("-model", default="mincut", const="mincut", nargs="?", choices=["deep", "diffpool", "mincut"])
+    parser.add_argument("-model", default="mincut", choices=["deep", "diffpool", "mincut"], required=True)
     parser.add_argument("-train", action="store_true")
     parser.add_argument("-test", action="store_true")
-    '''
-    parser.add_argument("-t", "--training_set")
-    parser.add_argument("-t_rmsd")
-    parser.add_argument("-v", "--val_set")
-    parser.add_argument("-v_rmsd")
-    parser.add_argument("-o", "--output_dir")
-    parser.add_argument("--batch_size", type=int, default=64)
-    parser.add_argument("-lr", "--learning_rate", default=1e-3)
-    parser.add_argument("-epochs", type=int, default=100)
-    parser.add_argument("--cycle_length", type=int, default=0, help="Length of learning rate decline cycles.")
-    parser.add_argument("--vector", action="store_true", default=False, help="Transform coordinates into vector representation.")
-    parser.add_argument("-k", type=int, default=0, help="Use the start and end of the element vectors, pointing to the next k elements.")
-    parser.add_argument("-seed", type=int, default=None)
-    parser.add_argument("-burn_in", type=int, default=0)
-    '''
+    #parser.add_argument("-predict")
+    parser.add_argument("--num_workers", type=int, default=0, help="Number of workers.")
+    parser.add_argument("--resume", default=False, action="store_true", help="Resume training from checkpoint.")
+
     return parser
 
 
@@ -36,18 +26,31 @@ def main():
     args = parser.parse_args()
     device = th.device("cuda" if th.cuda.is_available() else "cpu")
 
-    if args.training_set:
-        training_dataset = CGDataset(args.training_set, args.t_rmsd, args.vector, args.k)
-    if args.val_set:
-        val_dataset = CGDataset(args.val_set, args.v_rmsd, args.vector, args.k)
+    dataset_dict = {c.__name__: c for c in {CGDataset, VectorCGDataset, NeighbourCGDataset}}
+
+    if args.vector:
+        dataset_v = "VectorCGDataset"
+        num_node_feats = 15
+    elif args.k > 0:
+        dataset_v = "NeighbourCGDataset"
+        num_node_feats = 12 + 6 * args.k
+    else:
+        dataset_v = "CGDataset"
+        num_node_feats = 18
+
+    if args.train:
+        training_dataset = dataset_dict[dataset_v](args.training_set, args.t_rmsd, args.k)
+        val_dataset = dataset_dict[dataset_v](args.val_set, args.v_rmsd, args.k)
+    elif args.test:
+        test_dataset = dataset_dict[dataset_v](args.test_set, args.test_rmsd, args.k)
 
 
     if args.model == "deep":
-        m = DeepCG(training_dataset.num_node_features)
+        m = DeepCG(num_node_feats)
     elif args.model == "diffpool":
-        m = DiffCG(training_dataset.num_node_features)
+        m = DiffCG(num_node_feats)
     elif args.model == "mincut":
-        m = MinCutCG(training_dataset.num_node_features)
+        m = MinCutCG(num_node_feats)
 
 
     if args.train:
@@ -64,8 +67,12 @@ def main():
             vectorize=args.vector,
             k=args.k,
             seed=args.seed,
+            num_workers=args.num_workers,
+            resume=args.resume,
             burn_in=args.burn_in)
-
+  
+           
+ 
     if args.test:
         pass
 
