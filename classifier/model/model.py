@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import torch_geometric.nn as tgnn
 import torch_geometric.utils as tgu
 import math
-from .modules import dense_mincut_pool_adapted
+from model.modules import dense_mincut_pool_adapted
 
 # Dense/Diffpool Model
 class GNN(th.nn.Module):

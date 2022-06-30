@@ -2,9 +2,9 @@
 import argparse
 import logging
 import torch as th
-from train import training, add_train_specific_args
-from model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
-from data import CGDataset
+from run.train import training, add_train_specific_args
+from model.model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
+from model.data import CGDataset
 import torch_geometric.transforms as T
 
 def add_args():

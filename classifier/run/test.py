@@ -2,7 +2,7 @@ import math
 import numpy as np
 import torch as th
 import torch.nn.functional as F
-from classifier.utility import loss_plot, rmsd_scatter, e_rmsd_scatter, type_histo
+from classifier.run.utility import loss_plot, rmsd_scatter, e_rmsd_scatter, type_histo
 
 @th.no_grad()
 def test(model, loader, e_dict, title, device, cutoff = [10, 5]):
