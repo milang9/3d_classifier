@@ -331,16 +331,30 @@ class DeepCG(th.nn.Module):
 
         self.conv = tgnn.Sequential('x, x_0, edge_index', layer_list)
         '''
-        self.pre = tgnn.TAGConv(self.num_node_feats, 64) #th.nn.Linear(self.num_node_feats, 64)
+        self.pre = th.nn.Linear(self.num_node_feats, 64)
+        '''
+        tgnn.Sequential(
+            "x, edge_index",
+            [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
+            #tgnn.norm.BatchNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
+            th.nn.ELU(),
+            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
+            #tgnn.norm.BatchNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
+            #th.nn.ELU(),
+            (tgnn.TAGConv(64, 64, bias=False), "x, edge_index -> x"),
+            #tgnn.norm.BatchNorm(64), #LayerNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
+            th.nn.ELU()
+            ])#tgnn.TAGConv(self.num_node_feats, 64) #th.nn.Linear(self.num_node_feats, 64)
+        '''
         self.act = th.nn.ELU(inplace=True)
 
         self.conv = th.nn.ModuleList()
-        self.norm = th.nn.ModuleList()
-        for layer in range(self.num_layers):
+        #self.norm = th.nn.ModuleList()
+        for _ in range(self.num_layers):
             self.conv.append(
                 tgnn.GENConv(64, 64, aggr="add", learn_t=True, learn_p=True) #GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1) #
             )
-            self.norm.append(tgnn.norm.LayerNorm(64)) #BatchNorm(64)) #
+            #self.norm.append(tgnn.norm.LayerNorm(64)) #BatchNorm(64)) #
 
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
@@ -356,12 +370,12 @@ class DeepCG(th.nn.Module):
         batch = data.batch
 
         #x = x_0 = self.act(self.pre(x, edge_index))
-        x = self.act(self.pre(x, edge_index))
+        x = self.act(self.pre(x))#, edge_index))
 
-        for conv , norm in zip(self.conv, self.norm): #in self.conv: #
+        for conv in self.conv: # , norm in zip(self.conv, self.norm): #
             #x = conv(x, x_0, edge_index)
             x = conv(x, edge_index)
-            x = norm(x)#, batch)
+            #x = norm(x)#, batch)
             x = self.act(x)
 
         x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
