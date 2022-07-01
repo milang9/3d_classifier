@@ -46,6 +46,9 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
     epoch_dir = os.path.join(path, "model_data/")
     os.mkdir(epoch_dir)
 
+    with open(f"{path}model.txt", "w") as mfh:
+        mfh.write(str(model))
+
     start = time.perf_counter()
     if seed is not None:
         th.manual_seed(seed)
@@ -70,7 +73,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
         scheduler = th.optim.lr_scheduler.SequentialLR(opt, schedulers=[scheduler1, scheduler2], milestones=[burn_in])
 
     if resume:
-        logging.info(f"Resume training from checkpoint {resume}")
+        logging.info(f"Resume training from checkpoint: {resume}")
         checkpoint = th.load(resume)
         model.load_state_dict(checkpoint["model_state_dict"])
         opt.load_state_dict(checkpoint["optimizer_state_dict"])

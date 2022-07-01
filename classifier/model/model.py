@@ -313,48 +313,55 @@ class DiffCG(th.nn.Module):
 
 # Coarse Grain RNA Classifier Model
 class DeepCG(th.nn.Module):
-    def __init__(self, num_node_feats):
-        self.num_layers = 56
+    def __init__(self, num_node_feats, num_layers, blocks):
+        self.num_layers = num_layers
         self.num_node_feats = num_node_feats
         self.c = 0
         super().__init__()
 
-        '''
-        layer_list = [
-            (tgnn.GCN2Conv(self.num_node_feats, 64, aggr="add"),'x, x_0, edge_index -> x'),
+        self.pre = th.nn.Sequential(
+            th.nn.Linear(self.num_node_feats, 64),
+            th.nn.ELU(inplace=True),
+            th.nn.Linear(64, 64),
             th.nn.ELU(inplace=True)
-            ]
+        )
         
-        for i in range(self.num_layers):
-            layer_list.append((tgnn.GCN2Conv(64, 64, aggr="add"),'x, x_0, edge_index -> x'))
-            layer_list.append(th.nn.ELU(inplace=True))
+        modules = []
+        block_start = 0
+        interval = int(self.num_layers/blocks)
+        int_space = interval
+        concats = []
+        for layer in range(self.num_layers):
+            if layer == block_start:
+                modules.append(
+                    (tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x, x_0, edge_index -> x{layer+1}") #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch")
+                )
+                modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
+                modules.append(th.nn.ELU(inplace=True))
+            
+            elif layer == interval -1:
+                concats.append(layer)
+                if layer == self.num_layers - 1:
+                    all_x = ["x"+str(i) for i in concats]
+                    joined_x = ", ".join(all_x)
+                    joined_x += " -> xs"
+                    modules.append((lambda *all_x: all_x, joined_x))
+                else:
+                    modules.append((lambda x1, x2: [x1, x2], f"x{block_start+1}, x{layer} -> xs"))
+                modules.append((tgnn.JumpingKnowledge("lstm", 64, num_layers=2), f"xs -> x"))
+                modules.append((tgnn.global_add_pool, f"x, batch -> x{layer+1}"))
+                block_start = layer+1
+                interval += int_space
+            else:
+                modules.append(
+                    (tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x{layer}, x_0, edge_index -> x{layer+1}") #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch")
+                )
+                modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
+                modules.append(th.nn.ELU(inplace=True))
 
-        self.conv = tgnn.Sequential('x, x_0, edge_index', layer_list)
-        '''
-        self.pre = th.nn.Linear(self.num_node_feats, 64)
-        '''
-        tgnn.Sequential(
-            "x, edge_index",
-            [(tgnn.TAGConv(self.num_node_feats, 64), "x, edge_index -> x"),
-            #tgnn.norm.BatchNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
-            th.nn.ELU(),
-            #(tgnn.TAGConv(64, 64), "x, edge_index -> x"),
-            #tgnn.norm.BatchNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
-            #th.nn.ELU(),
-            (tgnn.TAGConv(64, 64, bias=False), "x, edge_index -> x"),
-            #tgnn.norm.BatchNorm(64), #LayerNorm(64), #InstanceNorm(64), #GraphNorm(64), #DiffGroupNorm(64, 1), #
-            th.nn.ELU()
-            ])#tgnn.TAGConv(self.num_node_feats, 64) #th.nn.Linear(self.num_node_feats, 64)
-        '''
-        self.act = th.nn.ELU(inplace=True)
 
-        self.conv = th.nn.ModuleList()
-        #self.norm = th.nn.ModuleList()
-        for _ in range(self.num_layers):
-            self.conv.append(
-                tgnn.GENConv(64, 64, aggr="add", learn_t=True, learn_p=True) #GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1) #
-            )
-            #self.norm.append(tgnn.norm.LayerNorm(64)) #BatchNorm(64)) #
+        
+        self.conv = tgnn.Sequential("x, x_0, edge_index, batch", modules)
 
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
@@ -369,16 +376,14 @@ class DeepCG(th.nn.Module):
         edge_index = data.edge_index
         batch = data.batch
 
-        #x = x_0 = self.act(self.pre(x, edge_index))
-        x = self.act(self.pre(x))#, edge_index))
+        x = x_0 = self.pre(x)#, edge_index)
+        #x = self.pre(x)#, edge_index))
 
-        for conv in self.conv: # , norm in zip(self.conv, self.norm): #
-            #x = conv(x, x_0, edge_index)
-            x = conv(x, edge_index)
-            #x = norm(x)#, batch)
-            x = self.act(x)
 
-        x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
+        x = self.conv(x, x_0, edge_index, batch)
+        #x = self.conv(x, edge_index)
+
+        #x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
         x = self.classify(x)
 
         x = th.flatten(x)
