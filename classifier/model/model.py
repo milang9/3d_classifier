@@ -194,10 +194,6 @@ class MinCutCG(th.nn.Module):
             th.nn.ELU(),
             th.nn.Linear(64, 64),
             th.nn.ELU(),
-            #th.nn.Linear(64, 64),
-            #th.nn.ELU(),
-            #th.nn.Linear(64, 64),
-            #th.nn.ELU(),
             th.nn.Linear(64, 1)
             )
         
@@ -312,6 +308,8 @@ class DiffCG(th.nn.Module):
         return x, l + e
 
 # Coarse Grain RNA Classifier Model
+#TODO: rework model building, take inspiration from ResNet architecture
+#TODO: build explicit passing of information, not implicit in one Sequential module
 class DeepCG(th.nn.Module):
     def __init__(self, num_node_feats, num_layers, blocks):
         self.num_layers = num_layers

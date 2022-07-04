@@ -68,9 +68,12 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
     opt = th.optim.RAdam(model.parameters(), lr=lr) # AdamW had a large performance increase
 
     if sched_T0 > 0:
-        scheduler1 = th.optim.lr_scheduler.CyclicLR(opt, base_lr=lr/1000, max_lr=lr, step_size_up=int(burn_in/2), mode="triangular", gamma=0.9, cycle_momentum=False)
-        scheduler2 = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
-        scheduler = th.optim.lr_scheduler.SequentialLR(opt, schedulers=[scheduler1, scheduler2], milestones=[burn_in])
+        if burn_in == 0:
+            scheduler = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
+        else:
+            scheduler1 = th.optim.lr_scheduler.CyclicLR(opt, base_lr=lr/1000, max_lr=lr, step_size_up=int(burn_in/2), mode="triangular", gamma=0.9, cycle_momentum=False)
+            scheduler2 = th.optim.lr_scheduler.CosineAnnealingWarmRestarts(opt, T_0=sched_T0)
+            scheduler = th.optim.lr_scheduler.SequentialLR(opt, schedulers=[scheduler1, scheduler2], milestones=[burn_in])
 
     if resume:
         logging.info(f"Resume training from checkpoint: {resume}")
@@ -89,7 +92,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
     logging.info("Start Training")
     for epoch in range(epochs):
         model.train()
-        if epoch == burn_in and sched_T0 > 0:
+        if (burn_in > 0) and (epoch == burn_in and sched_T0 > 0):
             opt.param_groups[0]["lr"] = lr
             scheduler2.base_lrs = [lr]
         epoch_loss = 0
