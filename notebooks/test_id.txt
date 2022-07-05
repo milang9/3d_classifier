@@ -1,0 +1,15 @@
+1b23_R tRNA 74
+1e7k_C U4_snRNA 22
+1e8o_E 7SL_RNA 50
+1f1t_A malachite_green_apt 38
+2azx_D tRNA 75
+2c4q_R MS2_RNA 19
+2hvy_E H-ACA_RNA 65
+2hw8_B L1_mRNA 36
+2il9_A RBD_IRES 142
+2qus_A hammerhead 69
+2quw_B hammerhead_cleaved 57
+2qux_F hairpin 25
+2r8s_R P4-6_ribozyme 159
+2vpl_B L1_mRNA 48
+2xxa_F 4.5S 106
