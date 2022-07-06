@@ -311,8 +311,8 @@ class DiffCG(th.nn.Module):
 #TODO: rework model building, take inspiration from ResNet architecture
 #TODO: build explicit passing of information, not implicit in one Sequential module
 class DeepCG(th.nn.Module):
-    def __init__(self, num_node_feats, num_layers, blocks):
-        self.num_layers = num_layers
+    def __init__(self, num_node_feats, blocks):
+        #self.num_layers = num_layers
         self.num_node_feats = num_node_feats
         self.c = 0
         super().__init__()
@@ -325,15 +325,20 @@ class DeepCG(th.nn.Module):
         )
         
         modules = []
+        '''
+        #new more comprehensive layer/block loop
+        for i in len(blocks):
+            for j in range(blocks[i]):
+                modules.append()
+        '''
+        
         block_start = 0
         interval = int(self.num_layers/blocks)
         int_space = interval
         concats = []
         for layer in range(self.num_layers):
             if layer == block_start:
-                modules.append(
-                    (tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x, x_0, edge_index -> x{layer+1}") #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch")
-                )
+                modules.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x, x_0, edge_index -> x{layer+1}")) #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch"))
                 modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
                 modules.append(th.nn.ELU(inplace=True))
             
@@ -351,9 +356,7 @@ class DeepCG(th.nn.Module):
                 block_start = layer+1
                 interval += int_space
             else:
-                modules.append(
-                    (tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x{layer}, x_0, edge_index -> x{layer+1}") #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch")
-                )
+                modules.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x{layer}, x_0, edge_index -> x{layer+1}")) #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch"))
                 modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
                 modules.append(th.nn.ELU(inplace=True))
 
