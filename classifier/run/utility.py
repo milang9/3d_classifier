@@ -4,7 +4,7 @@ import math
 
 #Plots
 def loss_plot(losses, fq, median, tq, title):
-    fig, axs = plt.subplots(layout='constrained', figsize=(8, 6))
+    fig, axs = plt.subplots(figsize=(8, 6)) #layout='constrained',
     plt.title(title)
     axs.plot(sorted(losses))
     plt.ylabel("RMSD Loss")
@@ -17,7 +17,7 @@ def loss_plot(losses, fq, median, tq, title):
 def rmsd_scatter(pred, true, losses, title):
     reg = linregress(pred, true)
     print(reg)
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6), gridspec_kw={'width_ratios': [5, 1]}, layout='constrained')
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6), gridspec_kw={'width_ratios': [5, 1]})#, layout='constrained')
     ax1.scatter(true, pred)
     ax1.axline(xy1=(0, reg.intercept), slope=reg.slope, linestyle="--", color="k")
     ax1.text(max(true), 0.01, f"R = {reg.rvalue:.4f}", fontsize = 14, verticalalignment="bottom", horizontalalignment="right")
@@ -34,7 +34,7 @@ def rmsd_scatter(pred, true, losses, title):
     plt.show()
 
 def e_rmsd_scatter(energy, rmsd, title):
-    fig1, axs1 = plt.subplots(layout='constrained', figsize=(8, 6))
+    fig1, axs1 = plt.subplots(figsize=(8, 6))#layout='constrained', 
     plt.title(title)
     axs1.scatter(rmsd, energy)
     if max(energy) > 200:
@@ -53,7 +53,7 @@ def type_histo(names, title, cutoff):
         else:
             labels_dic[label] += 1
 
-    fg, ax = plt.subplots(layout='constrained', figsize=(8, 6))
+    fg, ax = plt.subplots(figsize=(8, 6)) #layout='constrained', 
     plt.title(f"{title}, Structure Types above with more than {cutoff[0]} loss, below labeled RMSD {cutoff[1]}")
     plt.bar(list(labels_dic.keys()), labels_dic.values())#, color='g')
     plt.show()
