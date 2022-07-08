@@ -2,3 +2,6 @@ On Workstation:
 - ARES in its own virtual environment (Pipenv, pythons own..)
 - install pyg components with pip directly (or try conda first)
 --> this could lead to a clean install for both
+
+Dataset:
+- Use rna tools to scan the rfam database for id tags of the used structures

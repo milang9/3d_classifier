@@ -312,7 +312,11 @@ class DiffCG(th.nn.Module):
 #TODO: build explicit passing of information, not implicit in one Sequential module
 class DeepCG(th.nn.Module):
     def __init__(self, num_node_feats, blocks):
-        #self.num_layers = num_layers
+        try:
+            if len(blocks) == 4:
+                self.blocks = blocks
+        except:
+            raise ValueError("4 Layer Blocks are needed.")
         self.num_node_feats = num_node_feats
         self.c = 0
         super().__init__()
@@ -323,46 +327,22 @@ class DeepCG(th.nn.Module):
             th.nn.Linear(64, 64),
             th.nn.ELU(inplace=True)
         )
-        
-        modules = []
-        '''
-        #new more comprehensive layer/block loop
-        for i in len(blocks):
-            for j in range(blocks[i]):
-                modules.append()
-        '''
-        
-        block_start = 0
-        interval = int(self.num_layers/blocks)
-        int_space = interval
-        concats = []
-        for layer in range(self.num_layers):
-            if layer == block_start:
-                modules.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x, x_0, edge_index -> x{layer+1}")) #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch"))
-                modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
-                modules.append(th.nn.ELU(inplace=True))
-            
-            elif layer == interval -1:
-                concats.append(layer)
-                if layer == self.num_layers - 1:
-                    all_x = ["x"+str(i) for i in concats]
-                    joined_x = ", ".join(all_x)
-                    joined_x += " -> xs"
-                    modules.append((lambda *all_x: all_x, joined_x))
-                else:
-                    modules.append((lambda x1, x2: [x1, x2], f"x{block_start+1}, x{layer} -> xs"))
-                modules.append((tgnn.JumpingKnowledge("lstm", 64, num_layers=2), f"xs -> x"))
-                modules.append((tgnn.global_add_pool, f"x, batch -> x{layer+1}"))
-                block_start = layer+1
-                interval += int_space
-            else:
-                modules.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=layer+1), f"x{layer}, x_0, edge_index -> x{layer+1}")) #GENConv(64, 64, aggr="add", learn_t=True, learn_p=True, norm="batch"))
-                modules.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
-                modules.append(th.nn.ELU(inplace=True))
-
 
         
-        self.conv = tgnn.Sequential("x, x_0, edge_index, batch", modules)
+        
+        modules1 = []
+
+        modules1.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=0), f"x, x_0, edge_index -> x1"))
+        modules1.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
+        modules1.append(th.nn.ELU(inplace=True))
+        for j in range(self.blocks[0]-1):
+            modules1.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=j+1), f"x1, x_0, edge_index -> x1"))
+            modules1.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
+            modules1.append(th.nn.ELU(inplace=True))
+
+        self.conv1 = tgnn.Sequential("x, x_0, edge_index, batch", modules1)
+
+
 
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
