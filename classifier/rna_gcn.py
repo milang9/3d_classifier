@@ -68,7 +68,7 @@ def main():
 
 
     if args.model == "deep":
-        m = DeepCG(num_node_feats)
+        m = DeepCG(num_node_feats, [11, 22])
     elif args.model == "diffpool":
         m = DiffCG(num_node_feats)
     elif args.model == "mincut":

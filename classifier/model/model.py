@@ -1,3 +1,4 @@
+import sys
 import torch as th
 import torch.nn.functional as F
 import torch_geometric.nn as tgnn
@@ -310,13 +311,35 @@ class DiffCG(th.nn.Module):
 # Coarse Grain RNA Classifier Model
 #TODO: rework model building, take inspiration from ResNet architecture
 #TODO: build explicit passing of information, not implicit in one Sequential module
+
+class BuildGCN(th.nn.Module):
+    def __init__(self, channels, layers, start_i):
+        self.channels = channels
+        self.layers = layers
+        self.start_i = start_i
+        super().__init__()
+
+        modules = []
+        for i in range(self.start_i, self.start_i + self.layers):
+            modules.append((tgnn.GCN2Conv(self.channels, alpha=0.1, theta=0.5, layer=i), f"x, x_0, edge_index -> x"))
+            modules.append(tgnn.norm.BatchNorm(self.channels)) #LayerNorm(64)) #
+            modules.append(th.nn.ELU(inplace=True))
+
+        self.gcn = tgnn.Sequential("x, x_0, edge_index", modules)
+
+    def forward(self, x, x_0, edge_index):
+        x = self.gcn(x, x_0, edge_index)
+        return x
+
 class DeepCG(th.nn.Module):
     def __init__(self, num_node_feats, blocks):
-        try:
-            if len(blocks) == 4:
-                self.blocks = blocks
-        except:
-            raise ValueError("4 Layer Blocks are needed.")
+
+        if len(blocks) == 4:
+            self.blocks = blocks
+        else:
+            print("4 layer blocks need to be specified")
+            sys.exit(1)
+
         self.num_node_feats = num_node_feats
         self.c = 0
         super().__init__()
@@ -328,21 +351,21 @@ class DeepCG(th.nn.Module):
             th.nn.ELU(inplace=True)
         )
 
-        
-        
-        modules1 = []
-
-        modules1.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=0), f"x, x_0, edge_index -> x1"))
-        modules1.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
-        modules1.append(th.nn.ELU(inplace=True))
-        for j in range(self.blocks[0]-1):
-            modules1.append((tgnn.GCN2Conv(64, alpha=0.1, theta=0.5, layer=j+1), f"x1, x_0, edge_index -> x1"))
-            modules1.append(tgnn.norm.BatchNorm(64)) #LayerNorm(64)) #
-            modules1.append(th.nn.ELU(inplace=True))
-
-        self.conv1 = tgnn.Sequential("x, x_0, edge_index, batch", modules1)
-
-
+        self.conv = tgnn.Sequential("x, x_0, edge_index, batch", [
+            (BuildGCN(64, self.blocks[0], 1), "x, x_0, edge_index -> x1"),
+            (lambda x1, x2: [x1, x2], 'x, x1 -> xl'),
+            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
+            (tgnn.global_mean_pool, 'xs, batch -> xs'),
+            (BuildGCN(64, self.blocks[1], sum(self.blocks[:1])-1), "xs, x_0, edge_index -> x2"),
+            (lambda x1, x2: [x1, x2], 'x1, x2 -> xl'),
+            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
+            (tgnn.global_mean_pool, 'xs, batch -> xs'),
+            (BuildGCN(64, self.blocks[2], sum(self.blocks[:2])-1), "xs, x_0, edge_index -> x3"),
+            (lambda x1, x2: [x1, x2], 'x2, x3 -> xl'),
+            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
+            (tgnn.global_mean_pool, 'xs, batch -> xs'),
+            (BuildGCN(64, self.blocks[1], sum(self.blocks[:3])-1), "xs, x_0, edge_index -> x4"),
+        ])
 
         self.classify = th.nn.Sequential(
             th.nn.Linear(64, 64),
@@ -360,11 +383,11 @@ class DeepCG(th.nn.Module):
         x = x_0 = self.pre(x)#, edge_index)
         #x = self.pre(x)#, edge_index))
 
-
         x = self.conv(x, x_0, edge_index, batch)
+
         #x = self.conv(x, edge_index)
 
-        #x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
+        x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
         x = self.classify(x)
 
         x = th.flatten(x)
