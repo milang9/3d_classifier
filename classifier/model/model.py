@@ -309,19 +309,16 @@ class DiffCG(th.nn.Module):
         return x, l + e
 
 # Coarse Grain RNA Classifier Model
-#TODO: rework model building, take inspiration from ResNet architecture
-#TODO: build explicit passing of information, not implicit in one Sequential module
-
 class BuildGCN(th.nn.Module):
-    def __init__(self, channels, layers, start_i):
+    def __init__(self, channels, layers):#, start_i):
         self.channels = channels
         self.layers = layers
-        self.start_i = start_i
+        #self.start_i = start_i
         super().__init__()
 
         modules = []
-        for i in range(self.start_i, self.start_i + self.layers):
-            modules.append((tgnn.GCN2Conv(self.channels, alpha=0.1, theta=0.5, layer=i), f"x, x_0, edge_index -> x"))
+        for i in range(self.layers): #self.start_i, self.start_i + 
+            modules.append((tgnn.GCN2Conv(self.channels, alpha=0.1), "x, x_0, edge_index -> x")) #, theta=0.5, layer=i
             modules.append(tgnn.norm.BatchNorm(self.channels)) #LayerNorm(64)) #
             modules.append(th.nn.ELU(inplace=True))
 
@@ -351,20 +348,29 @@ class DeepCG(th.nn.Module):
             th.nn.ELU(inplace=True)
         )
 
-        self.conv = tgnn.Sequential("x, x_0, edge_index, batch", [
-            (BuildGCN(64, self.blocks[0], 1), "x, x_0, edge_index -> x1"),
-            (lambda x1, x2: [x1, x2], 'x, x1 -> xl'),
-            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
-            (tgnn.global_mean_pool, 'xs, batch -> xs'),
-            (BuildGCN(64, self.blocks[1], sum(self.blocks[:1])-1), "xs, x_0, edge_index -> x2"),
-            (lambda x1, x2: [x1, x2], 'x1, x2 -> xl'),
-            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
-            (tgnn.global_mean_pool, 'xs, batch -> xs'),
-            (BuildGCN(64, self.blocks[2], sum(self.blocks[:2])-1), "xs, x_0, edge_index -> x3"),
-            (lambda x1, x2: [x1, x2], 'x2, x3 -> xl'),
-            (tgnn.JumpingKnowledge("max", 64, num_layers=2), 'xl -> xs'),
-            (tgnn.global_mean_pool, 'xs, batch -> xs'),
-            (BuildGCN(64, self.blocks[1], sum(self.blocks[:3])-1), "xs, x_0, edge_index -> x4"),
+        self.conv = tgnn.Sequential("x0, x_0, edge_index, batch", [
+            (BuildGCN(64, self.blocks[0]), "x0, x_0, edge_index -> x1"), #, 1
+            (lambda x1, x2: [x1, x2], 'x0, x1 -> xs'),
+            (tgnn.JumpingKnowledge("lstm", 64, num_layers=2), 'xs -> x'),
+            #(tgnn.global_mean_pool, 'xs, batch -> x'),
+            #(tgnn.Linear(128, 64), "x -> x"),
+
+            (BuildGCN(64, self.blocks[1]), "x, x_0, edge_index -> x2"), #, sum(self.blocks[:1])-1
+            (lambda x1, x2: [x1, x2], 'x1, x2 -> xs'),
+            (tgnn.JumpingKnowledge("lstm", 64, num_layers=2), 'xs -> x'),
+            #(tgnn.global_mean_pool, 'xs, batch -> x'),
+            #(tgnn.Linear(128, 64), "x -> x"),
+
+            (BuildGCN(64, self.blocks[2]), "x, x_0, edge_index -> x3"), #, sum(self.blocks[:2])-1
+            (lambda x1, x2: [x1, x2], 'x2, x3 -> xs'),
+            (tgnn.JumpingKnowledge("lstm", 64, num_layers=2), 'xs -> x'),
+            #(tgnn.global_mean_pool, 'xs, batch -> x'),
+            #(tgnn.Linear(128, 64), "x -> x"),
+
+            (BuildGCN(64, self.blocks[1]), "x, x_0, edge_index -> x4"), #, sum(self.blocks[:3])-1
+            (lambda x0, x1, x2, x3, x4: [x0, x1, x2, x3, x4], 'x0, x1, x2, x3, x4 -> x'),
+            (tgnn.JumpingKnowledge("lstm", 64, num_layers=2), 'x -> xs'),
+            (tgnn.global_mean_pool, 'xs, batch -> x'),
         ])
 
         self.classify = th.nn.Sequential(
@@ -381,13 +387,8 @@ class DeepCG(th.nn.Module):
         batch = data.batch
 
         x = x_0 = self.pre(x)#, edge_index)
-        #x = self.pre(x)#, edge_index))
-
         x = self.conv(x, x_0, edge_index, batch)
-
-        #x = self.conv(x, edge_index)
-
-        x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
+        #x = tgnn.global_add_pool(x, batch) #x.mean(dim=1)
         x = self.classify(x)
 
         x = th.flatten(x)

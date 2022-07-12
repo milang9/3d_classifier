@@ -186,7 +186,7 @@ def training(model, train_dataset, val_dataset, model_dir, device, b_size, lr, e
     ax1.set_xlabel("Epochs")
     ax1.set_ylabel("Mean RMSD difference")
     ax2.set_ylabel("Learning rate")
-    ax1.set_ybound(lower=min(epoch_losses)-1, upper=max(val_losses)+2)
+    ax1.set_ybound(lower=min(epoch_losses)-1, upper=min(20, max(val_losses)+1))
     han1, lab1 = ax1.get_legend_handles_labels()
     han2, lab2 = ax2.get_legend_handles_labels()
     plt.legend(han1 + han2, lab1 + lab2, loc="upper right")
