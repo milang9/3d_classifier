@@ -5,13 +5,13 @@ import sys
 import torch as th
 from run.train import training, add_train_specific_args
 from run.test import test, add_test_specific_args
-from model.model import DeepCG, DiffCG, MinCutCG #, MinCut2_CG_Classifier
+from model.model import DeepCG, DiffCG, MinCutCG, DMoNCG #, MinCut2_CG_Classifier
 from model.data import CGDataset, VectorCGDataset, NeighbourCGDataset
 import torch_geometric.transforms as T
 
 def add_args():
     parser = argparse.ArgumentParser(description="Neural Network Model for the classification of coarse grained RNA 3D structures, using Graph Convolution.")
-    parser.add_argument("-model", default="mincut", choices=["deep", "diffpool", "mincut"], required=True)
+    parser.add_argument("-model", default="mincut", choices=["deep152", "deep101", "mincut", "diffpool", "dmon"], required=True)
     parser.add_argument("-train", action="store_true")
     parser.add_argument("-test", action="store_true") #add here option for test set path
     parser.add_argument("-o", "--output_dir")
@@ -67,13 +67,16 @@ def main():
         test_dataset = dataset_dict[dataset_v](args.test_set, args.test_rmsd, k=args.k)
 
 
-    if args.model == "deep":
-        m = DeepCG(num_node_feats)
-    elif args.model == "diffpool":
-        m = DiffCG(num_node_feats)
+    if args.model == "deep152":
+        m = DeepCG(num_node_feats, [3, 8, 36, 3])
+    elif args.model == "deep101":
+        m = DeepCG(num_node_feats, [3, 4, 23, 3])
     elif args.model == "mincut":
         m = MinCutCG(num_node_feats)
-
+    elif args.model == "diffpool":
+        m = DiffCG(num_node_feats)
+    elif args.model == "dmon":
+        m = DMoNCG(num_node_feats)
 
     if args.train:
         training(
