@@ -3,20 +3,7 @@ from Bio import PDB
 import os
 import argparse
 
-def add_args(parser):
-    parser.add_argument("-i", help="Input directory")
-    parser.add_argument("-o", help="Output file")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Be verbose")
-    return parser
-
-def main(args):
-    cif_parser = PDB.MMCIFParser()
-    desc = ""
-    for file in [f for f in os.listdir(args.i) if os.path.isfile(os.path.join(args.i, f)) if f.endswith(".cif")]:
-        print(file)
-
-        structure = cif_parser.get_structure("RNA", os.path.join(args.i, file))
-
+def scan_db(structure, args):
         seq = ""
         res_list = PDB.Selection.unfold_entities(structure, "R")
 
@@ -36,21 +23,42 @@ def main(args):
             if line[:2] == ">>":
                 id_line = line[3:]
                 break
-        print(id_line)
+        if not args.verbose:
+            print(id_line)
+        return id_line
+        
+def main(args):
+    cif_parser = PDB.MMCIFParser()
+    desc = ""
+    error_files = []
+    for file in [f for f in os.listdir(args.i) if os.path.isfile(os.path.join(args.i, f)) if f.endswith(".cif")]:
+        print(file)
+
+        try:
+            structure = cif_parser.get_structure("RNA", os.path.join(args.i, file))
+        except KeyError as e:
+            print(e)
+            error_files.append(file)
+            continue
+
+        id_line = scan_db(structure, args)
         desc += f"{file}\t{id_line}\n"
-    
+
+    print("##"*20 +"\n")
     if args.o:
         with open(args.o, "w") as fh:
             fh.write(desc)
     else:
-        print("##"*20 +"\n")
         print("No output file specified. \nResults:\n")
         print(desc)
-
+    
+    e_out = '\n'.join(error_files)
+    print(f"Errors were thrown with these files:\n{e_out}")
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description="Searches for all .cif files in a directory the rfam database with infernal for its description. Returns the first ranked hit.")
-    parser = add_args(parser)
+    parser.add_argument("-i", help="Input directory")
+    parser.add_argument("-o", help="Output file")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Be verbose")
     args = parser.parse_args()
     main(args)
-    
